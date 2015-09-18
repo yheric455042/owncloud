@@ -1,0 +1,749 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: ownCloud Core 8.0.0\n"
+"Report-Msgid-Bugs-To: translations@owncloud.org\n"
+"POT-Creation-Date: 2015-09-07 10:02+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: app/dependencyanalyzer.php:132
+#, php-format
+msgid "PHP %s or higher is required."
+msgstr ""
+
+#: app/dependencyanalyzer.php:138
+#, php-format
+msgid "PHP with a version lower than %s is required."
+msgstr ""
+
+#: app/dependencyanalyzer.php:162
+#, php-format
+msgid "Following databases are supported: %s"
+msgstr ""
+
+#: app/dependencyanalyzer.php:184
+#, php-format
+msgid "The command line tool %s could not be found"
+msgstr ""
+
+#: app/dependencyanalyzer.php:204
+#, php-format
+msgid "The library %s is not available."
+msgstr ""
+
+#: app/dependencyanalyzer.php:212
+#, php-format
+msgid ""
+"Library %s with a version higher than %s is required - available version %s."
+msgstr ""
+
+#: app/dependencyanalyzer.php:219
+#, php-format
+msgid ""
+"Library %s with a version lower than %s is required - available version %s."
+msgstr ""
+
+#: app/dependencyanalyzer.php:247
+#, php-format
+msgid "Following platforms are supported: %s"
+msgstr ""
+
+#: app/dependencyanalyzer.php:271
+#, php-format
+msgid "ownCloud %s or higher is required."
+msgstr ""
+
+#: app/dependencyanalyzer.php:276
+#, php-format
+msgid "ownCloud with a version lower than %s is required."
+msgstr ""
+
+#: app.php:435
+msgid "Help"
+msgstr ""
+
+#: app.php:448
+msgid "Personal"
+msgstr ""
+
+#: app.php:459
+msgid "Users"
+msgstr ""
+
+#: app.php:471
+msgid "Admin"
+msgstr ""
+
+#: app.php:950
+msgid "Recommended"
+msgstr ""
+
+#: app.php:1124
+#, php-format
+msgid ""
+"App \"%s\" cannot be installed because it is not compatible with this "
+"version of ownCloud."
+msgstr ""
+
+#: app.php:1136
+#, php-format
+msgid ""
+"App \"%s\" cannot be installed because the following dependencies are not "
+"fulfilled: %s"
+msgstr ""
+
+#: app.php:1148
+msgid "No app name specified"
+msgstr ""
+
+#: avatar.php:106
+msgid "Unknown filetype"
+msgstr ""
+
+#: avatar.php:111
+msgid "Invalid image"
+msgstr ""
+
+#: datetimeformatter.php:159
+msgid "today"
+msgstr ""
+
+#: datetimeformatter.php:161
+msgid "yesterday"
+msgstr ""
+
+#: datetimeformatter.php:163
+msgid "%n day ago"
+msgid_plural "%n days ago"
+msgstr[0] ""
+msgstr[1] ""
+
+#: datetimeformatter.php:165
+msgid "last month"
+msgstr ""
+
+#: datetimeformatter.php:167
+msgid "%n month ago"
+msgid_plural "%n months ago"
+msgstr[0] ""
+msgstr[1] ""
+
+#: datetimeformatter.php:169
+msgid "last year"
+msgstr ""
+
+#: datetimeformatter.php:171
+msgid "%n year ago"
+msgid_plural "%n years ago"
+msgstr[0] ""
+msgstr[1] ""
+
+#: datetimeformatter.php:221
+msgid "%n hour ago"
+msgid_plural "%n hours ago"
+msgstr[0] ""
+msgstr[1] ""
+
+#: datetimeformatter.php:223
+msgid "%n minute ago"
+msgid_plural "%n minutes ago"
+msgstr[0] ""
+msgstr[1] ""
+
+#: datetimeformatter.php:225
+msgid "seconds ago"
+msgstr ""
+
+#: defaults.php:64
+msgid "web services under your control"
+msgstr ""
+
+#: encryption/manager.php:158
+#, php-format
+msgid ""
+"Module with id: %s does not exist. Please enable it in your apps settings or "
+"contact your administrator."
+msgstr ""
+
+#: files/view.php:1652
+msgid "Empty filename is not allowed"
+msgstr ""
+
+#: files/view.php:1655
+msgid "Dot files are not allowed"
+msgstr ""
+
+#: files/view.php:1664
+msgid "4-byte characters are not supported in file names"
+msgstr ""
+
+#: files/view.php:1672
+msgid "File name is a reserved word"
+msgstr ""
+
+#: files/view.php:1674
+msgid "File name contains at least one invalid character"
+msgstr ""
+
+#: files/view.php:1676
+msgid "File name is too long"
+msgstr ""
+
+#: files.php:196
+msgid "File is currently busy, please try again later"
+msgstr ""
+
+#: files.php:200
+msgid "Can't read file"
+msgstr ""
+
+#: installer.php:93
+msgid "App directory already exists"
+msgstr ""
+
+#: installer.php:106
+#, php-format
+msgid "Can't create app folder. Please fix permissions. %s"
+msgstr ""
+
+#: installer.php:256
+msgid "No source specified when installing app"
+msgstr ""
+
+#: installer.php:264
+msgid "No href specified when installing app from http"
+msgstr ""
+
+#: installer.php:270
+msgid "No path specified when installing app from local file"
+msgstr ""
+
+#: installer.php:278
+#, php-format
+msgid "Archives of type %s are not supported"
+msgstr ""
+
+#: installer.php:292
+msgid "Failed to open archive when installing app"
+msgstr ""
+
+#: installer.php:330
+msgid "App does not provide an info.xml file"
+msgstr ""
+
+#: installer.php:336
+msgid "App can't be installed because of not allowed code in the App"
+msgstr ""
+
+#: installer.php:342
+msgid ""
+"App can't be installed because it is not compatible with this version of "
+"ownCloud"
+msgstr ""
+
+#: installer.php:348
+msgid ""
+"App can't be installed because it contains the <shipped>true</shipped> tag "
+"which is not allowed for non shipped apps"
+msgstr ""
+
+#: installer.php:361
+msgid ""
+"App can't be installed because the version in info.xml/version is not the "
+"same as the version reported from the app store"
+msgstr ""
+
+#: json.php:57
+msgid "Application is not enabled"
+msgstr ""
+
+#: json.php:69 json.php:93 json.php:119
+msgid "Authentication error"
+msgstr ""
+
+#: json.php:81
+msgid "Token expired. Please reload page."
+msgstr ""
+
+#: json.php:106
+msgid "Unknown user"
+msgstr ""
+
+#: setup/abstractdatabase.php:46 setup/oci.php:52
+#, php-format
+msgid "%s enter the database username."
+msgstr ""
+
+#: setup/abstractdatabase.php:49 setup/oci.php:55
+#, php-format
+msgid "%s enter the database name."
+msgstr ""
+
+#: setup/abstractdatabase.php:52
+#, php-format
+msgid "%s you may not use dots in the database name"
+msgstr ""
+
+#: setup/mssql.php:39
+#, php-format
+msgid "MS SQL username and/or password not valid: %s"
+msgstr ""
+
+#: setup/mssql.php:40 setup/mysql.php:34 setup/oci.php:149
+#: setup/postgresql.php:52 setup/postgresql.php:100
+msgid "You need to enter either an existing account or the administrator."
+msgstr ""
+
+#: setup/mysql.php:33
+msgid "MySQL/MariaDB username and/or password not valid"
+msgstr ""
+
+#: setup/mysql.php:104 setup/oci.php:94 setup/oci.php:156 setup/oci.php:179
+#: setup/oci.php:186 setup/oci.php:197 setup/oci.php:204 setup/oci.php:213
+#: setup/oci.php:221 setup/oci.php:230 setup/oci.php:236
+#: setup/postgresql.php:119 setup/postgresql.php:128 setup/postgresql.php:145
+#: setup/postgresql.php:155 setup/postgresql.php:164
+#, php-format
+msgid "DB Error: \"%s\""
+msgstr ""
+
+#: setup/mysql.php:105 setup/oci.php:95 setup/oci.php:157 setup/oci.php:180
+#: setup/oci.php:187 setup/oci.php:198 setup/oci.php:214 setup/oci.php:222
+#: setup/oci.php:231 setup/postgresql.php:120 setup/postgresql.php:129
+#: setup/postgresql.php:146 setup/postgresql.php:156 setup/postgresql.php:165
+#, php-format
+msgid "Offending command was: \"%s\""
+msgstr ""
+
+#: setup/mysql.php:122
+#, php-format
+msgid "MySQL/MariaDB user '%s'@'localhost' exists already."
+msgstr ""
+
+#: setup/mysql.php:123
+msgid "Drop this user from MySQL/MariaDB"
+msgstr ""
+
+#: setup/mysql.php:128
+#, php-format
+msgid "MySQL/MariaDB user '%s'@'%%' already exists"
+msgstr ""
+
+#: setup/mysql.php:129
+msgid "Drop this user from MySQL/MariaDB."
+msgstr ""
+
+#: setup/oci.php:74
+msgid "Oracle connection could not be established"
+msgstr ""
+
+#: setup/oci.php:81 setup/oci.php:148
+msgid "Oracle username and/or password not valid"
+msgstr ""
+
+#: setup/oci.php:205 setup/oci.php:237
+#, php-format
+msgid "Offending command was: \"%s\", name: %s, password: %s"
+msgstr ""
+
+#: setup/postgresql.php:51 setup/postgresql.php:99
+msgid "PostgreSQL username and/or password not valid"
+msgstr ""
+
+#: setup.php:197
+#, php-format
+msgid ""
+"Mac OS X is not supported and %s will not work properly on this platform. "
+"Use it at your own risk! "
+msgstr ""
+
+#: setup.php:201
+msgid "For the best results, please consider using a GNU/Linux server instead."
+msgstr ""
+
+#: setup.php:208
+#, php-format
+msgid ""
+"It seems that this %s instance is running on a 32-bit PHP environment and "
+"the open_basedir has been configured in php.ini. This will lead to problems "
+"with files over 4 GB and is highly discouraged."
+msgstr ""
+
+#: setup.php:212
+msgid ""
+"Please remove the open_basedir setting within your php.ini or switch to 64-"
+"bit PHP."
+msgstr ""
+
+#: setup.php:240
+msgid "Set an admin username."
+msgstr ""
+
+#: setup.php:243
+msgid "Set an admin password."
+msgstr ""
+
+#: setup.php:267
+#, php-format
+msgid "Can't create or write into the data directory %s"
+msgstr ""
+
+#: share/helper.php:253 share/helper.php:289
+msgid "Invalid Federated Cloud ID"
+msgstr ""
+
+#: share/mailnotifications.php:108 share/mailnotifications.php:180
+#, php-format
+msgid "%s shared »%s« with you"
+msgstr ""
+
+#: share/mailnotifications.php:150 share/mailnotifications.php:191
+#, php-format
+msgid "%s via %s"
+msgstr ""
+
+#: share/share.php:610
+msgid ""
+"Sharing %s failed, because the backend does not allow shares from type %i"
+msgstr ""
+
+#: share/share.php:628
+#, php-format
+msgid "Sharing %s failed, because the file does not exist"
+msgstr ""
+
+#: share/share.php:635
+#, php-format
+msgid "You are not allowed to share %s"
+msgstr ""
+
+#: share/share.php:665
+#, php-format
+msgid "Sharing %s failed, because the user %s is the item owner"
+msgstr ""
+
+#: share/share.php:671
+#, php-format
+msgid "Sharing %s failed, because the user %s does not exist"
+msgstr ""
+
+#: share/share.php:680
+#, php-format
+msgid ""
+"Sharing %s failed, because the user %s is not a member of any groups that %s "
+"is a member of"
+msgstr ""
+
+#: share/share.php:693 share/share.php:721 share/share.php:828
+#, php-format
+msgid "Sharing %s failed, because this item is already shared with %s"
+msgstr ""
+
+#: share/share.php:701 share/share.php:816
+#, php-format
+msgid "Sharing %s failed, because the group %s does not exist"
+msgstr ""
+
+#: share/share.php:708
+#, php-format
+msgid "Sharing %s failed, because %s is not a member of the group %s"
+msgstr ""
+
+#: share/share.php:760
+msgid ""
+"You need to provide a password to create a public link, only protected links "
+"are allowed"
+msgstr ""
+
+#: share/share.php:789
+#, php-format
+msgid "Sharing %s failed, because sharing with links is not allowed"
+msgstr ""
+
+#: share/share.php:808
+#, php-format
+msgid ""
+"Sharing %s failed, could not find %s, maybe the server is currently "
+"unreachable."
+msgstr ""
+
+#: share/share.php:841
+#, php-format
+msgid "Share type %s is not valid for %s"
+msgstr ""
+
+#: share/share.php:1071
+#, php-format
+msgid ""
+"Setting permissions for %s failed, because the permissions exceed "
+"permissions granted to %s"
+msgstr ""
+
+#: share/share.php:1133
+#, php-format
+msgid "Setting permissions for %s failed, because the item was not found"
+msgstr ""
+
+#: share/share.php:1171
+#, php-format
+msgid ""
+"Cannot set expiration date. Shares cannot expire later than %s after they "
+"have been shared"
+msgstr ""
+
+#: share/share.php:1179
+msgid "Cannot set expiration date. Expiration date is in the past"
+msgstr ""
+
+#: share/share.php:1203
+msgid ""
+"Cannot clear expiration date. Shares are required to have an expiration date."
+msgstr ""
+
+#: share/share.php:1395
+#, php-format
+msgid "Sharing backend %s must implement the interface OCP\\Share_Backend"
+msgstr ""
+
+#: share/share.php:1402
+#, php-format
+msgid "Sharing backend %s not found"
+msgstr ""
+
+#: share/share.php:1408
+#, php-format
+msgid "Sharing backend for %s not found"
+msgstr ""
+
+#: share/share.php:2241
+#, php-format
+msgid "Sharing %s failed, because the user %s is the original sharer"
+msgstr ""
+
+#: share/share.php:2253
+#, php-format
+msgid ""
+"Sharing %s failed, because the permissions exceed permissions granted to %s"
+msgstr ""
+
+#: share/share.php:2279
+#, php-format
+msgid "Sharing %s failed, because resharing is not allowed"
+msgstr ""
+
+#: share/share.php:2293
+#, php-format
+msgid ""
+"Sharing %s failed, because the sharing backend for %s could not find its "
+"source"
+msgstr ""
+
+#: share/share.php:2307
+#, php-format
+msgid ""
+"Sharing %s failed, because the file could not be found in the file cache"
+msgstr ""
+
+#: tags.php:275
+#, php-format
+msgid "Could not find category \"%s\""
+msgstr ""
+
+#: user/manager.php:258
+msgid ""
+"Only the following characters are allowed in a username: \"a-z\", \"A-Z\", "
+"\"0-9\", and \"_.@-\""
+msgstr ""
+
+#: user/manager.php:263
+msgid "A valid username must be provided"
+msgstr ""
+
+#: user/manager.php:267
+msgid "A valid password must be provided"
+msgstr ""
+
+#: user/manager.php:272
+msgid "The username is already being used"
+msgstr ""
+
+#: util.php:574
+msgid "No database drivers (sqlite, mysql, or postgresql) installed."
+msgstr ""
+
+#: util.php:583
+msgid "Microsoft Windows Platform is not supported"
+msgstr ""
+
+#: util.php:584
+#, php-format
+msgid ""
+"Running ownCloud Server on the Microsoft Windows platform is not supported. "
+"We suggest you use a Linux server in a virtual machine if you have no option "
+"for migrating the server itself. Find Linux packages as well as easy to "
+"deploy virtual machine images on <a href=\"%s\">%s</a>. For migrating "
+"existing installations to Linux you can find some tips and a migration "
+"script in <a href=\"%s\">our documentation</a>."
+msgstr ""
+
+#: util.php:596
+msgid "Cannot write into \"config\" directory"
+msgstr ""
+
+#: util.php:597
+#, php-format
+msgid ""
+"This can usually be fixed by %sgiving the webserver write access to the "
+"config directory%s."
+msgstr ""
+
+#: util.php:610
+msgid "Cannot write into \"apps\" directory"
+msgstr ""
+
+#: util.php:611
+#, php-format
+msgid ""
+"This can usually be fixed by %sgiving the webserver write access to the apps "
+"directory%s or disabling the appstore in the config file."
+msgstr ""
+
+#: util.php:626
+#, php-format
+msgid "Cannot create \"data\" directory (%s)"
+msgstr ""
+
+#: util.php:627
+#, php-format
+msgid ""
+"This can usually be fixed by <a href=\"%s\" target=\"_blank\">giving the "
+"webserver write access to the root directory</a>."
+msgstr ""
+
+#: util.php:634
+#, php-format
+msgid ""
+"Permissions can usually be fixed by %sgiving the webserver write access to "
+"the root directory%s."
+msgstr ""
+
+#: util.php:648
+#, php-format
+msgid "Setting locale to %s failed"
+msgstr ""
+
+#: util.php:651
+msgid ""
+"Please install one of these locales on your system and restart your "
+"webserver."
+msgstr ""
+
+#: util.php:690
+msgid "Please ask your server administrator to install the module."
+msgstr ""
+
+#: util.php:736
+#, php-format
+msgid "PHP module %s not installed."
+msgstr ""
+
+#: util.php:746
+#, php-format
+msgid "PHP setting \"%s\" is not set to \"%s\"."
+msgstr ""
+
+#: util.php:747
+msgid "Adjusting this setting in php.ini will make ownCloud run again"
+msgstr ""
+
+#: util.php:763
+#, php-format
+msgid ""
+"mbstring.func_overload is set to \"%s\" instead of the expected value \"0\""
+msgstr ""
+
+#: util.php:764
+msgid ""
+"To fix this issue set <code>mbstring.func_overload</code> to <code>0</code> "
+"in your php.ini"
+msgstr ""
+
+#: util.php:770
+msgid ""
+"PHP is apparently set up to strip inline doc blocks. This will make several "
+"core apps inaccessible."
+msgstr ""
+
+#: util.php:771
+msgid ""
+"This is probably caused by a cache/accelerator such as Zend OPcache or "
+"eAccelerator."
+msgstr ""
+
+#: util.php:777
+msgid "PHP modules have been installed, but they are still listed as missing?"
+msgstr ""
+
+#: util.php:778
+msgid "Please ask your server administrator to restart the web server."
+msgstr ""
+
+#: util.php:808
+msgid "PostgreSQL >= 9 required"
+msgstr ""
+
+#: util.php:809
+msgid "Please upgrade your database version"
+msgstr ""
+
+#: util.php:816
+msgid "Error occurred while checking PostgreSQL version"
+msgstr ""
+
+#: util.php:817
+msgid ""
+"Please make sure you have PostgreSQL >= 9 or check the logs for more "
+"information about the error"
+msgstr ""
+
+#: util.php:837
+msgid ""
+"Please change the permissions to 0770 so that the directory cannot be listed "
+"by other users."
+msgstr ""
+
+#: util.php:846
+#, php-format
+msgid "Data directory (%s) is readable by other users"
+msgstr ""
+
+#: util.php:867
+#, php-format
+msgid "Data directory (%s) must be an absolute path"
+msgstr ""
+
+#: util.php:868
+msgid "Check the value of \"datadirectory\" in your configuration"
+msgstr ""
+
+#: util.php:873
+#, php-format
+msgid "Data directory (%s) is invalid"
+msgstr ""
+
+#: util.php:874
+msgid ""
+"Please check that the data directory contains a file \".ocdata\" in its root."
+msgstr ""

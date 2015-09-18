@@ -1,0 +1,53 @@
+Array
+(
+    [0] => Array
+        (
+            [id] => "2"
+            [group] =>  "Testgroup"
+            [uid] =>  "wilson"
+        )
+
+    [1] => Array
+        (
+            [id] => "2"
+            [group] =>  "Testgroup"
+            [uid] =>  "user"
+        )
+
+    [2] => Array
+        (
+            [id] => "40"
+            [group] =>  "b"
+            [uid] =>  \N
+        )
+
+    [3] => Array
+        (
+            [id] => "41"
+            [group] =>  "q"
+            [uid] =>  \N
+        )
+
+    [4] => Array
+        (
+            [id] => "47"
+            [group] =>  "hrthtr"
+            [uid] =>  \N
+        )
+
+    [5] => Array
+        (
+            [id] => "48"
+            [group] =>  "gsr"
+            [uid] =>  \N
+        )
+
+    [6] => Array
+        (
+            [id] => "51"
+            [group] =>  "bbba"
+            [uid] =>  \N
+        )
+
+    [7] => 
+)

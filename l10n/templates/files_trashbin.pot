@@ -1,0 +1,76 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: ownCloud Core 8.0.0\n"
+"Report-Msgid-Bugs-To: translations@owncloud.org\n"
+"POT-Creation-Date: 2015-09-07 10:02+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ajax/delete.php:83
+#, php-format
+msgid "Couldn't delete %s permanently"
+msgstr ""
+
+#: ajax/undelete.php:88
+#, php-format
+msgid "Couldn't restore %s"
+msgstr ""
+
+#: appinfo/app.php:37 js/filelist.js:44
+msgid "Deleted files"
+msgstr ""
+
+#: js/app.js:58 templates/index.php:35
+msgid "Restore"
+msgstr ""
+
+#: js/app.js:70 js/app.js:71
+msgid "Delete permanently"
+msgstr ""
+
+#: js/filelist.js:133 js/filelist.js:178 js/filelist.js:228
+msgid "Error"
+msgstr ""
+
+#: lib/trashbin.php:817 lib/trashbin.php:819
+msgid "restored"
+msgstr ""
+
+#: templates/index.php:9
+msgid "No deleted files"
+msgstr ""
+
+#: templates/index.php:10
+msgid "You will be able to recover deleted files from here"
+msgstr ""
+
+#: templates/index.php:17
+msgid "No entries found in this folder"
+msgstr ""
+
+#: templates/index.php:28
+msgid "Select all"
+msgstr ""
+
+#: templates/index.php:30
+msgid "Name"
+msgstr ""
+
+#: templates/index.php:41
+msgid "Deleted"
+msgstr ""
+
+#: templates/index.php:44
+msgid "Delete"
+msgstr ""

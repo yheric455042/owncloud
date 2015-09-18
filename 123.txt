@@ -1,0 +1,7 @@
+"2", "Testgroup", "wilson"
+"2", "Testgroup", "user"
+"40", "b", \N
+"41", "q", \N
+"47", "hrthtr", \N
+"48", "gsr", \N
+"51", "bbba", \N

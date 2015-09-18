@@ -1,0 +1,229 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: ownCloud Core 8.0.0\n"
+"Report-Msgid-Bugs-To: translations@owncloud.org\n"
+"POT-Creation-Date: 2015-09-07 10:02+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: controller/recoverycontroller.php:78
+msgid "Missing recovery key password"
+msgstr ""
+
+#: controller/recoverycontroller.php:84
+msgid "Please repeat the recovery key password"
+msgstr ""
+
+#: controller/recoverycontroller.php:90 controller/recoverycontroller.php:134
+msgid ""
+"Repeated recovery key password does not match the provided recovery key "
+"password"
+msgstr ""
+
+#: controller/recoverycontroller.php:97
+msgid "Recovery key successfully enabled"
+msgstr ""
+
+#: controller/recoverycontroller.php:99
+msgid "Could not enable recovery key. Please check your recovery key password!"
+msgstr ""
+
+#: controller/recoverycontroller.php:102
+msgid "Recovery key successfully disabled"
+msgstr ""
+
+#: controller/recoverycontroller.php:104
+msgid ""
+"Could not disable recovery key. Please check your recovery key password!"
+msgstr ""
+
+#: controller/recoverycontroller.php:107
+msgid "Missing parameters"
+msgstr ""
+
+#: controller/recoverycontroller.php:119
+msgid "Please provide the old recovery password"
+msgstr ""
+
+#: controller/recoverycontroller.php:124
+msgid "Please provide a new recovery password"
+msgstr ""
+
+#: controller/recoverycontroller.php:129
+msgid "Please repeat the new recovery password"
+msgstr ""
+
+#: controller/recoverycontroller.php:145
+msgid "Password successfully changed."
+msgstr ""
+
+#: controller/recoverycontroller.php:152
+msgid "Could not change the password. Maybe the old password was not correct."
+msgstr ""
+
+#: controller/recoverycontroller.php:173
+msgid "Recovery Key disabled"
+msgstr ""
+
+#: controller/recoverycontroller.php:180
+msgid "Recovery Key enabled"
+msgstr ""
+
+#: controller/recoverycontroller.php:189
+msgid ""
+"Could not enable the recovery key, please try again or contact your "
+"administrator"
+msgstr ""
+
+#: controller/settingscontroller.php:96
+msgid "Could not update the private key password."
+msgstr ""
+
+#: controller/settingscontroller.php:114
+msgid "The old password was not correct, please try again."
+msgstr ""
+
+#: controller/settingscontroller.php:117
+msgid "The current log-in password was not correct, please try again."
+msgstr ""
+
+#: controller/settingscontroller.php:123
+msgid "Private key password successfully updated."
+msgstr ""
+
+#: controller/statuscontroller.php:70
+msgid ""
+"You need to migrate your encryption keys from the old encryption (ownCloud "
+"<= 8.0) to the new one. Please run 'occ encryption:migrate' or contact your "
+"administrator"
+msgstr ""
+
+#: controller/statuscontroller.php:76
+msgid ""
+"Invalid private key for Encryption App. Please update your private key "
+"password in your personal settings to recover access to your encrypted files."
+msgstr ""
+
+#: controller/statuscontroller.php:82 templates/settings-admin.php:10
+#: templates/settings-personal.php:12
+msgid ""
+"Encryption App is enabled but your keys are not initialized, please log-out "
+"and log-in again"
+msgstr ""
+
+#: controller/statuscontroller.php:87
+msgid "Encryption App is enabled and ready"
+msgstr ""
+
+#: lib/crypto/encryption.php:286
+msgid ""
+"Can not decrypt this file, probably this is a shared file. Please ask the "
+"file owner to reshare the file with you."
+msgstr ""
+
+#: lib/crypto/encryption.php:390
+msgid ""
+"Can not read this file, probably this is a shared file. Please ask the file "
+"owner to reshare the file with you."
+msgstr ""
+
+#: templates/settings-admin.php:13 templates/settings-admin.php:32
+msgid "Enable recovery key"
+msgstr ""
+
+#: templates/settings-admin.php:13 templates/settings-admin.php:32
+msgid "Disable recovery key"
+msgstr ""
+
+#: templates/settings-admin.php:17
+msgid ""
+"The recovery key is an extra encryption key that is used to encrypt files. "
+"It allows recovery of a user's files if the user forgets his or her password."
+msgstr ""
+
+#: templates/settings-admin.php:23
+msgid "Recovery key password"
+msgstr ""
+
+#: templates/settings-admin.php:27
+msgid "Repeat recovery key password"
+msgstr ""
+
+#: templates/settings-admin.php:37
+msgid "Change recovery key password:"
+msgstr ""
+
+#: templates/settings-admin.php:44
+msgid "Old recovery key password"
+msgstr ""
+
+#: templates/settings-admin.php:50
+msgid "New recovery key password"
+msgstr ""
+
+#: templates/settings-admin.php:55
+msgid "Repeat new recovery key password"
+msgstr ""
+
+#: templates/settings-admin.php:60
+msgid "Change Password"
+msgstr ""
+
+#: templates/settings-personal.php:8
+msgid "ownCloud basic encryption module"
+msgstr ""
+
+#: templates/settings-personal.php:18
+msgid "Your private key password no longer matches your log-in password."
+msgstr ""
+
+#: templates/settings-personal.php:21
+msgid "Set your old private key password to your current log-in password:"
+msgstr ""
+
+#: templates/settings-personal.php:23
+msgid ""
+" If you don't remember your old password you can ask your administrator to "
+"recover your files."
+msgstr ""
+
+#: templates/settings-personal.php:30
+msgid "Old log-in password"
+msgstr ""
+
+#: templates/settings-personal.php:36
+msgid "Current log-in password"
+msgstr ""
+
+#: templates/settings-personal.php:41
+msgid "Update Private Key Password"
+msgstr ""
+
+#: templates/settings-personal.php:49
+msgid "Enable password recovery:"
+msgstr ""
+
+#: templates/settings-personal.php:52
+msgid ""
+"Enabling this option will allow you to reobtain access to your encrypted "
+"files in case of password loss"
+msgstr ""
+
+#: templates/settings-personal.php:60
+msgid "Enabled"
+msgstr ""
+
+#: templates/settings-personal.php:69
+msgid "Disabled"
+msgstr ""

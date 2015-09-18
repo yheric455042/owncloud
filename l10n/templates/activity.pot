@@ -1,0 +1,196 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: ownCloud Core 8.0.0\n"
+"Report-Msgid-Bugs-To: translations@owncloud.org\n"
+"POT-Creation-Date: 2015-09-07 10:02+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: appinfo/app.php:34
+msgid "Activity"
+msgstr ""
+
+#: controller/feed.php:103
+#, php-format
+msgid "Personal activity feed for %s"
+msgstr ""
+
+#: controller/feed.php:107 tests/controller/feedtest.php:126
+#: tests/controller/feedtest.php:157
+msgid "Your feed URL is invalid"
+msgstr ""
+
+#: controller/settings.php:136 controller/settings.php:203
+msgid "Your settings have been updated."
+msgstr ""
+
+#: js/script.js:56 templates/stream.body.php:37
+msgid "This stream will show events like additions, changes & shares"
+msgstr ""
+
+#: js/script.js:58
+msgid "There are no events for this filter"
+msgstr ""
+
+#: lib/mailqueuehandler.php:265
+msgid "Activity notification"
+msgstr ""
+
+#: lib/navigation.php:117
+msgid "All Activities"
+msgstr ""
+
+#: lib/navigation.php:125
+msgid "Activities by you"
+msgstr ""
+
+#: lib/navigation.php:130
+msgid "Activities by others"
+msgstr ""
+
+#: lib/parameterhelper.php:169 lib/parameterhelper.php:171
+msgid "\"remote user\""
+msgstr ""
+
+#: lib/parameterhelper.php:229
+#, php-format
+msgid "in %s"
+msgstr ""
+
+#: lib/parameterhelper.php:291 lib/parameterhelper.php:296
+#: tests/parameterhelpertest.php:205 tests/parameterhelpertest.php:206
+#: tests/parameterhelpertest.php:207 tests/parameterhelpertest.php:208
+#: tests/parameterhelpertest.php:209 tests/parameterhelpertest.php:210
+#, php-format
+msgid "%s and %s"
+msgstr ""
+
+#: lib/parameterhelper.php:295 lib/parameterhelper.php:300
+#: lib/parameterhelper.php:302 tests/parameterhelpertest.php:213
+#: tests/parameterhelpertest.php:222 tests/parameterhelpertest.php:237
+msgid ", "
+msgstr ""
+
+#: lib/parameterhelper.php:305 tests/parameterhelpertest.php:218
+#: tests/parameterhelpertest.php:233
+msgid "%s and <strong class=\"tooltip\" title=\"%s\">%n more</strong>"
+msgid_plural "%s and <strong class=\"tooltip\" title=\"%s\">%n more</strong>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/parameterhelper.php:310 tests/parameterhelpertest.php:213
+msgid "%s and %n more"
+msgid_plural "%s and %n more"
+msgstr[0] ""
+msgstr[1] ""
+
+#: templates/email.notification.php:6
+#, php-format
+msgid "Hello %s,"
+msgstr ""
+
+#: templates/email.notification.php:11
+#, php-format
+msgid ""
+"You are receiving this email because in the last hour the following things "
+"happened at %s"
+msgstr ""
+
+#: templates/email.notification.php:13
+#, php-format
+msgid ""
+"You are receiving this email because in the last day the following things "
+"happened at %s"
+msgstr ""
+
+#: templates/email.notification.php:15
+#, php-format
+msgid ""
+"You are receiving this email because in the last week the following things "
+"happened at %s"
+msgstr ""
+
+#: templates/email.notification.php:21
+#, php-format
+msgid "* %1$s - %2$s"
+msgstr ""
+
+#: templates/email.notification.php:25
+msgid "* and %n more "
+msgid_plural "* and %n more "
+msgstr[0] ""
+msgstr[1] ""
+
+#: templates/personal.php:14
+msgid "Notifications"
+msgstr ""
+
+#: templates/personal.php:19
+msgid "Mail"
+msgstr ""
+
+#: templates/personal.php:22
+msgid "Stream"
+msgstr ""
+
+#: templates/personal.php:53
+msgid "List your own actions in the stream"
+msgstr ""
+
+#: templates/personal.php:57
+msgid "Notify about your own actions via email"
+msgstr ""
+
+#: templates/personal.php:62
+msgid ""
+"You need to set up your email address before you can receive notification "
+"emails."
+msgstr ""
+
+#: templates/personal.php:66
+msgid "Send emails:"
+msgstr ""
+
+#: templates/personal.php:68
+msgid "Hourly"
+msgstr ""
+
+#: templates/personal.php:69
+msgid "Daily"
+msgstr ""
+
+#: templates/personal.php:70
+msgid "Weekly"
+msgstr ""
+
+#: templates/rss.php:13
+msgid "Activity feed"
+msgstr ""
+
+#: templates/stream.app.navigation.php:31
+msgid "Enable RSS feed"
+msgstr ""
+
+#: templates/stream.body.php:36
+msgid "No activity yet"
+msgstr ""
+
+#: templates/stream.body.php:46
+msgid "No more events to load"
+msgstr ""
+
+#: tests/mock/extension.php:146
+msgid "Files"
+msgstr ""

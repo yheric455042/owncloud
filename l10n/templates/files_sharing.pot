@@ -1,0 +1,300 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: ownCloud Core 8.0.0\n"
+"Report-Msgid-Bugs-To: translations@owncloud.org\n"
+"POT-Creation-Date: 2015-09-07 10:02+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ajax/external.php:34
+msgid "Server to server sharing is not enabled on this server"
+msgstr ""
+
+#: ajax/external.php:46
+msgid "The mountpoint name contains invalid characters."
+msgstr ""
+
+#: ajax/external.php:60
+msgid "Invalid or untrusted SSL certificate"
+msgstr ""
+
+#: ajax/external.php:82
+msgid "Could not authenticate to remote share, password might be wrong"
+msgstr ""
+
+#: ajax/external.php:94 ajax/external.php:108
+msgid "Storage not valid"
+msgstr ""
+
+#: ajax/external.php:115 ajax/external.php:124
+msgid "Couldn't add remote share"
+msgstr ""
+
+#: appinfo/app.php:80 js/app.js:41
+msgid "Shared with you"
+msgstr ""
+
+#: appinfo/app.php:92 js/app.js:63
+msgid "Shared with others"
+msgstr ""
+
+#: appinfo/app.php:103 js/app.js:85
+msgid "Shared by link"
+msgstr ""
+
+#: js/app.js:43
+msgid "Nothing shared with you yet"
+msgstr ""
+
+#: js/app.js:44
+msgid "Files and folders others share with you will show up here"
+msgstr ""
+
+#: js/app.js:65
+msgid "Nothing shared yet"
+msgstr ""
+
+#: js/app.js:66
+msgid "Files and folders you share will show up here"
+msgstr ""
+
+#: js/app.js:87
+msgid "No shared links"
+msgstr ""
+
+#: js/app.js:88
+msgid "Files and folders you share by link will show up here"
+msgstr ""
+
+#: js/external.js:30 js/external.js:43
+#, python-brace-format
+msgid "Do you want to add the remote share {name} from {owner}@{remote}?"
+msgstr ""
+
+#: js/external.js:33 js/external.js:46
+msgid "Remote share"
+msgstr ""
+
+#: js/external.js:52
+msgid "Remote share password"
+msgstr ""
+
+#: js/external.js:63
+msgid "Cancel"
+msgstr ""
+
+#: js/external.js:64
+msgid "Add remote share"
+msgstr ""
+
+#: js/public.js:169
+msgid "You can upload into this folder"
+msgstr ""
+
+#: js/public.js:271
+#, python-brace-format
+msgid "No ownCloud installation (7 or higher) found at {remote}"
+msgstr ""
+
+#: js/public.js:272
+msgid "Invalid ownCloud url"
+msgstr ""
+
+#: js/share.js:138
+msgid "Share"
+msgstr ""
+
+#: js/sharedfilelist.js:146
+msgid "Shared by"
+msgstr ""
+
+#: lib/activity.php:90
+msgid "A file or folder has been <strong>shared</strong>"
+msgstr ""
+
+#: lib/activity.php:91
+msgid "A file or folder was shared from <strong>another server</strong>"
+msgstr ""
+
+#: lib/activity.php:92
+msgid "A public shared file or folder was <strong>downloaded</strong>"
+msgstr ""
+
+#: lib/activity.php:153
+#, php-format
+msgid "You received a new remote share from %s"
+msgstr ""
+
+#: lib/activity.php:155
+#, php-format
+msgid "%1$s accepted remote share %2$s"
+msgstr ""
+
+#: lib/activity.php:157
+#, php-format
+msgid "%1$s declined remote share %2$s"
+msgstr ""
+
+#: lib/activity.php:159
+#, php-format
+msgid "%1$s unshared %2$s from you"
+msgstr ""
+
+#: lib/activity.php:161
+#, php-format
+msgid "Public shared folder %1$s was downloaded"
+msgstr ""
+
+#: lib/activity.php:163
+#, php-format
+msgid "Public shared file %1$s was downloaded"
+msgstr ""
+
+#: lib/activity.php:165
+#, php-format
+msgid "You shared %1$s with %2$s"
+msgstr ""
+
+#: lib/activity.php:167
+#, php-format
+msgid "You shared %1$s with group %2$s"
+msgstr ""
+
+#: lib/activity.php:169
+#, php-format
+msgid "%2$s shared %1$s with you"
+msgstr ""
+
+#: lib/activity.php:171
+#, php-format
+msgid "You shared %1$s via link"
+msgstr ""
+
+#: lib/activity.php:263
+msgid "Shares"
+msgstr ""
+
+#: settings-personal.php:36
+#, php-format
+msgid "Share with me through my #ownCloud Federated Cloud ID, see %s"
+msgstr ""
+
+#: settings-personal.php:37
+msgid "Share with me through my #ownCloud Federated Cloud ID"
+msgstr ""
+
+#: templates/authenticate.php:9
+msgid "This share is password-protected"
+msgstr ""
+
+#: templates/authenticate.php:12
+msgid "The password is wrong. Try again."
+msgstr ""
+
+#: templates/authenticate.php:15 templates/authenticate.php:18
+msgid "Password"
+msgstr ""
+
+#: templates/list.php:13
+msgid "No entries found in this folder"
+msgstr ""
+
+#: templates/list.php:22
+msgid "Name"
+msgstr ""
+
+#: templates/list.php:26
+msgid "Share time"
+msgstr ""
+
+#: templates/part.404.php:3
+msgid "Sorry, this link doesn’t seem to work anymore."
+msgstr ""
+
+#: templates/part.404.php:4
+msgid "Reasons might be:"
+msgstr ""
+
+#: templates/part.404.php:6
+msgid "the item was removed"
+msgstr ""
+
+#: templates/part.404.php:7
+msgid "the link expired"
+msgstr ""
+
+#: templates/part.404.php:8
+msgid "sharing is disabled"
+msgstr ""
+
+#: templates/part.404.php:10
+msgid "For more info, please ask the person who sent this link."
+msgstr ""
+
+#: templates/public.php:73
+msgid "Add to your ownCloud"
+msgstr ""
+
+#: templates/public.php:82
+msgid "Download"
+msgstr ""
+
+#: templates/public.php:105
+#, php-format
+msgid "Download %s"
+msgstr ""
+
+#: templates/public.php:109
+msgid "Direct link"
+msgstr ""
+
+#: templates/settings-admin.php:6
+msgid "Federated Cloud Sharing"
+msgstr ""
+
+#: templates/settings-admin.php:8
+msgid "Open documentation"
+msgstr ""
+
+#: templates/settings-admin.php:15
+msgid "Allow users on this server to send shares to other servers"
+msgstr ""
+
+#: templates/settings-admin.php:23
+msgid "Allow users on this server to receive shares from other servers"
+msgstr ""
+
+#: templates/settings-personal.php:12
+msgid "Federated Cloud"
+msgstr ""
+
+#: templates/settings-personal.php:15
+msgid "Your Federated Cloud ID:"
+msgstr ""
+
+#: templates/settings-personal.php:22
+msgid "Share it:"
+msgstr ""
+
+#: templates/settings-personal.php:51
+msgid "Add it to your website:"
+msgstr ""
+
+#: templates/settings-personal.php:57 templates/settings-personal.php:67
+msgid "Share with me via ownCloud"
+msgstr ""
+
+#: templates/settings-personal.php:62
+msgid "HTML Code:"
+msgstr ""

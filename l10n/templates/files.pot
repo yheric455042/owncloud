@@ -1,0 +1,527 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: ownCloud Core 8.0.0\n"
+"Report-Msgid-Bugs-To: translations@owncloud.org\n"
+"POT-Creation-Date: 2015-09-07 10:02+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: ajax/list.php:85
+msgid "Storage not available"
+msgstr ""
+
+#: ajax/list.php:93
+msgid "Storage invalid"
+msgstr ""
+
+#: ajax/list.php:101
+msgid "Unknown error"
+msgstr ""
+
+#: ajax/move.php:39
+#, php-format
+msgid "Could not move %s - File with this name already exists"
+msgstr ""
+
+#: ajax/move.php:50 ajax/move.php:58
+#, php-format
+msgid "Could not move %s"
+msgstr ""
+
+#: ajax/move.php:53
+msgid "Permission denied"
+msgstr ""
+
+#: ajax/newfile.php:57 ajax/newfolder.php:58 ajax/upload.php:201
+#: lib/app.php:101
+msgid "The target folder has been moved or deleted."
+msgstr ""
+
+#: ajax/newfile.php:68 ajax/newfolder.php:69 lib/app.php:110
+#, php-format
+msgid ""
+"The name %s is already used in the folder %s. Please choose a different name."
+msgstr ""
+
+#: ajax/newfile.php:103
+msgid "Error when creating the file"
+msgstr ""
+
+#: ajax/newfolder.php:99
+msgid "Error when creating the folder"
+msgstr ""
+
+#: ajax/upload.php:52 ajax/upload.php:86 ajax/upload.php:96
+msgid "Unable to set upload directory."
+msgstr ""
+
+#: ajax/upload.php:68
+msgid "Invalid Token"
+msgstr ""
+
+#: ajax/upload.php:110
+msgid "No file was uploaded. Unknown error"
+msgstr ""
+
+#: ajax/upload.php:117
+msgid "There is no error, the file uploaded with success"
+msgstr ""
+
+#: ajax/upload.php:118
+msgid ""
+"The uploaded file exceeds the upload_max_filesize directive in php.ini: "
+msgstr ""
+
+#: ajax/upload.php:120
+msgid ""
+"The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
+"the HTML form"
+msgstr ""
+
+#: ajax/upload.php:121
+msgid "The uploaded file was only partially uploaded"
+msgstr ""
+
+#: ajax/upload.php:122
+msgid "No file was uploaded"
+msgstr ""
+
+#: ajax/upload.php:123
+msgid "Missing a temporary folder"
+msgstr ""
+
+#: ajax/upload.php:124
+msgid "Failed to write to disk"
+msgstr ""
+
+#: ajax/upload.php:144
+msgid "Not enough storage available"
+msgstr ""
+
+#: ajax/upload.php:215
+msgid "Upload failed. Could not find uploaded file"
+msgstr ""
+
+#: ajax/upload.php:225
+msgid "Upload failed. Could not get file info."
+msgstr ""
+
+#: ajax/upload.php:243
+msgid "Invalid directory."
+msgstr ""
+
+#: appinfo/app.php:35 js/filelist.js:38 lib/activity.php:262
+msgid "Files"
+msgstr ""
+
+#: appinfo/app.php:54
+msgid "All files"
+msgstr ""
+
+#: index.php:98 js/favoritesfilelist.js:31 lib/activity.php:255
+msgid "Favorites"
+msgstr ""
+
+#: js/breadcrumb.js:156
+msgid "Home"
+msgstr ""
+
+#: js/file-upload.js:285
+#, python-brace-format
+msgid "Unable to upload {filename} as it is a directory or has 0 bytes"
+msgstr ""
+
+#: js/file-upload.js:300
+#, python-brace-format
+msgid "Total file size {size1} exceeds upload limit {size2}"
+msgstr ""
+
+#: js/file-upload.js:311
+#, python-brace-format
+msgid ""
+"Not enough free space, you are uploading {size1} but only {size2} is left"
+msgstr ""
+
+#: js/file-upload.js:388
+msgid "Upload cancelled."
+msgstr ""
+
+#: js/file-upload.js:434
+msgid "Could not get result from server."
+msgstr ""
+
+#: js/file-upload.js:545
+msgid ""
+"File upload is in progress. Leaving the page now will cancel the upload."
+msgstr ""
+
+#: js/file-upload.js:617 js/filelist.js:1442
+#, python-brace-format
+msgid "{new_name} already exists"
+msgstr ""
+
+#: js/file-upload.js:666
+msgid "Could not create file"
+msgstr ""
+
+#: js/file-upload.js:682
+msgid "Could not create folder"
+msgstr ""
+
+#: js/fileactions.js:268 js/fileactions.js:451
+msgid "Rename"
+msgstr ""
+
+#: js/fileactions.js:285 templates/list.php:91 templates/simplelist.php:34
+#: templates/simplelist.php:35
+msgid "Delete"
+msgstr ""
+
+#: js/fileactions.js:287
+msgid "Disconnect storage"
+msgstr ""
+
+#: js/fileactions.js:289
+msgid "Unshare"
+msgstr ""
+
+#: js/fileactions.js:295
+msgid "No permission to delete"
+msgstr ""
+
+#: js/fileactions.js:484 templates/list.php:80
+msgid "Download"
+msgstr ""
+
+#: js/filelist.js:737
+msgid "Select"
+msgstr ""
+
+#: js/filelist.js:791 js/filelist.js:2058 js/filesummary.js:178
+#: js/filesummary.js:226
+msgid "Pending"
+msgstr ""
+
+#: js/filelist.js:813
+msgid "Unable to determine date"
+msgstr ""
+
+#: js/filelist.js:1130
+msgid "This operation is forbidden"
+msgstr ""
+
+#: js/filelist.js:1138
+msgid ""
+"This directory is unavailable, please check the logs or contact the "
+"administrator"
+msgstr ""
+
+#: js/filelist.js:1393
+msgid "Error moving file."
+msgstr ""
+
+#: js/filelist.js:1401
+msgid "Error moving file"
+msgstr ""
+
+#: js/filelist.js:1401
+msgid "Error"
+msgstr ""
+
+#: js/filelist.js:1491
+msgid "Could not rename file"
+msgstr ""
+
+#: js/filelist.js:1613
+msgid "Error deleting file."
+msgstr ""
+
+#: js/filelist.js:1730
+#, python-brace-format
+msgid "No entries in this folder match '{filter}'"
+msgstr ""
+
+#: js/filelist.js:1766 templates/list.php:75 templates/simplelist.php:25
+msgid "Name"
+msgstr ""
+
+#: js/filelist.js:1767 templates/list.php:86 templates/simplelist.php:29
+msgid "Size"
+msgstr ""
+
+#: js/filelist.js:1768 templates/list.php:89 templates/simplelist.php:32
+msgid "Modified"
+msgstr ""
+
+#: js/filelist.js:1778 js/filesummary.js:176 js/filesummary.js:211
+msgid "%n folder"
+msgid_plural "%n folders"
+msgstr[0] ""
+msgstr[1] ""
+
+#: js/filelist.js:1784 js/filesummary.js:177 js/filesummary.js:212
+msgid "%n file"
+msgid_plural "%n files"
+msgstr[0] ""
+msgstr[1] ""
+
+#: js/filelist.js:1850 templates/list.php:49
+msgid "You don’t have permission to upload or create files here"
+msgstr ""
+
+#: js/filelist.js:1951 js/filelist.js:1990
+msgid "Uploading %n file"
+msgid_plural "Uploading %n files"
+msgstr[0] ""
+msgstr[1] ""
+
+#: js/files.js:103
+#, python-brace-format
+msgid "\"{name}\" is an invalid file name."
+msgstr ""
+
+#: js/files.js:105
+msgid "File name cannot be empty."
+msgstr ""
+
+#: js/files.js:119
+#, python-brace-format
+msgid "Storage of {owner} is full, files can not be updated or synced anymore!"
+msgstr ""
+
+#: js/files.js:123
+msgid "Your storage is full, files can not be updated or synced anymore!"
+msgstr ""
+
+#: js/files.js:128
+#, python-brace-format
+msgid "Storage of {owner} is almost full ({usedSpacePercent}%)"
+msgstr ""
+
+#: js/files.js:132
+#, python-brace-format
+msgid "Your storage is almost full ({usedSpacePercent}%)"
+msgstr ""
+
+#: js/filesummary.js:201 js/filesummary.js:215
+#, python-brace-format
+msgid "matches '{filter}'"
+msgid_plural "match '{filter}'"
+msgstr[0] ""
+msgstr[1] ""
+
+#: js/filesummary.js:230
+#, python-brace-format
+msgid "{dirs} and {files}"
+msgstr ""
+
+#: js/tagsplugin.js:43
+msgid "Favorited"
+msgstr ""
+
+#: js/tagsplugin.js:43
+msgid "Favorite"
+msgstr ""
+
+#: js/tagsplugin.js:184
+msgid "An error occurred while trying to update the tags"
+msgstr ""
+
+#: lib/activity.php:94
+msgid "A new file or folder has been <strong>created</strong>"
+msgstr ""
+
+#: lib/activity.php:95
+msgid "A file or folder has been <strong>changed</strong>"
+msgstr ""
+
+#: lib/activity.php:96
+msgid ""
+"Limit notifications about creation and changes to your <strong>favorite "
+"files</strong> <em>(Stream only)</em>"
+msgstr ""
+
+#: lib/activity.php:97
+msgid "A file or folder has been <strong>deleted</strong>"
+msgstr ""
+
+#: lib/activity.php:98
+msgid "A file or folder has been <strong>restored</strong>"
+msgstr ""
+
+#: lib/activity.php:141
+#, php-format
+msgid "You created %1$s"
+msgstr ""
+
+#: lib/activity.php:143
+#, php-format
+msgid "%2$s created %1$s"
+msgstr ""
+
+#: lib/activity.php:145
+#, php-format
+msgid "%1$s was created in a public folder"
+msgstr ""
+
+#: lib/activity.php:147
+#, php-format
+msgid "You changed %1$s"
+msgstr ""
+
+#: lib/activity.php:149
+#, php-format
+msgid "%2$s changed %1$s"
+msgstr ""
+
+#: lib/activity.php:151
+#, php-format
+msgid "You deleted %1$s"
+msgstr ""
+
+#: lib/activity.php:153
+#, php-format
+msgid "%2$s deleted %1$s"
+msgstr ""
+
+#: lib/activity.php:155
+#, php-format
+msgid "You restored %1$s"
+msgstr ""
+
+#: lib/activity.php:157
+#, php-format
+msgid "%2$s restored %1$s"
+msgstr ""
+
+#: lib/app.php:94
+#, php-format
+msgid "%s could not be renamed as it has been deleted"
+msgstr ""
+
+#: lib/app.php:129
+#, php-format
+msgid "%s could not be renamed"
+msgstr ""
+
+#: lib/helper.php:49 templates/list.php:22
+#, php-format
+msgid "Upload (max. %s)"
+msgstr ""
+
+#: templates/admin.php:4
+msgid "File handling"
+msgstr ""
+
+#: templates/admin.php:5
+msgid "Maximum upload size"
+msgstr ""
+
+#: templates/admin.php:8
+msgid "max. possible: "
+msgstr ""
+
+#: templates/admin.php:14
+msgid "Save"
+msgstr ""
+
+#: templates/admin.php:16
+msgid "Can not be edited from here due to insufficient permissions."
+msgstr ""
+
+#: templates/appnavigation.php:15
+msgid "Settings"
+msgstr ""
+
+#: templates/appnavigation.php:20
+msgid "WebDAV"
+msgstr ""
+
+#: templates/appnavigation.php:23
+#, php-format
+msgid ""
+"Use this address to <a href=\"%s\" target=\"_blank\">access your Files via "
+"WebDAV</a>"
+msgstr ""
+
+#: templates/list.php:5
+msgid "New"
+msgstr ""
+
+#: templates/list.php:8
+msgid "New text file"
+msgstr ""
+
+#: templates/list.php:9
+msgid "Text file"
+msgstr ""
+
+#: templates/list.php:12
+msgid "New folder"
+msgstr ""
+
+#: templates/list.php:13
+msgid "Folder"
+msgstr ""
+
+#: templates/list.php:35
+msgid "Upload"
+msgstr ""
+
+#: templates/list.php:42
+msgid "Cancel upload"
+msgstr ""
+
+#: templates/list.php:56
+msgid "No files in here"
+msgstr ""
+
+#: templates/list.php:57
+msgid "Upload some content or sync with your devices!"
+msgstr ""
+
+#: templates/list.php:62 templates/simplelist.php:16
+msgid "No entries found in this folder"
+msgstr ""
+
+#: templates/list.php:73
+msgid "Select all"
+msgstr ""
+
+#: templates/list.php:105
+msgid "Upload too large"
+msgstr ""
+
+#: templates/list.php:107
+msgid ""
+"The files you are trying to upload exceed the maximum size for file uploads "
+"on this server."
+msgstr ""
+
+#: templates/list.php:112
+msgid "Files are being scanned, please wait."
+msgstr ""
+
+#: templates/list.php:115
+msgid "Currently scanning"
+msgstr ""
+
+#: templates/simplelist.php:8
+msgid "No favorites"
+msgstr ""
+
+#: templates/simplelist.php:9
+msgid "Files and folders you mark as favorite will show up here"
+msgstr ""

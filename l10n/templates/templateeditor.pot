@@ -1,0 +1,74 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: ownCloud Core 8.0.0\n"
+"Report-Msgid-Bugs-To: translations@owncloud.org\n"
+"POT-Creation-Date: 2015-09-07 10:02+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: js/settings-admin.js:16
+msgid "Could not load template"
+msgstr ""
+
+#: js/settings-admin.js:52
+msgid "Saved"
+msgstr ""
+
+#: js/settings-admin.js:71 templates/settings-admin.php:34
+msgid "Reset"
+msgstr ""
+
+#: lib/mailtemplate.php:167
+msgid "Sharing email (HTML)"
+msgstr ""
+
+#: lib/mailtemplate.php:168
+msgid "Sharing email (plain text fallback)"
+msgstr ""
+
+#: lib/mailtemplate.php:169
+msgid "Lost password mail"
+msgstr ""
+
+#: lib/mailtemplate.php:170
+msgid "New user email (HTML)"
+msgstr ""
+
+#: lib/mailtemplate.php:171
+msgid "New user email (plain text fallback)"
+msgstr ""
+
+#: lib/mailtemplate.php:177
+msgid "Activity notification mail"
+msgstr ""
+
+#: templates/settings-admin.php:3
+msgid "Mail Templates"
+msgstr ""
+
+#: templates/settings-admin.php:8
+msgid "Theme"
+msgstr ""
+
+#: templates/settings-admin.php:17
+msgid "Template"
+msgstr ""
+
+#: templates/settings-admin.php:19
+msgid "Please choose a template"
+msgstr ""
+
+#: templates/settings-admin.php:36
+msgid "Save"
+msgstr ""

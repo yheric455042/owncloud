@@ -1,0 +1,375 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: ownCloud Core 8.0.0\n"
+"Report-Msgid-Bugs-To: translations@owncloud.org\n"
+"POT-Creation-Date: 2015-09-07 10:02+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ajax/dropbox.php:50
+msgid ""
+"Fetching request tokens failed. Verify that your Dropbox app key and secret "
+"are correct."
+msgstr ""
+
+#: ajax/dropbox.php:63
+msgid ""
+"Fetching access tokens failed. Verify that your Dropbox app key and secret "
+"are correct."
+msgstr ""
+
+#: ajax/dropbox.php:71 js/dropbox.js:105
+msgid "Please provide a valid Dropbox app key and secret."
+msgstr ""
+
+#: ajax/google.php:53
+#, php-format
+msgid "Step 1 failed. Exception: %s"
+msgstr ""
+
+#: ajax/google.php:64
+#, php-format
+msgid "Step 2 failed. Exception: %s"
+msgstr ""
+
+#: appinfo/app.php:63 js/app.js:38 templates/settings.php:9
+msgid "External storage"
+msgstr ""
+
+#: appinfo/app.php:71
+msgid "Local"
+msgstr ""
+
+#: appinfo/app.php:74
+msgid "Location"
+msgstr ""
+
+#: appinfo/app.php:79
+msgid "Amazon S3"
+msgstr ""
+
+#: appinfo/app.php:82
+msgid "Key"
+msgstr ""
+
+#: appinfo/app.php:83
+msgid "Secret"
+msgstr ""
+
+#: appinfo/app.php:84 appinfo/app.php:95 appinfo/app.php:151
+msgid "Bucket"
+msgstr ""
+
+#: appinfo/app.php:90
+msgid "Amazon S3 and compliant"
+msgstr ""
+
+#: appinfo/app.php:93
+msgid "Access Key"
+msgstr ""
+
+#: appinfo/app.php:94
+msgid "Secret Key"
+msgstr ""
+
+#: appinfo/app.php:96
+msgid "Hostname"
+msgstr ""
+
+#: appinfo/app.php:97
+msgid "Port"
+msgstr ""
+
+#: appinfo/app.php:98
+msgid "Region"
+msgstr ""
+
+#: appinfo/app.php:99
+msgid "Enable SSL"
+msgstr ""
+
+#: appinfo/app.php:100
+msgid "Enable Path Style"
+msgstr ""
+
+#: appinfo/app.php:110
+msgid "App key"
+msgstr ""
+
+#: appinfo/app.php:111
+msgid "App secret"
+msgstr ""
+
+#: appinfo/app.php:123 appinfo/app.php:169 appinfo/app.php:182
+#: appinfo/app.php:221 appinfo/app.php:232
+msgid "Host"
+msgstr ""
+
+#: appinfo/app.php:124 appinfo/app.php:150 appinfo/app.php:170
+#: appinfo/app.php:196 appinfo/app.php:209 appinfo/app.php:222
+#: appinfo/app.php:233
+msgid "Username"
+msgstr ""
+
+#: appinfo/app.php:125 appinfo/app.php:171 appinfo/app.php:197
+#: appinfo/app.php:210 appinfo/app.php:223
+msgid "Password"
+msgstr ""
+
+#: appinfo/app.php:126 appinfo/app.php:173 appinfo/app.php:185
+#: appinfo/app.php:198 appinfo/app.php:211 appinfo/app.php:224
+#: appinfo/app.php:236
+msgid "Remote subfolder"
+msgstr ""
+
+#: appinfo/app.php:127
+msgid "Secure ftps://"
+msgstr ""
+
+#: appinfo/app.php:137
+msgid "Client ID"
+msgstr ""
+
+#: appinfo/app.php:138
+msgid "Client secret"
+msgstr ""
+
+#: appinfo/app.php:147
+msgid "OpenStack Object Storage"
+msgstr ""
+
+#: appinfo/app.php:152
+msgid "Region (optional for OpenStack Object Storage)"
+msgstr ""
+
+#: appinfo/app.php:153
+msgid "API Key (required for Rackspace Cloud Files)"
+msgstr ""
+
+#: appinfo/app.php:154
+msgid "Tenantname (required for OpenStack Object Storage)"
+msgstr ""
+
+#: appinfo/app.php:155
+msgid "Password (required for OpenStack Object Storage)"
+msgstr ""
+
+#: appinfo/app.php:156
+msgid "Service Name (required for OpenStack Object Storage)"
+msgstr ""
+
+#: appinfo/app.php:157
+msgid "URL of identity endpoint (required for OpenStack Object Storage)"
+msgstr ""
+
+#: appinfo/app.php:158
+msgid "Timeout of HTTP requests in seconds"
+msgstr ""
+
+#: appinfo/app.php:172 appinfo/app.php:184
+msgid "Share"
+msgstr ""
+
+#: appinfo/app.php:179
+msgid "SMB / CIFS using OC login"
+msgstr ""
+
+#: appinfo/app.php:183
+msgid "Username as share"
+msgstr ""
+
+#: appinfo/app.php:195 appinfo/app.php:208
+msgid "URL"
+msgstr ""
+
+#: appinfo/app.php:199 appinfo/app.php:212
+msgid "Secure https://"
+msgstr ""
+
+#: appinfo/app.php:229
+msgid "SFTP with secret key login"
+msgstr ""
+
+#: appinfo/app.php:234
+msgid "Public key"
+msgstr ""
+
+#: controller/globalstoragescontroller.php:151
+#: controller/storagescontroller.php:142 controller/storagescontroller.php:167
+#: controller/userstoragescontroller.php:176
+msgid "Storage with id \"%i\" not found"
+msgstr ""
+
+#: controller/storagescontroller.php:86
+msgid "Invalid mount point"
+msgstr ""
+
+#: controller/storagescontroller.php:99
+#: controller/userstoragescontroller.php:82
+#, php-format
+msgid "Invalid storage backend \"%s\""
+msgstr ""
+
+#: js/dropbox.js:7 js/dropbox.js:29 js/google.js:8 js/google.js:40
+msgid "Access granted"
+msgstr ""
+
+#: js/dropbox.js:33 js/dropbox.js:100 js/dropbox.js:106
+msgid "Error configuring Dropbox storage"
+msgstr ""
+
+#: js/dropbox.js:71 js/google.js:90
+msgid "Grant access"
+msgstr ""
+
+#: js/google.js:45 js/google.js:123
+msgid "Error configuring Google Drive storage"
+msgstr ""
+
+#: js/mountsfilelist.js:51
+msgid "Personal"
+msgstr ""
+
+#: js/mountsfilelist.js:53
+msgid "System"
+msgstr ""
+
+#: js/settings.js:37
+msgid "Enable encryption"
+msgstr ""
+
+#: js/settings.js:38
+msgid "Enable previews"
+msgstr ""
+
+#: js/settings.js:39
+msgid "Check for changes"
+msgstr ""
+
+#: js/settings.js:40
+msgid "Never"
+msgstr ""
+
+#: js/settings.js:41
+msgid "Once every direct access"
+msgstr ""
+
+#: js/settings.js:42
+msgid "Every time the filesystem is used"
+msgstr ""
+
+#: js/settings.js:82
+msgid "All users. Type to select user or group."
+msgstr ""
+
+#: js/settings.js:165
+msgid "(group)"
+msgstr ""
+
+#: js/settings.js:1024 js/settings.js:1031
+msgid "Saved"
+msgstr ""
+
+#: js/sftp_key.js:31
+msgid "Generate keys"
+msgstr ""
+
+#: js/sftp_key.js:49
+msgid "Error generating key pair"
+msgstr ""
+
+#: lib/config.php:761
+msgid "<b>Note:</b> "
+msgstr ""
+
+#: lib/config.php:772
+msgid "and"
+msgstr ""
+
+#: lib/config.php:795
+#, php-format
+msgid ""
+"<b>Note:</b> The cURL support in PHP is not enabled or installed. Mounting "
+"of %s is not possible. Please ask your system administrator to install it."
+msgstr ""
+
+#: lib/config.php:797
+#, php-format
+msgid ""
+"<b>Note:</b> The FTP support in PHP is not enabled or installed. Mounting of "
+"%s is not possible. Please ask your system administrator to install it."
+msgstr ""
+
+#: lib/config.php:799
+#, php-format
+msgid ""
+"<b>Note:</b> \"%s\" is not installed. Mounting of %s is not possible. Please "
+"ask your system administrator to install it."
+msgstr ""
+
+#: templates/list.php:9
+msgid "No external storage configured"
+msgstr ""
+
+#: templates/list.php:10
+msgid "You can add external storages in the personal settings"
+msgstr ""
+
+#: templates/list.php:20
+msgid "Name"
+msgstr ""
+
+#: templates/list.php:24
+msgid "Storage type"
+msgstr ""
+
+#: templates/list.php:27
+msgid "Scope"
+msgstr ""
+
+#: templates/settings.php:2
+msgid "External Storage"
+msgstr ""
+
+#: templates/settings.php:8 templates/settings.php:26
+msgid "Folder name"
+msgstr ""
+
+#: templates/settings.php:10
+msgid "Configuration"
+msgstr ""
+
+#: templates/settings.php:11
+msgid "Available for"
+msgstr ""
+
+#: templates/settings.php:32
+msgid "Add storage"
+msgstr ""
+
+#: templates/settings.php:96 templates/settings.php:97
+msgid "Advanced settings"
+msgstr ""
+
+#: templates/settings.php:108 templates/settings.php:109
+msgid "Delete"
+msgstr ""
+
+#: templates/settings.php:122
+msgid "Enable User External Storage"
+msgstr ""
+
+#: templates/settings.php:125
+msgid "Allow users to mount the following external storage"
+msgstr ""
