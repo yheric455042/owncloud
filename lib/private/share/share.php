@@ -170,7 +170,7 @@ class Share extends Constants {
 				WHERE
 				`item_source` = ? AND `share_type` = ? AND `item_type` IN (\'file\', \'folder\')'
 			);
-
+            file_put_contents('ttttt.txt','1234');
 			$result = $query->execute(array($source, self::SHARE_TYPE_GROUP));
 
 			if (\OCP\DB::isError($result)) {

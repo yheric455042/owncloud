@@ -56,7 +56,7 @@ class SharingGroupsController extends Controller{
         $files = $this->request->getUploadedFile('fileToUpload'); 
         $data = file_get_contents($files['tmp_name']);
         
-        file_put_contents('123.txt', $data);
+        //file_put_contents('123.txt', $data);
         
         $result = $this->data->importGroup($data);
         //return new JSONResponse($result);

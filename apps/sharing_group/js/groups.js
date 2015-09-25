@@ -8,23 +8,7 @@ GroupList = {
 	everyoneGID: '_everyone',
     groups: [],
 
-	/*
-    addGroup: function (gid, usercount) {
-		var $li = $userGroupList.find('.isgroup:last-child').clone();
-		$li
-			.data('gid', gid)
-			.find('.groupname').text(gid);
-		GroupList.setUserCount($li, usercount);
-
-		$li.appendTo($userGroupList);
-
-		GroupList.sortGroups();
-
-		return $li;
-	},
-
-        */
-    elementBelongsToAddGroup: function (el) {
+   elementBelongsToAddGroup: function (el) {
 		return !(el !== $('#newgroup-form').get(0) &&
 		$('#newgroup-form').find($(el)).length === 0);
 	},
@@ -131,26 +115,28 @@ GroupList = {
         }
         
         $('#editInput').keydown(function(event){
-            if(event.which == 27) {
-                $tmpelem.remove();
-                $element.show();
-            }
-            
-            if(event.which == 13) {
-                var newname = $editInput.val();
-                $.post(
-			        OC.generateUrl('/apps/sharing_group/renameGroup'),
-			        {
-				        gid: id,
-                        newname: newname
-			        },
-			        function (result) {
-                        $element.find('.groupname').text(newname);
-                        $tmpelem.remove();
-                        $element.show();
-                    });
-		    }
+        
+                if(event.which == $.ui.keyCode.ESCAPE) {
+                    $tmpelem.remove();
+                    $element.show();
+                }
+                
+                if(event.which == $.ui.keyCode.ENTER) {
+                    var newname = $editInput.val();
+                    $.post(
+                        OC.generateUrl('/apps/sharing_group/renameGroup'),
+                        {
+                            gid: id,
+                            newname: newname
+                        },
+                        function (result) {
+                            $element.find('.groupname').text(newname);
+                            $tmpelem.remove();
+                            $element.show();
+                        });
+                }
         });
+        
         $('#renamebutton').click(function() {
             var newname = $editInput.val();
             $.post(
@@ -165,7 +151,7 @@ GroupList = {
                     $element.show();
                 });
         });
-
+        
         $(document).on('click', function(event) {
             if(event.target.parentElement.className != 'group editing'){
                 event.stopPropagation();
@@ -334,7 +320,7 @@ $(document).ready( function () {
 			GroupList.toggleAddGroup();
 		}
 		// Escape
-		if(!GroupList.isAddGroupButtonVisible() && event.keyCode && event.keyCode === 27) {
+		if(!GroupList.isAddGroupButtonVisible() && event.keyCode && event.keyCode === $.ui.keyCode.ESCAPE) {
 			GroupList.toggleAddGroup();
 		}
 	});

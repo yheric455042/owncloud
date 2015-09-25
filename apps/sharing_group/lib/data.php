@@ -17,14 +17,23 @@ class Data{
 
     }
 
-    public function addUserToGroup($gid, $uids) {
+    public static function addUserToGroup($gid, $uids) {
         $user = User::getUser();
-        $query = DB::prepare('INSERT INTO `*PREFIX*sharing_group_user` (`gid`, `uid`, `owner`) VALUES(?, ?, ?)');
-        
+        $sql = 'INSERT INTO `*PREFIX*sharing_group_user` (`gid`, `uid`, `owner`) VALUES';
+        $sqlarr = [];
+        $checkuid = self::readGroupUsers($gid);
         foreach($uids as $uid) {
-            $query->execute(array($gid, $uid, $user));
+            if(in_array($uid,$checkuid)){
+                continue;
+            }
+            $sql .='(?, ? , ?) ,';
+            array_push($sqlarr, $gid, $uid, $user); 
         }
-
+        if(!empty($sqlarr)){
+            $sql = substr($sql,0,-1);
+            $query = DB::prepare($sql);
+            $query->execute($sqlarr);
+        }     
     }
 
     public static function readGroups($user = '', $filter = '') {
@@ -37,12 +46,12 @@ class Data{
     }
     
     public static function createGroups($name){
-        $user = User::getUser();
-        $sql = 'INSERT INTO `*PREFIX*sharing_groups` (`name`, `uid`) VALUES(?, ?)';
-        $query = DB::prepare($sql);
-        $result = $query->execute(array($name, $user));
-
-        
+        if(empty(self::findGroupByName($name))){
+            $user = User::getUser();
+            $sql = 'INSERT INTO `*PREFIX*sharing_groups` (`name`, `uid`) VALUES(?, ?)';
+            $query = DB::prepare($sql);
+            $result = $query->execute(array($name, $user));
+        }
         if (DB::isError($result)) {
 			Util::writeLog('SharingGroup', DB::getErrorMessage($result), Util::ERROR);
         } else{
@@ -89,29 +98,77 @@ class Data{
         
         $query = DB::prepare($sql);
         $result = $query->execute(array($name, $user));
-        return self::getGroupsQueryResult($result, '');
+        return self::getGroupIdQueryResult($result);
 
     }
     
-    public static function importGroup($data){
+    public static function importGroup($data, $type = 'ignore'){
         $user = User::getUser();
         $importdata = explode("\n", $data);
-        for($i = 0; $i < sizeof($importdata); $i++){
-            
-            list($id, $group, $uid) = explode("," , $importdata[$i]);
-            
-            if($importdata[$i] != NULL){
-                $importdata[$i] = array();
-                $importdata[$i]['id'] = $id;
-                $importdata[$i]['group'] = $group;
-                $importdata[$i]['uid'] = $uid;
+        unset($importdata[sizeof($importdata) -1]);
+        $importdata = self::importDataHanlder($importdata); 
+        $length = sizeof($importdata);
+        
+        $sql = 'SELECT `name` FROM `*PREFIX*sharing_groups` WHERE `uid` = ?';
+        $query = DB::prepare($sql);
+        $result = $query->execute(array($user));
+        $allgroup = self::getAllGroupsQueryresult($result);
+
+
+        if($type == 'ignore') {
+           
+           for($i = 0; $i < $length; $i++) {
+                if(in_array($importdata[$i]['group'], $allgroup)) {
+                    continue;
+                }
+                self::createGroups($importdata[$i]['group']);
+                $gid = self::findGroupByName($importdata[$i]['group']);
+                if($importdata[$i]['uid'] != '\N'){
+                    self::addUserToGroup($gid[0], $importdata[$i]['uid']);
+                }
+            }
+           
+        }
+        
+        if($type == 'merge') {
+            for($i = 0; $i < $length; $i++) { 
+                if(in_array($importdata[$i]['group'], $allgroup)) {
+                    $gid = self::findGroupByName($importdata[$i]['group']);
+                    if($importdata[$i]['uid'] != '\N') {
+                        self::addUserToGroup($gid[0], $importdata[$i]['uid']);
+                    }
+                    continue;
+                }
+                
+                self::createGroups($importdata[$i]['group']);
+                $gid = self::findGroupByName($importdata[$i]['group']);
+                if($importdata[$i]['uid'] != '\N'){
+                    self::addUserToGroup($gid[0], $importdata[$i]['uid']);
+                }
+                
             }
         }
         
-        file_put_contents("12345.txt", print_r($importdata,true));
+        if($type == 'cover'){
+            for($i = 0; $i < $length; $i++){
+                 if(in_array($importdata[$i]['group'], $allgroup)) {
+                    $gid = self::findGroupByName($importdata[$i]['group']);
+                    self::deleteGroup($gid[0]); 
+                }
+                
+                self::createGroups($importdata[$i]['group']);
+                $gid = self::findGroupByName($importdata[$i]['group']);
+                if($importdata[$i]['uid'] != '\N'){
+                    self::addUserToGroup($gid[0], $importdata[$i]['uid']);
+                }
+            
+            }
+        }
+
+        file_put_contents("12345.txt", print_r($gid,true));
     }
  
-    public static function export(){
+    public static function export() {
         $user = User::getUser();
         //$filePath = "/tmp/" . $user . ".csv";
         //$fileName = $user . ".csv";
@@ -188,6 +245,36 @@ class Data{
         }
 
         return $result !== null;
+    }
+    
+    private static function getAllGroupsQueryresult($result) {
+        $data = [];
+
+        if(DB::isError($result)) {
+			Util::writeLog('SharingGroup', DB::getErrorMessage($result), Util::ERROR);
+
+            return;
+        }
+
+        while($row = $result->fetch()) {
+            $data[] = $row['name'];
+        }
+        return $data;
+    }
+    private static function getGroupIdQueryresult($result) {
+        $data = [];
+
+        if(DB::isError($result)) {
+			Util::writeLog('SharingGroup', DB::getErrorMessage($result), Util::ERROR);
+
+            return;
+        }
+
+        while($row = $result->fetch()) {
+            $data[] = $row['id'];
+        }
+
+        return $data;
     }
 
     private static function getGroupUserQueryresult($result) {
@@ -280,6 +367,33 @@ class Data{
         }
         
         return $data;
+    }
+
+    private static function importDataHanlder($data) {
+        $result = [];
+        for($i = 0; $i < count($data); $i++) {
+            list($id, $group, $uid) = explode(", " , $data[$i]);
+            $id = substr($id, 1, -1);
+            $group = substr($group, 1, -1);
+            $uid = str_replace("\"", "", $uid);
+            $temp = [];
+            $temp['id'] = $id;
+            $temp['group'] = $group;
+            $temp['uid'] = $uid == '\N' ? '\N' : array($uid);
+
+            for($j = 0; $j < count($result); $j++) {
+                if($group == $result[$j]['group'] && $uid != NULL) {
+                    $result[$j]['uid'][] = $uid;
+                    break;
+                 }
+            }
+            if($j < count($result)) {
+                continue;
+            }
+            $result[] = $temp;
+        }
+
+        return $result;
     }
 
 }
