@@ -100,7 +100,7 @@ GroupList = {
         //console.dir(oldname);
         //console.dir(id);
 
-		var $editInput = $('<input type="text" />').val(oldname).attr({class:'oc-addnew-name', style:'display: inline-block', id:'editInput'});
+		var $editInput = $('<input type="text" />').val(oldname).attr({ id:'editInput'});
         var button = $('<button>').attr({class:'new-button primary icon-checkmark-white', style:'display: block', id:'renamebutton'});
         var group_editing = $('<li>').attr({class:'group editing'});
         
@@ -109,19 +109,30 @@ GroupList = {
         group_editing.append(button);
         $('.group.editing').append(button);
         var $tmpelem = $editInput.parent('li');
-        
+        $editInput.focus();
+        /*
         if($editInput.val() != oldname && $.inArray($editInput.val(), GroupList.groups) >-1){
             console.dir(1);
         }
-        
-        $('#editInput').keydown(function(event){
-        
+        */
+
+        $('#usergrouplist').on('keyup', '#editInput', function(event) {
+                
+                if($.inArray($editInput.val(), GroupList.groups) > -1) {
+                    
+                    $('#editInput').addClass("ui-status-error");
+
+                }
+                else {
+                    $('#editInput').removeClass("ui-status-error");
+                }
+
                 if(event.which == $.ui.keyCode.ESCAPE) {
                     $tmpelem.remove();
                     $element.show();
                 }
                 
-                if(event.which == $.ui.keyCode.ENTER) {
+                if(event.which == $.ui.keyCode.ENTER && !$('#editInput').hasClass('ui-status-error')) {
                     var newname = $editInput.val();
                     $.post(
                         OC.generateUrl('/apps/sharing_group/renameGroup'),
@@ -139,6 +150,7 @@ GroupList = {
         
         $('#renamebutton').click(function() {
             var newname = $editInput.val();
+            if(!$('#editInput').hasClass('ui-status-error'))
             $.post(
 			    OC.generateUrl('/apps/sharing_group/renameGroup'),
 			    {
@@ -312,24 +324,49 @@ $(document).ready( function () {
 	$('#newgroup-init').on('click', function (e) {
 		GroupList.toggleAddGroup(e);
 	});
-
-	$(document).on('click keydown keyup', function(event) {
-		if(!GroupList.isAddGroupButtonVisible() &&
-			!GroupList.elementBelongsToAddGroup(event.target) &&
-			!GroupList.hasAddGroupNameText()) {
-			GroupList.toggleAddGroup();
-		}
-		// Escape
-		if(!GroupList.isAddGroupButtonVisible() && event.keyCode && event.keyCode === $.ui.keyCode.ESCAPE) {
-			GroupList.toggleAddGroup();
-		}
-	});
-
     
+    
+	$(document).on('click', function(event) {
+       
+        if(!GroupList.isAddGroupButtonVisible() &&
+			!GroupList.elementBelongsToAddGroup(event.target)) {
+			GroupList.toggleAddGroup();
+		}
+        
+	});
+    
+    
+    $('#newgroupname').keyup(function(event) {
+        if($.inArray($('#newgroupname').val(),GroupList.groups) > -1) {
+            $('#newgroupname').addClass("ui-status-error");
+        }
+        else {
+            $('#newgroupname').removeClass("ui-status-error");
+        }
+        
+        if(!GroupList.isAddGroupButtonVisible() && event.keyCode === $.ui.keyCode.ESCAPE) {
+			GroupList.toggleAddGroup();
+		}
+
+    });
+/* 
+    $(document).on('click', function(event) {
+        console.dir(event);
+        if(event.target.parentElement.className != 'group editing'){
+            //event.stopPropagation();
+            //event.preventDefault();
+            //$('#newgroup-form').remove();
+            //$('#newgroup-init').show();
+            GroupList.toggleAddGroup();
+            $(document).off('click');
+        }
+    });
+  */  
+
 	// Responsible for Creating Groups.
 	$('#newgroup-form form').submit(function (event) {
-		event.preventDefault();
-		if(GroupList.isGroupNameValid($('#newgroupname').val())) {
+		//event.preventDefault();
+        if(GroupList.isGroupNameValid($('#newgroupname').val()) && !$('#newgroupname').hasClass('ui-status-error')) {
 			GroupList.createGroup($('#newgroupname').val());
         }
 	});
@@ -426,7 +463,7 @@ $(document).ready( function () {
 				data: files
 			}
         );
-        
+
     });*/
         
 });

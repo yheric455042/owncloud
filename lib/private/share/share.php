@@ -170,14 +170,11 @@ class Share extends Constants {
 				WHERE
 				`item_source` = ? AND `share_type` = ? AND `item_type` IN (\'file\', \'folder\')'
 			);
-            file_put_contents('ttttt.txt','1234');
 			$result = $query->execute(array($source, self::SHARE_TYPE_GROUP));
-
 			if (\OCP\DB::isError($result)) {
 				\OCP\Util::writeLog('OCP\Share', \OC_DB::getErrorMessage(), \OC_Log::ERROR);
 			} else {
 				while ($row = $result->fetchRow()) {
-                    file_put_contents('test.txt',print_r($row,true));
 					$usersInGroup = \OC_Group::usersInGroup($row['share_with']);
 					$shares = array_merge($shares, $usersInGroup);
 					if ($returnUserPaths) {
@@ -188,31 +185,6 @@ class Share extends Constants {
 				}
 			}
 
-            $query = \OC_DB::prepare(
-				'SELECT `share_with`, `file_source`, `file_target`
-				FROM
-				`*PREFIX*share`
-				WHERE
-				`item_source` = ? AND `share_type` = ? AND `item_type` IN (\'file\', \'folder\')'
-			);
-
-			$result = $query->execute(array($source, self::SHARE_TYPE_SHARING_GROUP));
-
-			if (\OCP\DB::isError($result)) {
-				\OCP\Util::writeLog('OCP\Share', \OC_DB::getErrorMessage(), \OC_Log::ERROR);
-			} else {
-				while ($row = $result->fetchRow()) {
-					$usersInGroup = \OCA\Sharing_Group\Data::readGroupUsers($row['share_with']);
-					$shares = array_merge($shares, $usersInGroup);
-					if ($returnUserPaths) {
-						foreach ($usersInGroup as $user) {
-							$fileTargets[(int) $row['file_source']][$user] = $row;
-						}
-					}
-				}
-			}
-
-				
 			//check for public link shares
 			if (!$publicShare) {
 				$query = \OC_DB::prepare('

@@ -29,7 +29,7 @@ use OCP\IUserManager;
 use OCP\IUserSession;
 use OCP\Mail\IMailer;
 use OCA\Sharing_Group\Data;
-
+use OCP\User;
 
 
 class UserController extends UsersController {
@@ -145,23 +145,28 @@ class UserController extends UsersController {
        }
 
        $users = [];
-       if ($this->isAdmin) {
+       //if ($this->isAdmin) {
 
-           if($gid !== '') {
+       if($gid !== '') {
            
-                $users = Data::readGroupUsers($gid);
-           } else {
-               $users = Data::readAllUsers();
-               //$batch = $this->userManager->search($pattern, $limit, $offset);
+            $users = Data::readGroupUsers($gid);
+        } else {
+            $users = Data::readAllUsers();
+            
+            $user = User::getUser();
+            $key = array_search($user,$users);
+            if($key!=FALSE)
+                unset( $users[$key]);
+            //$batch = $this->userManager->search($pattern, $limit, $offset);
            
                //file_put_contents('test.txt', print_r($users, true)); 
-           }
+        }
             /*
            foreach ($batch as $user) {
                $users[] = $this->formatUserForIndex($user);
            }
             */
-       } else {
+       /*} else {
            $subAdminOfGroups = $this->subAdminFactory->getSubAdminsOfGroups(
                $this->userSession->getUser()->getUID()
            );
@@ -193,7 +198,7 @@ class UserController extends UsersController {
                $users[] = $this->formatUserForIndex($user, $userGroups);
            }
        }
-
+        */
        return new DataResponse($users);
    }
 

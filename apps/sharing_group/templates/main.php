@@ -16,7 +16,7 @@ script('core', [
     'singleselect'
 ]);
 style('sharing_group', [
-    'jquery.ocaddnew',
+    'sharing_group',
     'style',
 ]);
 
