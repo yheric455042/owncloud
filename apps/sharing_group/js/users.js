@@ -87,6 +87,21 @@ var UserList = {
 		UserList.checkUsersToLoad();
 	},
     
+    checktristate: function(){
+        var CheckLength = $('#checkuser').data("checkeduser").length;
+        var UserLength = $('#checkuser').data("user").length;
+        var $tristate = $('#checkuser').tristate();
+        
+        if(CheckLength == 0) {
+            $tristate.tristate('state', false);
+        }
+        if(CheckLength == UserLength) {
+            $tristate.tristate('state', true);
+        }
+        if(CheckLength != 0 && CheckLength != UserLength) {
+            $tristate.tristate('state', null);
+        }
+    },
 
 	update: function (gid, limit) {
 		if (UserList.updating) {
@@ -107,10 +122,14 @@ var UserList = {
 			OC.generateUrl('/apps/sharing_group/user'),
 			{ offset: UserList.offset, limit: limit, gid: gid, pattern: pattern },
 			function (result) {
-				
+                $('#checkuser').data({
+                    'user':result ,
+                    'checkeduser':[] ,
+                    'different': [] 
+                });
                 $.each(result, function (index, value) {
 				    var li = $('<li>').attr({class:'users'});
-                    var checkbox = $('<input>').attr({type: 'checkbox', id: 'id-' + value});
+                    var checkbox = $('<input>').attr({type: 'checkbox', id: 'id-' + value, checked:false});
                     var label = $('<label>').attr({ for: 'id-' + value}).text(value);
 
                     li.append(checkbox);
@@ -132,110 +151,6 @@ var UserList = {
 				UserList.updating = false;
 			});
 	},
-   /* 
-    applyGroupSelect: function (element) {
-		var checked = [];
-		var $element = $(element);
-		//var user = UserList.getUID($element);
-
-		if ($element.data('user-groups')) {
-			if (typeof $element.data('user-groups') === 'string') {
-				checked = $element.data('user-groups').split(", ");
-			}
-			else {
-				checked = $element.data('user-groups');
-			}
-		}
-	
-       var checkHandler = null;
-		
-        if(user) { // Only if in a user row, and not the #newusergroups select
-			checkHandler = function (group) {
-				if (user === OC.currentUser && group === 'admin') {
-					return false;
-				}
-				if (!oc_isadmin && checked.length === 1 && checked[0] === group) {
-					return false;
-				}
-				$.post(
-					OC.filePath('settings', 'ajax', 'togglegroups.php'),
-					{
-						username: user,
-						group: group
-					},
-					function (response) {
-						if (response.status === 'success') {
-							GroupList.update();
-							var groupName = response.data.groupname;
-							if (UserList.availableGroups.indexOf(groupName) === -1 &&
-								response.data.action === 'add'
-							) {
-								UserList.availableGroups.push(groupName);
-							}
-
-							// in case this was the last user in that group the group has to be removed
-							var groupElement = GroupList.getGroupLI(groupName);
-							var userCount = GroupList.getUserCount(groupElement);
-							if (response.data.action === 'remove' && userCount === 1) {
-								_.without(UserList.availableGroups, groupName);
-								GroupList.remove(groupName);
-								$('.groupsselect option').filterAttr('value', groupName).remove();
-								$('.subadminsselect option').filterAttr('value', groupName).remove();
-							}
-
-
-						}
-						if (response.data.message) {
-							OC.Notification.show(response.data.message);
-						}
-					}
-				);
-			};
-		}
-		
-        var addGroup = function (select, group) {
-			$('select[multiple]').each(function (index, element) {
-				$element = $(element);
-				if ($element.find('option').filterAttr('value', group).length === 0 &&
-					select.data('msid') !== $element.data('msid')) {
-                    var id = GroupList.findGroupByName(escapeHTML(group) );
-                    var option = $('<option>').attr({'value':id});
-                    $element.append(option);
-				}
-			});
-			//GroupList.createGroup(escapeHTML(group));
-		};
-        
-		var label;
-		if (oc_isadmin) {
-			label = t('settings', 'add group');
-		}
-		else {
-			label = null;
-		}
-    
-		$element.multiSelect({
-			//createCallback: addGroup,
-			//createText: label,
-			//selectedFirst: true,
-			//checked: checked,
-			//oncheck: checkHandler,
-			//onuncheck: checkHandler,
-			minWidth: 100
-		});
-        
-	},
-
-    
-    _onScroll: function() {
-		if (!!UserList.noMoreEntries) {
-			return;
-		}
-		if (UserList.scrollArea.scrollTop() + UserList.scrollArea.height() > UserList.scrollArea.get(0).scrollHeight - 500) {
-			UserList.update(UserList.currentGid);
-		}
-	},
-    */
 
 };
 
@@ -243,12 +158,14 @@ $(document).ready(function () {
 	$userList = $('#userlist');
 	$groupsselect = $('.groupsselect');
     //$userListBody = $userList.find('tbody');
-    
-
+    //var CheckUser = {};
+    //data = $('#checkuser').data().user;
+    //checkdata = $('#checkuser').data().checkeduser;
+         
 	// Implements User Search
 	filter = new UserManagementFilter($('#usersearchform input'), UserList, GroupList);
 
-//	UserList.availableGroups = $userList.data('groups');
+    //UserList.availableGroups = $userList.data('groups');
 
 	//UserList.scrollArea = $('#app-content');
 	//UserList.scrollArea.scroll(function(e) {UserList._onScroll(e);});
@@ -271,12 +188,24 @@ $(document).ready(function () {
 		UserList.applyGroupSelect(element);
 	});
     */
+    
     $userList.delegate("input:checkbox","click",function(){
+        $(this).prop('checked') ? $(this).attr({'checked':true}) :  $(this).attr({'checked':false}) ;
+        var name = $(this).closest('li').find('label').text();
+        
+        if($(this).prop('checked')) {
+           $('#checkuser').data("checkeduser").push(name);
+           console.dir($('#checkuser').data("checkeduser"));
+        }
+        else {
+           var index = $('#checkuser').data("checkeduser").indexOf(name);
 
-       $(this).hasClass('checked') ? $(this).removeClass('checked') : $(this).addClass('checked');
-
+           $('#checkuser').data("checkeduser").splice( index , 1);
+           console.dir($('#checkuser').data("checkeduser"));
+        }
+        UserList.checktristate();
     });
-   
+  /* 
     $('#groupsselect_r').change(function() {
         console.dir($(this).val());
         
@@ -295,15 +224,47 @@ $(document).ready(function () {
         );
 
     });
+    */    
 
+    $('#checkall').click(function() {
+         $.each($('#checkuser').data("user") , function(index,value) {
+            $('#checkuser').data("checkeduser")[index] = value;
+            $('#id-' + value).attr({'checked':true});
+         });
+         UserList.checktristate();
+    });
 
+    $('#clearall').click(function() {
+        $.each($('#checkuser').data("checkeduser"), function(index,value) {
+            $('#id-' + value).attr({'checked':false});
+        });
+        $('#checkuser').data("checkeduser",[]);
+        UserList.checktristate();
+    });
+    
+    $('#inverse').click(function(){
+        var difference = [];
+        difference = $.grep($('#checkuser').data("user"), function(el) { 
+            return $.inArray(el, $('#checkuser').data("checkeduser")) == -1;
+        })
+        $.each($('#checkuser').data("checkeduser") , function(index,value) {
+            $('#id-' + value).attr({'checked':false});
+        });
+        $('#checkuser').data("checkeduser",difference);
+        $.each($('#checkuser').data("checkeduser") , function(index,value) {
+            $('#id-' + value).attr({'checked':true});
+        });
+        UserList.checktristate();
+    });
+    
+    /*
     $('#groupsselect').change(function() {
         console.dir($(this).val());
         
         var groupname = $(this).val();
         $userList.find('input:checkbox').each(function() {
             if($(this).hasClass('checked')){
-                uid[uid.length] = $(this).closest('li').find('label').text();
+                uids = $(this).closest('li').find('label').text();
             }
         });
         $.post(
@@ -315,8 +276,7 @@ $(document).ready(function () {
         );
 
     });
-
-
+    */
 	// trigger loading of users on startup
 	UserList.update(UserList.currentGid, initialUserCountLimit);
 

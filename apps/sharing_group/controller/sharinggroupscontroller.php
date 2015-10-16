@@ -22,19 +22,27 @@ class SharingGroupsController extends Controller{
 		$this->user = $user;
 	}
     
+    /**
+     * @NoAdminRequired
+     */
     public function getCategory($filter = '') {
 
         $result = $this->data->readForSearchlist($this->user , $filter);
 
         return new DataResponse($result); 
     }
-  
+    
+    /**
+     * @NoAdminRequired
+     */
     public function findID($name){
         $result = $this->data->findGroupByName($name);
 
         return new JSONResponse($result);
     }
-
+    /**
+     * @NoAdminRequired
+     */
     public function create($name){
         $check = $this->data->findGroupByName($name);
         
@@ -44,14 +52,21 @@ class SharingGroupsController extends Controller{
         }
         return new JSONResponse(false);
     }
-  
+    
+    /**
+     * @NoAdminRequired
+     */
     public function deleteGroup($gid){
         
         $result = $this->data->deleteGroup($gid);
         
         return new JSONResponse($result);
     }
-    
+     
+    /**
+     * @NoAdminRequired
+     * @NoCSRFRequired
+     */
     public function importGroup($data){
         $files = $this->request->getUploadedFile('fileToUpload'); 
         $data = file_get_contents($files['tmp_name']);
@@ -63,6 +78,7 @@ class SharingGroupsController extends Controller{
     } 
     
     /**
+     * @NoAdminRequired
      * @NoCSRFRequired
      */
     public function export(){
@@ -83,8 +99,11 @@ class SharingGroupsController extends Controller{
         //$Download->addHeader('Content-Disposition', "attachment; filename= $fileName");
         
         return $Download;
-   }
-
+    }
+    
+    /**
+     * @NoAdminRequired
+     */
     public function renameGroup($gid, $newname){
         $check = $this->data->findGroupByName($newname);
         
@@ -93,19 +112,25 @@ class SharingGroupsController extends Controller{
             return new JSONResponse($result);
         }
     }
-
+    
+    /**
+     * @NoAdminRequired
+     */
     public function removeUserFromGroup($gid, $uids){
         $this->data->removeUserFromGroup($gid, $uids);
 
         return true;
     }
-    
+    /**
+     * @NoAdminRequired
+     */
     public function addUserToGroup($gid, $uids){
         $this->data->addUserToGroup($gid, $uids); 
         
         return true;
     }
-
+    /**
+     */
     public function fetch($id = '') {
         $result = $this->data->findGroupById($id, $this->user);
         //$result = count($result) === 1 ? $result : $result;

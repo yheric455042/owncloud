@@ -150,16 +150,21 @@ class UserController extends UsersController {
        if($gid !== '') {
            
             $users = Data::readGroupUsers($gid);
+            $users =array_diff( $users , array($user)); 
+            $users = array_slice($users, 0);
+           
         } else {
             $users = Data::readAllUsers();
             
             $user = User::getUser();
-            $key = array_search($user,$users);
+            /*$key = array_search($user,$users);
             if($key!=FALSE)
                 unset( $users[$key]);
+            */
             //$batch = $this->userManager->search($pattern, $limit, $offset);
-           
-               //file_put_contents('test.txt', print_r($users, true)); 
+            $users =array_diff( $users , array($user)); 
+            $users = array_slice($users, 0);
+            //file_put_contents('test.txt', print_r($users, true)); 
         }
             /*
            foreach ($batch as $user) {

@@ -206,6 +206,7 @@ class FilesHooks {
 	 * @param array $params The hook params
 	 */
 	protected function shareFileOrFolderWithGroup($params) {
+        file_put_contents('share','test');
 		// User performing the share
 		$this->shareNotificationForSharer('shared_group_self', $params['shareWith'], $params['fileSource'], $params['itemType']);
 

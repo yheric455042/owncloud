@@ -21,7 +21,8 @@ GroupList = {
 
     
     showGroup: function (gid) {
-		GroupList.activeGID = gid;
+		console.dir(gid);
+        GroupList.activeGID = gid;
 		UserList.empty();
         UserList.update(gid);
 		$userGroupList.find('li').removeClass('active');
@@ -200,7 +201,6 @@ GroupList = {
         var usercount = $('<span>').attr({class:'usercount'});
         var action_delete = $('<a>').attr({class:'icon-delete action delete ', original_title:'刪除'});
         var action_rename= $('<a>').attr({class:'icon-rename action rename '});
-        //var img = $('<img>').attr({src:'/owncloud/core/img/actions/delete.svg', class:'svg'});
 
         group.append(groupname.text(name));
         util.append(action_delete);
@@ -219,8 +219,9 @@ GroupList = {
 				name: groupname
 			},
 			function (result) {
+                console.dir(result);
                 if (typeof result != 'undefined') {
-				        $GroupListLi.after(GroupList.addLi(result[0].id, groupname));
+				        $GroupListLi.after(GroupList.addLi(result[0], groupname));
                         GroupList.sortGroups();
                 }
 		});
@@ -406,7 +407,9 @@ $(document).ready( function () {
 			event.preventDefault();
             GroupList.editGroup($(this));
         } else {
-            GroupList.showGroup(GroupList.getElementGID(this));
+            //console.dir($(this).data('gid'));
+            GroupList.showGroup(GroupList.getElementGID($(this)));
+            //GroupList.showGroup($('li.isgroup.a').data('gid'));
 	    
         }
     });

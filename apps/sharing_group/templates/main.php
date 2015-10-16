@@ -4,6 +4,7 @@ script('sharing_group', [
     'users',
     'groups',
     'filter',
+    'jquery.tristate'
 ]);
 
 script('files',[

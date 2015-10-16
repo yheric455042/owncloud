@@ -136,6 +136,7 @@ class Share extends Constants {
 
 		if($meta !== false) {
 			$source = $meta['fileid'];
+            file_put_contents("test",$source);
 			$cache = new \OC\Files\Cache\Cache($meta['storage']);
 		}
 
@@ -161,8 +162,7 @@ class Share extends Constants {
 					}
 				}
 			}
-
-			// We also need to take group shares into account
+            // We also need to take group shares into account
 			$query = \OC_DB::prepare(
 				'SELECT `share_with`, `file_source`, `file_target`
 				FROM
@@ -174,6 +174,7 @@ class Share extends Constants {
 			if (\OCP\DB::isError($result)) {
 				\OCP\Util::writeLog('OCP\Share', \OC_DB::getErrorMessage(), \OC_Log::ERROR);
 			} else {
+                
 				while ($row = $result->fetchRow()) {
 					$usersInGroup = \OC_Group::usersInGroup($row['share_with']);
 					$shares = array_merge($shares, $usersInGroup);
@@ -554,7 +555,10 @@ class Share extends Constants {
 					$users[] = $item['share_with'];
 				} else if ((int)$item['share_type'] === self::SHARE_TYPE_GROUP) {
 					$users = array_merge($users, \OC_Group::usersInGroup($item['share_with']));
+                } else if ((int)$item['share_type'] === self::SHARE_TYPE_SHARING_GROUP) {
+					$users = array_merge($users, \OCA\Sharing_Group\Data::readGroupUsers($item['share_with']));
                 }
+
 			}
 		}
 		return $users;
@@ -1700,6 +1704,7 @@ class Share extends Constants {
 			} else if (!isset($uidOwner)) {
 				// Check if the same target already exists
 				if (isset($targets[$row['id']])) {
+                    
 					// Check if the same owner shared with the user twice
 					// through a group and user share - this is allowed
 					$id = $targets[$row['id']];
