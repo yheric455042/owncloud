@@ -175,8 +175,11 @@ class FilesHooks {
 				if ((int) $params['shareType'] === Share::SHARE_TYPE_USER) {
 					$this->shareFileOrFolderWithUser($params);
 				} else if ((int) $params['shareType'] === Share::SHARE_TYPE_GROUP) {
-					$this->shareFileOrFolderWithGroup($params);
-				}
+					$this->shareFileOrFolderWithGroup($params,Share::SHARE_TYPE_GROUP);
+                } else if ((int) $params['shareType'] === Share::SHARE_TYPE_SHARING_GROUP) {
+					$this->shareFileOrFolderWithGroup($params,Share::SHARE_TYPE_SHARING_GROUP);
+                }
+
 			} else {
 				$this->shareFileOrFolder($params);
 			}
@@ -205,14 +208,14 @@ class FilesHooks {
 	 * Sharing a file or folder with a group
 	 * @param array $params The hook params
 	 */
-	protected function shareFileOrFolderWithGroup($params) {
-        file_put_contents('share','test');
+	protected function shareFileOrFolderWithGroup($params, $type) {
 		// User performing the share
-		$this->shareNotificationForSharer('shared_group_self', $params['shareWith'], $params['fileSource'], $params['itemType']);
+        $subject = ($type == Share::SHARE_TYPE_GROUP) ? 'shared_group_self' : 'shared_sharing_group_self';
+		$this->shareNotificationForSharer($subject, $params['shareWith'], $params['fileSource'], $params['itemType']);
 
 		// Members of the new group
 		$affectedUsers = array();
-		$usersInGroup = \OC_Group::usersInGroup($params['shareWith']);
+		$usersInGroup = ($type == Share::SHARE_TYPE_GROUP) ? \OC_Group::usersInGroup($params['shareWith']) : \OCA\Sharing_Group\Data::readGroupUsers($params['shareWith']);
 		foreach ($usersInGroup as $user) {
 			$affectedUsers[$user] = $params['fileTarget'];
 		}
@@ -238,12 +241,12 @@ class FilesHooks {
 				$affectedUsers[$row['share_with']] = $row['file_target'];
 			}
 		}
-
+        
 		foreach ($affectedUsers as $user => $path) {
 			if (empty($filteredStreamUsersInGroup[$user]) && empty($filteredEmailUsersInGroup[$user])) {
 				continue;
 			}
-
+            
 			$this->addNotificationsForUser(
 				$user, 'shared_with_by', array($path, $this->currentUser),
 				$path, ($params['itemType'] === 'file'),
@@ -253,7 +256,7 @@ class FilesHooks {
 		}
 	}
 
-	/**
+    	/**
 	 * Add notifications for the user that shares a file/folder
 	 *
 	 * @param string $subject

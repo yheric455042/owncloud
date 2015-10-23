@@ -87,18 +87,39 @@ var UserList = {
 		UserList.checkUsersToLoad();
 	},
     
-    checktristate: function(){
+    checktristate: function(groupname){
         var CheckLength = $('#checkuser').data("checkeduser").length;
         var UserLength = $('#checkuser').data("user").length;
         var $tristate = $('#checkuser').tristate();
+        if(groupname != undefined){ 
+            GroupLength = $('#usergrouplist').data(groupname).length;
+            var $tristate = $('#id-' + groupname).tristate();
+        }
+        var Length = groupname != undefined ? GroupLength : UserLength;
         
         if(CheckLength == 0) {
             $tristate.tristate('state', false);
         }
-        if(CheckLength == UserLength) {
+        if(CheckLength == Length)  {
+            var difference = [];
+            difference = $.grep($('#usergrouplist').data(groupname), function(el) { 
+            return $.inArray(el, $('#checkuser').data("checkeduser")) == -1;
+            })
+             
             $tristate.tristate('state', true);
+            console.dir($('#usergrouplist').data(groupname));
+            console.dir(difference);
+            console.dir(difference.length);
+            if(difference.length != 0) {
+                $tristate.tristate('state', null);
+            }
+            if(Length == 0) {
+                $tristate.tristate('state', false);
+            }
         }
-        if(CheckLength != 0 && CheckLength != UserLength) {
+
+        if(CheckLength != 0 && CheckLength != Length ) {
+            
             $tristate.tristate('state', null);
         }
     },
@@ -117,7 +138,8 @@ var UserList = {
 			gid = '';
 		}
 		UserList.currentGid = gid;
-		var pattern = filter.getPattern();
+		//console.dir(UserList.currentGid);
+        var pattern = filter.getPattern();
 		$.get(
 			OC.generateUrl('/apps/sharing_group/user'),
 			{ offset: UserList.offset, limit: limit, gid: gid, pattern: pattern },
@@ -125,8 +147,9 @@ var UserList = {
                 $('#checkuser').data({
                     'user':result ,
                     'checkeduser':[] ,
-                    'different': [] 
+                    'different': [],
                 });
+
                 $.each(result, function (index, value) {
 				    var li = $('<li>').attr({class:'users'});
                     var checkbox = $('<input>').attr({type: 'checkbox', id: 'id-' + value, checked:false});
@@ -150,17 +173,13 @@ var UserList = {
 			}).always(function() {
 				UserList.updating = false;
 			});
-	},
-
+    },
 };
 
 $(document).ready(function () {
 	$userList = $('#userlist');
 	$groupsselect = $('.groupsselect');
     //$userListBody = $userList.find('tbody');
-    //var CheckUser = {};
-    //data = $('#checkuser').data().user;
-    //checkdata = $('#checkuser').data().checkeduser;
          
 	// Implements User Search
 	filter = new UserManagementFilter($('#usersearchform input'), UserList, GroupList);
@@ -183,27 +202,28 @@ $(document).ready(function () {
 		}
 	}
 
-   /* 
-	$groupsselect.each(function (index, element) {
-		UserList.applyGroupSelect(element);
-	});
-    */
-    
+   
     $userList.delegate("input:checkbox","click",function(){
         $(this).prop('checked') ? $(this).attr({'checked':true}) :  $(this).attr({'checked':false}) ;
         var name = $(this).closest('li').find('label').text();
         
         if($(this).prop('checked')) {
            $('#checkuser').data("checkeduser").push(name);
-           console.dir($('#checkuser').data("checkeduser"));
+           //console.dir($('#checkuser').data("checkeduser"));
         }
         else {
            var index = $('#checkuser').data("checkeduser").indexOf(name);
 
            $('#checkuser').data("checkeduser").splice( index , 1);
-           console.dir($('#checkuser').data("checkeduser"));
+           //console.dir($('#checkuser').data("checkeduser"));
         }
         UserList.checktristate();
+        
+        $.each(GroupList.groups, function(index, value) {
+            //console.dir(value);
+            UserList.checktristate(value); 
+        });
+    
     });
   /* 
     $('#groupsselect_r').change(function() {
@@ -225,8 +245,8 @@ $(document).ready(function () {
 
     });
     */    
-
     $('#checkall').click(function() {
+         
          $.each($('#checkuser').data("user") , function(index,value) {
             $('#checkuser').data("checkeduser")[index] = value;
             $('#id-' + value).attr({'checked':true});

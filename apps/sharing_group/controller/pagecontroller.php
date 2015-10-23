@@ -12,6 +12,7 @@
 namespace OCA\Sharing_Group\Controller;
 
 use OCP\IRequest;
+use OCA\Sharing_Group\Data;
 use OCP\AppFramework\Http\TemplateResponse;
 use OCP\AppFramework\Http\DataResponse;
 use OCP\AppFramework\Controller;
@@ -37,8 +38,12 @@ class PageController extends Controller {
 	 * @NoCSRFRequired
 	 */
 	public function index() {
-		$params = ['user' => $this->userId];
-		return new TemplateResponse('sharing_group', 'main', $params);  // templates/main.php
+		$params = [
+            'user' => $this->userId,
+            'everyone' => Data::countAllUsers(),
+        ];
+		
+        return new TemplateResponse('sharing_group', 'main', $params);  // templates/main.php
 	}
 
 	/**

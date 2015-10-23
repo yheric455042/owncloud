@@ -7,6 +7,10 @@ use OCP\Util;
 
 class Data{
     
+    public function controlGroupUser($data){
+        //if()
+    }
+
     public function removeUserFromGroup($gid, $uids) {
         $user = User::getUser();
         $query = DB::prepare('DELETE FROM `*PREFIX*sharing_group_user` WHERE `gid` = ? AND `uid`= ? AND `owner` = ? ');
@@ -64,7 +68,7 @@ class Data{
         $sql = 'SELECT `id`, `item_type` FROM `*PREFIX*share` WHERE `share_type` = ? AND `share_with` = ?';
         $query = DB::prepare($sql);
         $check = $query->execute(array('7', $gid));
-        $share_check = self::getQueryResult($check); 
+        $share_check = self::getSharingQueryResult($check); 
         file_put_contents('123.txt', print_r($share_check ,true));     
 
         if($share_check != NULL ) {
@@ -165,7 +169,7 @@ class Data{
             }
         }
 
-        file_put_contents("12345.txt", print_r($gid,true));
+        //file_put_contents("12345.txt", print_r($gid,true));
     }
  
     public static function export() {
@@ -186,7 +190,18 @@ class Data{
         //array_push($data, )
         return $data;
     }
-
+    
+    public static function getAllGroupInfo() {
+        $user = User::getUser();
+        $sql = 'SELECT id, name , *PREFIX*sharing_group_user.uid FROM *PREFIX*sharing_groups LEFT OUTER JOIN *PREFIX*sharing_group_user ON *PREFIX*sharing_groups.id = *PREFIX*sharing_group_user.gid WHERE *PREFIX*sharing_groups.uid = ?';
+        $query = DB::prepare($sql);
+        //$result = $query->execute(array($filePath, $user));
+        $result = $query->execute(array($user));
+        $data = self::getGroupsInfoQueryResult($result); 
+        
+        return $data;
+    }
+   
     public static function findGroupById($id = '', $user = '') {
         $user = ($user !== '') ? $user : User::getUser();
         $sql = $id ? 'SELECT `id` ,`name` FROM `*PREFIX*sharing_groups` WHERE `id` = ?' : 'SELECT `id` ,`name` FROM `*PREFIX*sharing_groups` WHERE `uid` = ?';
@@ -198,6 +213,13 @@ class Data{
         return self::getGroupsQueryResult($result, '');
     }
     
+    public static function countAllUsers() {
+        $sql = 'SELECT COUNT(uid) FROM `*PREFIX*users`';
+        $query = DB::prepare($sql);
+        $result = $query->execute();
+        return self::getEveryoneCountQueryResult($result); 
+    }
+
     public static function readAllUsers() {
         $sql = 'SELECT `uid` FROM `*PREFIX*users`';
         $query = DB::prepare($sql);
@@ -261,6 +283,7 @@ class Data{
         }
         return $data;
     }
+    
     private static function getGroupIdQueryresult($result) {
         $data = [];
 
@@ -308,6 +331,38 @@ class Data{
 
         return $data;
     }
+    
+    private static function getGroupsInfoQueryResult($result) {
+        $data = [];
+        
+        if (DB::isError($result)) {
+			Util::writeLog('SharingGroup', DB::getErrorMessage($result), Util::ERROR);
+            
+            return;
+        }
+
+        while ($row = $result->fetchRow()) {
+            
+            if(!array_key_exists($row['name'], $data)) {
+                $data[$row['name']] = [];
+                $info = array('id' => $row['id'], 'name' => $row['name'],
+                            'count' => 0);
+            }
+            
+            if($row['uid'] != NULL) {
+                $info['count']++;
+                $info['user'] .= $row['uid'].',';
+            }
+            
+            $data[$row['name']]= $info;
+        }
+        ksort($data,SORT_NATURAL | SORT_FLAG_CASE);   
+        file_put_contents('132.txt', print_r($data, true));
+        
+        return $data;
+
+    }
+
 
     private static function getGroupsQueryResult($result, $filter) {
         $data = [];
@@ -349,9 +404,22 @@ class Data{
         
         return $string;
     }
+    
+    private static function getEveryoneCountQueryResult($result) {
+    
+        if (DB::isError($result)) {
+			Util::writeLog('SharingGroup', DB::getErrorMessage($result), Util::ERROR);
+            
+            return;
+        }
 
-
-     private static function getQueryResult($result) {
+        while ($row = $result->fetchRow()) {
+            $data = $row['COUNT(uid)'] - 1 ;     
+        }
+        return $data;
+    }
+    
+    private static function getSharingQueryResult($result) {
         $data = [];
 
         if (DB::isError($result)) {

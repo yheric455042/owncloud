@@ -1,3 +1,7 @@
+<?php
+    /** @var $_ array*/
+?>
+
 <ul id="usergrouplist" data-sort-groups="<?php //p($_['sortGroups']); ?>">
 	<!-- Add new group -->
 	<li id="newgroup-init">
@@ -21,7 +25,7 @@
 		</a>
 		<span class="utils">
 			<span class="usercount" id="everyonecount">
-
+                <?php  p($_['everyone']) ?>
 			</span>
 		</span>
 	</li>

@@ -53,6 +53,7 @@ class Activity implements IExtension {
 	const SUBJECT_REMOTE_SHARE_UNSHARED = 'remote_share_unshared';
 
 	const SUBJECT_SHARED_GROUP_SELF = 'shared_group_self';
+	const SUBJECT_SHARED_SHARING_GROUP_SELF = 'shared_sharing_group_self';
 	const SUBJECT_SHARED_LINK_SELF = 'shared_link_self';
 	const SUBJECT_SHARED_USER_SELF = 'shared_user_self';
 	const SUBJECT_SHARED_WITH_BY = 'shared_with_by';
@@ -146,7 +147,6 @@ class Activity implements IExtension {
 	 */
 	public function translate($app, $text, $params, $stripPath, $highlightParams, $languageCode) {
 		$l = $this->getL10N($languageCode);
-
 		if ($app === self::FILES_SHARING_APP) {
 			switch ($text) {
 				case self::SUBJECT_REMOTE_SHARE_RECEIVED:
@@ -165,6 +165,8 @@ class Activity implements IExtension {
 					return (string) $l->t('You shared %1$s with %2$s', $params);
 				case self::SUBJECT_SHARED_GROUP_SELF:
 					return (string) $l->t('You shared %1$s with group %2$s', $params);
+                case self::SUBJECT_SHARED_SHARING_GROUP_SELF:
+					return (string) $l->t('You shared %1$s with sharing group %2$s', $params);
 				case self::SUBJECT_SHARED_WITH_BY:
 					return (string) $l->t('%2$s shared %1$s with you', $params);
 				case self::SUBJECT_SHARED_LINK_SELF:
@@ -216,6 +218,12 @@ class Activity implements IExtension {
 						0 => 'file',
 						//1 => 'group', Group does not exist yet
 					];
+                case self::SUBJECT_SHARED_SHARING_GROUP_SELF:
+					return [
+						0 => 'file',
+						//1 => 'group', Group does not exist yet
+					];
+
 			}
 		}
 
