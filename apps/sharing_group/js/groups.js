@@ -167,8 +167,8 @@ GroupList = {
         
         $(document).on('click', function(event) {
             if(event.target.parentElement.className != 'group editing'){
-                event.stopPropagation();
-			    event.preventDefault();
+                //event.stopPropagation();
+			    //event.preventDefault();
                 $tmpelem.remove();
                 $element.show();
                 $(document).off('click');
@@ -196,7 +196,8 @@ GroupList = {
     addCheckbox: function(name){
         var checkbox = $('<input>').attr({type: 'checkbox', id: 'id-' + name, checked:false});
         var label = $('<label>').attr({ for: 'id-' + name, class:'isgroup'}).text(name);
-
+        checkbox.tristate();
+        checkbox.data('origin','unchecked');
         $('#mutigroupselect').before(checkbox);
         $('#mutigroupselect').before(label);
     },

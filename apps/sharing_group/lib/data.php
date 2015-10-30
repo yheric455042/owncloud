@@ -8,7 +8,36 @@ use OCP\Util;
 class Data{
     
     public function controlGroupUser($data){
-        //if()
+        $user = User::getUser();
+        $sql = 'INSERT INTO `*PREFIX*sharing_group_user` (`gid`, `uid`, `owner`) VALUES';
+        $sqlarr = [];
+        file_put_contents('12.txt', print_r($data,true));
+        foreach($data as $gid => $action){
+            $checkuid = self::readGroupUsers($gid);
+           
+            file_put_contents('12.txt', $gid, FILE_APPEND);
+            foreach($action as $key => $uid){
+                if($key == 'add' && !in_array($uid,$checkuid)) {
+                    $sql .= '(?, ?, ?) ,';
+                    array_push($sqlarr,$gid,$uid,$user);
+                       
+                }
+                /*
+                if($key == 'remove') {
+                    $sql1 =
+                }
+                */
+            }
+            file_put_contents('123.txt',print_r($key,true));
+        }
+        
+        file_put_contents('123456.txt',print_r($sqlarr,true));
+        /*if(!empty($sqlarr)){
+            $sql = substr($sql,0,-1);
+            $query = DB::prepare($sql);
+            $query->execute($sqlarr);
+        } 
+        */
     }
 
     public function removeUserFromGroup($gid, $uids) {
@@ -69,7 +98,7 @@ class Data{
         $query = DB::prepare($sql);
         $check = $query->execute(array('7', $gid));
         $share_check = self::getSharingQueryResult($check); 
-        file_put_contents('123.txt', print_r($share_check ,true));     
+        //file_put_contents('123.txt', print_r($share_check ,true));     
 
         if($share_check != NULL ) {
             for($i = 0; $i <= count($share_check); $i++) {
@@ -346,7 +375,7 @@ class Data{
             if(!array_key_exists($row['name'], $data)) {
                 $data[$row['name']] = [];
                 $info = array('id' => $row['id'], 'name' => $row['name'],
-                            'count' => 0);
+                            'count' => 0, 'user' => '');
             }
             
             if($row['uid'] != NULL) {
@@ -357,7 +386,7 @@ class Data{
             $data[$row['name']]= $info;
         }
         ksort($data,SORT_NATURAL | SORT_FLAG_CASE);   
-        file_put_contents('132.txt', print_r($data, true));
+        //file_put_contents('132.txt', print_r($data, true));
         
         return $data;
 

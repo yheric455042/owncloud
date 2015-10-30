@@ -30,6 +30,7 @@ $application->registerRoutes($this,[
 	   ['name' => 'SharingGroups#fetch', 'url' => '/fetch', 'verb' => 'GET'],
 	   ['name' => 'SharingGroups#getAllGroupsInfo', 'url' => '/getAllGroupsInfo', 'verb' => 'GET'],
 	   ['name' => 'SharingGroups#create', 'url' => '/create', 'verb' => 'POST'],
+	   ['name' => 'SharingGroups#controlGroupUser', 'url' => '/controlGroupUser', 'verb' => 'POST'],
 	   ['name' => 'SharingGroups#findID', 'url' => '/findID', 'verb' => 'POST'],
 	   ['name' => 'SharingGroups#addUserToGroup', 'url' => '/addUserToGroup', 'verb' => 'POST'],
 	   ['name' => 'SharingGroups#renameGroup', 'url' => '/renameGroup', 'verb' => 'POST'],

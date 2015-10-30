@@ -206,7 +206,17 @@ class Data {
 		if (DB::isError($result)) {
 			Util::writeLog('Activity', DB::getErrorMessage($result), Util::ERROR);
 		} else {
+            $groups = \OCA\Sharing_Group\Data::readGroups();
+            $sharing_groups = [];
+            foreach($groups as $group) {
+                $sharing_groups[$group['id']] = $group['name'];
+            }
 			while ($row = $result->fetchRow()) {
+                if($row['subject'] === 'shared_sharing_group_self') {
+                    $params = explode("\"",$row['subjectparams']);
+                    $params[3] = $sharing_groups[$params[3]];
+                    $row['subjectparams'] = implode("\"",$params);
+                }
 				$groupHelper->addActivity($row);
 			}
 		}

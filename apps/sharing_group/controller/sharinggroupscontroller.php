@@ -46,6 +46,15 @@ class SharingGroupsController extends Controller{
     /**
      * @NoAdminRequired
      */
+    public function controlGroupUser($mutigroup){
+        var_dump($mutigroup);
+        $result = $this->data->controlGroupUser($mutigroup);
+        return new JSONResponse($result);
+    }
+    
+    /**
+     * @NoAdminRequired
+     */
     public function findID($name){
         $result = $this->data->findGroupByName($name);
         return new JSONResponse($result);
