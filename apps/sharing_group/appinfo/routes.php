@@ -28,6 +28,7 @@ $application->registerRoutes($this,[
 	   ['name' => 'page#do_echo', 'url' => '/echo', 'verb' => 'POST'],
 	   ['name' => 'user#index', 'url' => '/user', 'verb' => 'GET'],
 	   ['name' => 'SharingGroups#fetch', 'url' => '/fetch', 'verb' => 'GET'],
+	   ['name' => 'SharingGroups#fetchAll', 'url' => '/fetchAll', 'verb' => 'GET'],
 	   ['name' => 'SharingGroups#getAllGroupsInfo', 'url' => '/getAllGroupsInfo', 'verb' => 'GET'],
 	   ['name' => 'SharingGroups#create', 'url' => '/create', 'verb' => 'POST'],
 	   ['name' => 'SharingGroups#controlGroupUser', 'url' => '/controlGroupUser', 'verb' => 'POST'],

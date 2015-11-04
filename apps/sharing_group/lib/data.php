@@ -7,37 +7,74 @@ use OCP\Util;
 
 class Data{
     
-    public function controlGroupUser($data){
+    public function controlGroupUser($data) {
         $user = User::getUser();
-        $sql = 'INSERT INTO `*PREFIX*sharing_group_user` (`gid`, `uid`, `owner`) VALUES';
-        $sqlarr = [];
-        file_put_contents('12.txt', print_r($data,true));
-        foreach($data as $gid => $action){
-            $checkuid = self::readGroupUsers($gid);
-           
-            file_put_contents('12.txt', $gid, FILE_APPEND);
-            foreach($action as $key => $uid){
-                if($key == 'add' && !in_array($uid,$checkuid)) {
-                    $sql .= '(?, ?, ?) ,';
-                    array_push($sqlarr,$gid,$uid,$user);
-                       
-                }
-                /*
-                if($key == 'remove') {
-                    $sql1 =
-                }
-                */
-            }
-            file_put_contents('123.txt',print_r($key,true));
-        }
+        $sqladd = 'INSERT INTO `*PREFIX*sharing_group_user` (`gid`, `uid`, `owner`) VALUES';
+        $sqlshare = 'DELETE FROM `*PREFIX*share` WHERE (`parent` = ? ';
+        $sqlremove = 'DELETE FROM `*PREFIX*sharing_group_user` WHERE (`gid` = ?';
+        $addarr = [];
+        $sharearr = [];
+        $removearr = [];
+        $temp = [];
+
+        //file_put_contents('12.txt', print_r($data,true));
         
-        file_put_contents('123456.txt',print_r($sqlarr,true));
-        /*if(!empty($sqlarr)){
-            $sql = substr($sql,0,-1);
+        foreach($data as $gid => $action) {
+            $checkuid = self::readGroupUsers($gid);
+            $add = isset($action['add']) ? $action['add'] : [];
+            $remove = isset($action['remove']) ? $action['remove'] : [];
+
+            //file_put_contents('12.txt', print_r($add,true),FILE_APPEND);
+            foreach($add as $uid){
+                if(!in_array($uid,$checkuid)) {
+                    $sqladd .= '(?, ?, ?) ,';
+                    array_push($addarr,$gid,$uid,$user);
+                }
+            }
+            
+            if(!empty($remove)) {
+                $sql = 'SELECT `id` FROM `*PREFIX*share` WHERE `share_type` = ? AND `share_with` = ? AND `item_type` = ?';
+                $query = DB::prepare($sql);
+                $check = $query->execute(array('7', $gid, 'folder'));
+                $share_check = self::getSharingQueryResult($check); 
+                //file_put_contents('123.txt', print_r($share_check ,true));     
+                
+                if(!empty($share_check)) {
+                    array_push($sharearr,$share_check[0]['id']);
+                    
+                    for($i = 1; $i < count($share_check); $i++) {
+                            $sqlshare .= 'OR `parent` = ?';
+                            array_push($sharearr,$share_check[$i]['id']);
+                    }
+                    $sqlshare .= ') AND (`share_with` = ?';
+                    //file_put_contents('1234.txt', print_r($share_folder,true));
+                }
+                
+                for($i = 1 ; $i < count($remove) ; $i++) {
+                    if(!empty($share_check)) {
+                         $sqlshare .= 'OR `share_with` = ?';
+                    }
+                    $sqltemp .= 'OR `uid` = ?';
+                }
+                array_push($temp,$gid);
+            }
+            //file_put_contents('123.txt',print_r($key,true));
+        }
+        for($i=1 ; $i < count($temp) ; $i++) {
+            $sqlremove .= 'OR `gid` = ?';
+        }
+        $sqlshare .= ')';
+        $sqlremove .= ') AND (`uid` = ?';
+        $sqlremove .= $sqltemp;
+        array_merge($sharearr,$remove);
+        array_merge($removearr, $temp, $remove);
+        file_put_contents('1.txt',print_r($removearr,true));
+        if(!empty($addarr)){
+            $sql = substr($sqladd,0,-1);
             $query = DB::prepare($sql);
-            $query->execute($sqlarr);
+            $query->execute($addarr);
         } 
-        */
+        
     }
 
     public function removeUserFromGroup($gid, $uids) {
@@ -94,14 +131,14 @@ class Data{
     
     public static function deleteGroup($gid){
         $user = User::getUser();
-        $sql = 'SELECT `id`, `item_type` FROM `*PREFIX*share` WHERE `share_type` = ? AND `share_with` = ?';
+        $sql = 'SELECT `id` FROM `*PREFIX*share` WHERE `share_type` = ? AND `share_with` = ?';
         $query = DB::prepare($sql);
         $check = $query->execute(array('7', $gid));
         $share_check = self::getSharingQueryResult($check); 
         //file_put_contents('123.txt', print_r($share_check ,true));     
 
         if($share_check != NULL ) {
-            for($i = 0; $i <= count($share_check); $i++) {
+            for($i = 0; $i < count($share_check); $i++) {
                 $share_id = $share_check[$i]['id'];
                 $sql = 'DELETE FROM `*PREFIX*share` WHERE `id` = ? OR `parent` = ?';
                 $query = DB::prepare($sql);
@@ -241,6 +278,14 @@ class Data{
 
         return self::getGroupsQueryResult($result, '');
     }
+    
+    public static function findAllGroup() {
+        
+        $query = DB::prepare('SELECT `id` ,`name` FROM `*PREFIX*sharing_groups`');
+        $result = $query->execute();
+        return self::getGroupsQueryResult($result, '');
+    }
+
     
     public static function countAllUsers() {
         $sql = 'SELECT COUNT(uid) FROM `*PREFIX*users`';
@@ -459,7 +504,7 @@ class Data{
         
 
         while ($row = $result->fetchRow()) {
-            $share = array('id' => $row['id'], 'item_type' => $row['item_type']);
+            $share = array('id' => $row['id']);
             array_push($data, $share);
         }
         

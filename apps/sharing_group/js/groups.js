@@ -193,10 +193,11 @@ GroupList = {
         return option;
     },
     */
-    addCheckbox: function(name){
-        var checkbox = $('<input>').attr({type: 'checkbox', id: 'id-' + name, checked:false});
-        var label = $('<label>').attr({ for: 'id-' + name, class:'isgroup'}).text(name);
+    addCheckbox: function(id, name){
+        var checkbox = $('<input>').attr({type: 'checkbox', id: 'id-' + id, checked:false});
+        var label = $('<label>').attr({ for: 'id-' + id, class:'isgroup'}).text(name);
         checkbox.tristate();
+        //checkbox.tristate({checkedvalue:"Yes",uncheckedvalue:"no",indeterminate:"Maybe"});
         checkbox.data('origin','unchecked');
         $('#mutigroupselect').before(checkbox);
         $('#mutigroupselect').before(label);
@@ -213,17 +214,17 @@ GroupList = {
         
         if(user != null){
             user = user.split(",", count);
-            $('#usergrouplist').data(name,user);
+            $('#usergrouplist').data(gid,user);
             //console.dir(user);
         }
         else {
-            $('#usergrouplist').data(name,[]);
+            $('#usergrouplist').data(gid,[]);
         }
         group.append(groupname.text(name));
         util.append(action_delete);
         util.append(action_rename);
         
-        util.append(usercount.text($('#usergrouplist').data(name).length)) 
+        util.append(usercount.text($('#usergrouplist').data(gid).length)) 
         /*
         if(count == undefined){
             util.append(usercount.text(0));
@@ -248,7 +249,7 @@ GroupList = {
                 console.dir(result[0]);
                 if (typeof result != 'undefined') {
 				        $GroupListLi.after(GroupList.addLi(result[0], groupname));
-                        GroupList.addCheckbox(groupname);
+                        GroupList.addCheckbox(result[0],groupname);
                         GroupList.sortGroups();
                 }
 		});
@@ -261,11 +262,11 @@ GroupList = {
 			function (result) {
                 console.dir(result);
 			    $.each(result, function (index, value) {
-                    GroupList.groups.push(value.name);
+                    GroupList.groups.push(value.id);
                     var button = $('<button>').attr({type: 'button', id:'mutigroupselect'}).text('Submit');
 
                     $GroupListLi.after(GroupList.addLi(value.id, value.name, value.count, value.user));
-                    GroupList.addCheckbox(value.name);
+                    GroupList.addCheckbox(value.id, value.name);
                     
                     //$groupsselect.append(GroupList.addOption(value.id).text(value.name) )
                     GroupList.sortGroups();

@@ -5,7 +5,7 @@ $CONFIG = array (
   'secret' => 'o8HfvIXs7RCCHex2xGUe6KL82+PSKoWabRRAW4tgWPGmWrGN',
   'trusted_domains' => 
   array (
-    0 => '172.20.3.61',
+    0 => '172.20.3.84',
   ),
   'datadirectory' => '/var/www/owncloud/data',
   'overwrite.cli.url' => 'http://172.20.3.46/owncloud',

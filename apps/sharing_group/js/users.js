@@ -104,12 +104,15 @@ var UserList = {
             //console.dir(difference);
             if(difference.length != groupLength) {
                 $tristate.tristate('state', null);
+                $tristate.data("origin",'indeterminate');
             }
             if(groupLength != 0 && difference.length == 0){
                 $tristate.tristate('state', true);
+                $tristate.data("origin",'checked');
             }
-            $tristate.data("origin",$tristate.val());
-            console.dir($tristate.data("origin"));
+            
+            //$tristate.data("origin",$tristate.val());
+            //console.dir($tristate.data("origin"));
         }
         else {
             if(checkLength == 0) {
@@ -205,10 +208,13 @@ $(document).ready(function () {
 	}
 
     $('#controls').delegate("input:checkbox","click",function(){
-        console.dir($(this).data('origin'));
-        console.dir($(this).attr('indeterminate')!=undefined)
-        if($(this).data('origin') == 'unchecked' && $(this).attr('indeterminate')!=undefined) {
-            $(this).tristate('state', false);
+        //console.dir($(this).data('origin'));
+        if($(this).data('origin') == 'unchecked' && $(this).attr('checked') == undefined) {
+            //console.dir($(this).attr('indeterminate'));
+            $(this).tristate('state', null);
+        }
+        if($(this).data('origin') == 'checked' && $(this).attr('checked') == undefined){
+            $(this).tristate('state', null);
         }
     });
 
@@ -225,7 +231,7 @@ $(document).ready(function () {
            $('#checkuser').data("checkeduser").splice( index , 1);
         }
         UserList.checktristate();
-        
+       //console.dir(GroupList.groups); 
         $.each(GroupList.groups, function(index, value) {
             UserList.checktristate(value); 
         });

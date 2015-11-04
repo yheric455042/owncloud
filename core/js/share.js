@@ -58,7 +58,7 @@ OC.Share={
     SharingGroups:function() {
         return $.ajax({
             method: 'GET',
-            url: OC.generateUrl('/apps/sharing_group/fetch'),
+            url: OC.generateUrl('/apps/sharing_group/fetchAll'),
             async: false,
         });
     },
@@ -314,6 +314,7 @@ OC.Share={
 	loadItem:function(itemType, itemSource) {
 		var data = '';
 		var checkReshare = true;
+        var groups = '';
 		if (typeof OC.Share.statuses[itemSource] === 'undefined') {
 			// NOTE: Check does not always work and misses some shares, fix later
 			var checkShares = true;
@@ -328,13 +329,26 @@ OC.Share={
 			}
 		}});
 
+
         OC.Share.SharingGroups().done(function (result) {
+            groups = result;
+        });
+
+
+        if(data.shares.length != 0) {
             $.each(data.shares, function (index, share) {
                 if(share.share_type === 7) {
-                    share.share_with_displayname = OC.Share.findSharingGroupName(share.share_with_displayname, result);
+                    share.share_with_displayname = OC.Share.findSharingGroupName(share.share_with_displayname, groups);
                 }
             });
-        });
+        } else if(data.reshare != 0) {
+            if(data.reshare.share_type === 7) {
+                data.reshare.share_with = OC.Share.findSharingGroupName(data.reshare.share_with, groups);
+            }
+        }
+
+
+
 
 		return data;
 	},
@@ -409,6 +423,9 @@ OC.Share={
 
 			if (data.reshare.share_type == OC.Share.SHARE_TYPE_GROUP) {
 				html += t('core', 'Shared with you and the group {group} by {owner}', {group: data.reshare.share_with, owner: data.reshare.displayname_owner});
+			} else if (data.reshare.share_type == OC.Share.SHARE_TYPE_SHARING_GROUP) {
+				html += t('core', 'Shared with you and the sharing group {group} by {owner}', {group: data.reshare.share_with, owner: data.reshare.displayname_owner});
+                console.dir(data);
 			} else {
 				html += t('core', 'Shared with you by {owner}', {owner: data.reshare.displayname_owner});
 			}
@@ -621,6 +638,9 @@ OC.Share={
 				}
 				insert.text( text );
 				if(item.value.shareType === OC.Share.SHARE_TYPE_GROUP) {
+					insert = insert.wrapInner('<strong></strong>');
+				}
+                if(item.value.shareType === OC.Share.SHARE_TYPE_SHARING_GROUP) {
 					insert = insert.wrapInner('<strong></strong>');
 				}
 				return $( "<li>" )

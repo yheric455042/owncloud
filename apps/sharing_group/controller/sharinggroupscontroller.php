@@ -47,7 +47,8 @@ class SharingGroupsController extends Controller{
      * @NoAdminRequired
      */
     public function controlGroupUser($mutigroup){
-        var_dump($mutigroup);
+        //var_dump($mutigroup);
+        //file_put_contents('123456789.txt', print_r($mutigroup,true));
         $result = $this->data->controlGroupUser($mutigroup);
         return new JSONResponse($result);
     }
@@ -147,15 +148,22 @@ class SharingGroupsController extends Controller{
         
         return true;
     }
-    
+
     /**
+     * @NoAdminRequired
      */
     public function fetch($id = '') {
         $result = $this->data->findGroupById($id, $this->user);
         
-        file_put_contents('123.txt', print_r($result,true));
         //$result = count($result) === 1 ? $result : $result;
         return new JSONResponse($result);
     }
+    public function fetchAll($id = '') {
+        $result = $this->data->findAllGroup($id, $this->user);
+        
+        //$result = count($result) === 1 ? $result : $result;
+        return new JSONResponse($result);
+    }
+
 }
 ?>
