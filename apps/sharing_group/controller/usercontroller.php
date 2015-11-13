@@ -145,66 +145,24 @@ class UserController extends UsersController {
        }
 
        $users = [];
-       //if ($this->isAdmin) {
 
        if($gid !== '') {
            
+            $user = User::getUser();
             $users = Data::readGroupUsers($gid);
             $users =array_diff( $users , array($user)); 
             $users = array_slice($users, 0);
            
-        } else {
+        } 
+        else {
             $users = Data::readAllUsers();
             
             $user = User::getUser();
-            /*$key = array_search($user,$users);
-            if($key!=FALSE)
-                unset( $users[$key]);
-            */
-            //$batch = $this->userManager->search($pattern, $limit, $offset);
             $users =array_diff( $users , array($user)); 
             $users = array_slice($users, 0);
             //file_put_contents('test.txt', print_r($users, true)); 
         }
-            /*
-           foreach ($batch as $user) {
-               $users[] = $this->formatUserForIndex($user);
-           }
-            */
-       /*} else {
-           $subAdminOfGroups = $this->subAdminFactory->getSubAdminsOfGroups(
-               $this->userSession->getUser()->getUID()
-           );
-           // Set the $gid parameter to an empty value if the subadmin has no rights to access a specific group
-           if($gid !== '' && !in_array($gid, $subAdminOfGroups)) {
-               $gid = '';
-           }
-
-           // Batch all groups the user is subadmin of when a group is specified
-           $batch = [];
-           if($gid === '') {
-               foreach($subAdminOfGroups as $group) {
-                   $groupUsers = $this->groupManager->displayNamesInGroup($group, $pattern, $limit, $offset);
-                   foreach($groupUsers as $uid => $displayName) {
-                       $batch[$uid] = $displayName;
-                   }
-               }
-           } else {
-               $batch = $this->groupManager->displayNamesInGroup($gid, $pattern, $limit, $offset);
-           }
-           $batch = $this->getUsersForUID($batch);
-
-           foreach ($batch as $user) {
-               // Only add the groups, this user is a subadmin of
-               $userGroups = array_values(array_intersect(
-                   $this->groupManager->getUserGroupIds($user),
-                   $subAdminOfGroups
-               ));
-               $users[] = $this->formatUserForIndex($user, $userGroups);
-           }
-       }
-        */
-       return new DataResponse($users);
+        return new DataResponse($users);
    }
 
 }

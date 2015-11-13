@@ -46,11 +46,25 @@ class SharingGroupsController extends Controller{
     /**
      * @NoAdminRequired
      */
-    public function controlGroupUser($mutigroup){
+    public function controlGroupUser($multigroup){
         //var_dump($mutigroup);
-        //file_put_contents('123456789.txt', print_r($mutigroup,true));
-        $result = $this->data->controlGroupUser($mutigroup);
-        return new JSONResponse($result);
+        
+        //file_put_contents('1234.txt',print_r($multigroup,true));
+        foreach($multigroup as $gid => $action) {
+            $temp = [];
+            $action = explode(':',$action);
+            $users = explode(',',$action[1]);
+            $temp[$action[0]] = $users;
+            $multigroup[$gid] = $temp;
+        }
+        //file_put_contents('123.txt',print_r($multigroup,true));
+        if($multigroup != null) {
+            
+            $result = $this->data->controlGroupUser($multigroup);
+            return new JSONResponse($result);
+        }
+        return new JSONResponse();
+        
     }
     
     /**
@@ -95,7 +109,7 @@ class SharingGroupsController extends Controller{
         //file_put_contents('123.txt', $data);
         
         $result = $this->data->importGroup($data);
-        //return new JSONResponse($result);
+        return new JSONResponse($result);
     } 
     
     /**
@@ -155,13 +169,18 @@ class SharingGroupsController extends Controller{
     public function fetch($id = '') {
         $result = $this->data->findGroupById($id, $this->user);
         
+        //file_put_contents('123.txt', print_r($result,true));
         //$result = count($result) === 1 ? $result : $result;
         return new JSONResponse($result);
     }
-    public function fetchAll($id = '') {
-        $result = $this->data->findAllGroup($id, $this->user);
+
+    /**
+     * @NoAdminRequired
+     */
+
+    public function fetchAll() {
+        $result = $this->data->findAllGroup();
         
-        //$result = count($result) === 1 ? $result : $result;
         return new JSONResponse($result);
     }
 

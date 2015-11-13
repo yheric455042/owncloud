@@ -1,57 +1,80 @@
-var $userGroupList,
+var $groupList,
     $GroupListLi,
-	$sortGroupBy;
-
-var GroupList;
-GroupList = {
-	activeGID: '',
+	$sortGroupBy,
+    appname = 'sharing_group';
+    
+var GroupList = {
 	everyoneGID: '_everyone',
     groups: [],
+    groups_name: [],
 
-   elementBelongsToAddGroup: function (el) {
+    elementBelongsToAddGroup: function(el) {
 		return !(el !== $('#newgroup-form').get(0) &&
 		$('#newgroup-form').find($(el)).length === 0);
 	},
 
-    hasAddGroupNameText: function () {
-		var name = $('#newgroupname').val();
-		return $.trim(name) !== '';
-
+    hasAddGroupNameText: function() {
+		var name = $('#newgroup-name').val();
+		
+        return $.trim(name) !== '';
 	},
-
     
     showGroup: function (gid) {
-		//console.dir(gid);
-        GroupList.activeGID = gid;
 		UserList.empty();
-        UserList.update(gid);
-		$userGroupList.find('li').removeClass('active');
-		if (gid !== undefined) {
-			//TODO: treat Everyone properly
+        var statereset = $('#checkuser').attr('checked') != undefined || $('#checkuser').attr('indeterminate') != undefined;
+        
+        if(statereset){
+            $('#checkuser').tristate('state', false);
+        }
+        
+        $groupList.find('li').removeClass('active');
+		
+        if (gid !== undefined) {
 			GroupList.getGroupLI(gid).addClass('active');
-		}
+            $('#checkuser').data({
+                'user':$('#group-list').data(gid),
+                'checkeduser':[]
+            });
+	        if (gid == '_everyone') {
+                UserList.update(gid);
+            }
+            else {
+                var users = $('#group-list').data(gid);
+                if(users.length == 0) {
+                    UserList.addLabel();
+                }
+                else { 
+                    users = users.sort(function(u1,u2){
+                        UserList.alphanum(u1,u2)
+                    });
+                    $.each(users, function(index, user) {
+                        UserList.addLabel(user);
+                    });
+                }
+            }
+        }
 	},
     
-	isAddGroupButtonVisible: function () {
+	isAddGroupButtonVisible: function() {
 		return $('#newgroup-init').is(":visible");
 	},
 
-	toggleAddGroup: function (event) {
+	toggleAddGroup: function(event) {
 		if (GroupList.isAddGroupButtonVisible()) {
 			event.stopPropagation();
 			$('#newgroup-form').show();
 			$('#newgroup-init').hide();
-			$('#newgroupname').focus();
+			$('#newgroup-name').focus();
 			GroupList.handleAddGroupInput('');
 		}
 		else {
 			$('#newgroup-form').hide();
 			$('#newgroup-init').show();
-			$('#newgroupname').val('');
+			$('#newgroup-name').val('');
 		}
 	},
 
-	handleAddGroupInput: function (input) {
+	handleAddGroupInput: function(input) {
 		if(input.length) {
 			$('#newgroup-form input[type="submit"]').attr('disabled', null);
 		} else {
@@ -59,50 +82,25 @@ GroupList = {
 		}
 	},
 
-	isGroupNameValid: function (groupname) {
+	isGroupNameValid: function(groupname) {
 		if ($.trim(groupname) === '') {
 			OC.dialogs.alert(
-				t('Sharing_Group', 'A valid group name must be provided'),
-				t('Sharing_Group', 'Error creating group'));
+				t(appname, 'A valid group name must be provided'),
+				t(appname, 'Error creating group'));
 			return false;
 		}
 		return true;
 	},
-    
-    /* 
-	hide: function (gid) {
-		GroupList.getGroupLI(gid).hide();
-	},
-	show: function (gid) {
-		GroupList.getGroupLI(gid).show();
-	},
-	
-    remove: function (gid) {
-		GroupList.getGroupLI(gid).remove();
-	},
-	empty: function () {
-		$userGroupList.find('.isgroup').filter(function(index, item){
-			return $(item).data('gid') !== '';
-		}).remove();
-	},
-	*/
-    
-    /**
-	 * Edit a groups name.
-	 * 
-	 * @param object $element jQuery element
-	 */
+      
     editGroup: function($element) {
-        //console.dir($element);
-        var self = this;
-		var oldname = $element.text();
-		var id = $element.data('gid');
-		//var owner = $element.data('owner');
-        //console.dir(oldname);
-        //console.dir(id);
-
+		var oldname = $element.find('.group-name').text();
+		var gid = $element.data('gid');
 		var $editInput = $('<input type="text" />').val(oldname).attr({ id:'editInput'});
-        var button = $('<button>').attr({class:'new-button primary icon-checkmark-white', style:'display: block', id:'renamebutton'});
+        var button = $('<button>').attr({
+            class:'new-button primary icon-checkmark-white', 
+            style:'display: block', 
+            id:'rename-button'
+        });
         var group_editing = $('<li>').attr({class:'group editing'});
         
         $element.hide();
@@ -111,64 +109,33 @@ GroupList = {
         $('.group.editing').append(button);
         var $tmpelem = $editInput.parent('li');
         $editInput.focus();
-        /*
-        if($editInput.val() != oldname && $.inArray($editInput.val(), GroupList.groups) >-1){
-            console.dir(1);
-        }
-        */
 
-        $('#usergrouplist').on('keyup', '#editInput', function(event) {
-                
-                if($.inArray($editInput.val(), GroupList.groups) > -1) {
-                    
-                    $('#editInput').addClass("ui-status-error");
-
+        $('#group-list').on('keyup', '#editInput', function(event) {
+                if ($.inArray($editInput.val(), GroupList.groups_name) > -1) {
+                    $editInput.addClass("ui-status-error");
                 }
                 else {
-                    $('#editInput').removeClass("ui-status-error");
+                    $editInput.removeClass("ui-status-error");
                 }
-
+                
                 if(event.which == $.ui.keyCode.ESCAPE) {
                     $tmpelem.remove();
                     $element.show();
                 }
                 
-                if(event.which == $.ui.keyCode.ENTER && !$('#editInput').hasClass('ui-status-error')) {
+                if(event.which == $.ui.keyCode.ENTER && !$editInput.hasClass('ui-status-error')) {
                     var newname = $editInput.val();
-                    $.post(
-                        OC.generateUrl('/apps/sharing_group/renameGroup'),
-                        {
-                            gid: id,
-                            newname: newname
-                        },
-                        function (result) {
-                            $element.find('.groupname').text(newname);
-                            $tmpelem.remove();
-                            $element.show();
-                        });
+                    GroupList.renameGroup($element , $tmpelem, gid, newname);
                 }
         });
         
-        $('#renamebutton').click(function() {
+        $('#rename-button').click(function() {
             var newname = $editInput.val();
-            if(!$('#editInput').hasClass('ui-status-error'))
-            $.post(
-			    OC.generateUrl('/apps/sharing_group/renameGroup'),
-			    {
-				    gid: id,
-                    newname: newname
-			    },
-			    function (result) {
-                    $element.find('.groupname').text(newname);
-                    $tmpelem.remove();
-                    $element.show();
-                });
+            GroupList.renameGroup($element, $tmpelem, gid, newname);
         });
         
         $(document).on('click', function(event) {
-            if(event.target.parentElement.className != 'group editing'){
-                //event.stopPropagation();
-			    //event.preventDefault();
+            if (event.target.parentElement.className != 'group editing') {
                 $tmpelem.remove();
                 $element.show();
                 $(document).off('click');
@@ -176,9 +143,24 @@ GroupList = {
         });
         
    	},
+    
+    renameGroup: function($element, $tmpelem , gid, newname) {
+        $.post(
+            OC.generateUrl('/apps/sharing_group/renameGroup'),
+            {
+                gid: gid,
+                newname: newname
+            },
+            function (result) {
+                $element.find('.group-name').text(newname);
+                $tmpelem.remove();
+                $element.show();
+            });
 
-    getGroupLI: function (gid) {
-		return $userGroupList.find('li.isgroup').filter(function () {
+    },
+
+    getGroupLI: function(gid) {
+		return $groupList.find('li.isgroup').filter(function() {
 			return GroupList.getElementGID(this) === gid;
 		});
 	},
@@ -186,117 +168,145 @@ GroupList = {
     getElementGID: function (element) {
 		return ($(element).closest('li').data('gid') || '').toString();
 	},
-    /*
-    addOption: function(id) {
-        var option = $('<option>').attr({'value':id});
-
-        return option;
-    },
-    */
+    
     addCheckbox: function(id, name){
-        var checkbox = $('<input>').attr({type: 'checkbox', id: 'id-' + id, checked:false});
-        var label = $('<label>').attr({ for: 'id-' + id, class:'isgroup'}).text(name);
+        var li = $('<li>');
+        var checkbox = $('<input>').attr({
+            type: 'checkbox', 
+            id: 'id-' + id, 
+            checked: false
+        });
+        var label = $('<label>').attr({for: 'id-' + id}).text(name);
+        
         checkbox.tristate();
-        //checkbox.tristate({checkedvalue:"Yes",uncheckedvalue:"no",indeterminate:"Maybe"});
-        checkbox.data('origin','unchecked');
-        $('#mutigroupselect').before(checkbox);
-        $('#mutigroupselect').before(label);
+        checkbox.data({
+            'origin': 'unchecked',
+            'click': 0
+        });
+        
+        li.append(checkbox);
+        li.append(label);
+        $('.sg-dropdown-scrollable').append(li);
     },
 
     addLi: function(gid, name, count, user){
-        var li = $('<li>').attr({'data-gid':gid , id:name,  class:'isgroup'});
+        var li = $('<li>').attr({
+            'data-gid': gid , 
+            id: name, 
+            class: 'isgroup'
+        });
         var group = $('<a>')
-        var groupname = $('<span>').attr({class:'groupname'});
-        var util = $('<span>').attr({class:'utils'});
-        var usercount = $('<span>').attr({class:'usercount'});
-        var action_delete = $('<a>').attr({class:'icon-delete action delete ', original_title:'刪除'});
-        var action_rename= $('<a>').attr({class:'icon-rename action rename '});
+        var groupname = $('<span>').attr({class: 'group-name'});
+        var util = $('<span>').attr({class: 'utils'});
+        var usercount = $('<span>').attr({class: 'user-count'});
+        var action_delete = $('<a>').attr({
+            class: 'icon-delete action delete', 
+            original_title: '刪除'
+        });
+        var action_rename= $('<a>').attr({class: 'icon-rename action rename'});
         
-        if(user != null){
+        if (user != null){
             user = user.split(",", count);
-            $('#usergrouplist').data(gid,user);
-            //console.dir(user);
+            $('#group-list').data(gid, user);
         }
         else {
-            $('#usergrouplist').data(gid,[]);
+            $('#group-list').data(gid, []);
         }
         group.append(groupname.text(name));
         util.append(action_delete);
         util.append(action_rename);
-        
-        util.append(usercount.text($('#usergrouplist').data(gid).length)) 
-        /*
-        if(count == undefined){
-            util.append(usercount.text(0));
-        }
-        else {    
-            util.append(usercount.text(count));
-        }
-        */
+        util.append(usercount.text($('#group-list').data(gid).length)) 
         li.append(group);
         li.append(util);
 
         return li;
     },
     
-    findGroupByName: function(groupname){
+    findGroupByName: function(groupname) {
        	$.post(
 			OC.generateUrl('/apps/sharing_group/findID'),
 			{
 				name: groupname
 			},
-			function (result) {
-                console.dir(result[0]);
+			function(result) {
                 if (typeof result != 'undefined') {
-				        $GroupListLi.after(GroupList.addLi(result[0], groupname));
-                        GroupList.addCheckbox(result[0],groupname);
-                        GroupList.sortGroups();
+				    $GroupListLi.after(GroupList.addLi(result[0], groupname));
+                    GroupList.addCheckbox(result[0],groupname);
+                    GroupList.sortGroups();
                 }
 		});
-
     },
 
-    showGroupList: function () {
+    showGroupList: function() {
 		$.get(
 			OC.generateUrl('/apps/sharing_group/getAllGroupsInfo'),
-			function (result) {
-                console.dir(result);
-			    $.each(result, function (index, value) {
-                    GroupList.groups.push(value.id);
-                    var button = $('<button>').attr({type: 'button', id:'mutigroupselect'}).text('Submit');
+			function(result) {
+			    $.each(result, function(index, group) {
+                    GroupList.groups.push(group.id);
+                    GroupList.groups_name.push(group.name);
 
-                    $GroupListLi.after(GroupList.addLi(value.id, value.name, value.count, value.user));
-                    GroupList.addCheckbox(value.id, value.name);
-                    
-                    //$groupsselect.append(GroupList.addOption(value.id).text(value.name) )
+                    $GroupListLi.after(GroupList.addLi(group.id, group.name, group.count, group.user));
                     GroupList.sortGroups();
-
                 });
 			}
 		);
 	},
+    
+    refreshGroupList: function() {
+        $.get(
+			OC.generateUrl('/apps/sharing_group/getAllGroupsInfo'),
+			function(result) {
+			    $.each(result, function(index, group) {
+                    if(group.user != null) {
+                        user = group.user.split(",", group.count);
+                        $('#group-list').data(group.id, user);
+                    }
+                    else {
+                        $('#group-list').data(group.id, []);
+                    }
+                    $('#' + group.name).find('.user-count').text($('#group-list').data(group.id).length); 
+                });
+			}
+		);
 
-    createGroup: function (groupname) {
+    },
+    
+    controlGroupUsers: function(multiGroup) {
+        $.post(
+            OC.generateUrl('/apps/sharing_group/controlGroupUser'),
+            {
+                multigroup: multiGroup
+            },
+            function(result, status) {
+                if(result == 'success') {
+                    GroupList.refreshGroupList();                    
+                }
+            }
+            ,'json'
+        );
+    },
+    
+    createGroup: function(groupname) {
 		$.post(
 			OC.generateUrl('/apps/sharing_group/create'),
 			{
 				name: groupname
 			},
-			function (result) {
+			function(result) {
 				if (result) {
                     GroupList.findGroupByName(groupname);			        
                 }
-                else{
-				    OC.dialogs.alert('Group already exists', 'Error create group');
+                else {
+				    OC.dialogs.alert(t(appname, 'Group already exists'), t(appname, 'Error create group'));
                 }
 				GroupList.toggleAddGroup();
 		});
 	},
 
-    sortGroups: function () {
-		var lis = $userGroupList.find('.isgroup').get();
+    sortGroups: function() {
+		var lis = $groupList.find('.isgroup').get();
 
-		lis.sort(function (a, b) {
+		lis.sort(function(a, b) {
 			// "Everyone" always at the top
 			if ($(a).data('gid') === '_everyone') {
 				return -1;
@@ -306,8 +316,8 @@ GroupList = {
 
 			if ($sortGroupBy === 1) {
 				// Sort by user count first
-				var $usersGroupA = $(a).data('usercount'),
-					$usersGroupB = $(b).data('usercount');
+				var $usersGroupA = $(a).data('user-count');
+				var	$usersGroupB = $(b).data('user-count');
 				if ($usersGroupA > 0 && $usersGroupA > $usersGroupB) {
 					return -1;
 				}
@@ -324,206 +334,188 @@ GroupList = {
 		});
 
 		var items = [];
-		$.each(lis, function (index, li) {
+		$.each(lis, function(index, li) {
 			items.push(li);
 			if (items.length === 100) {
-				$userGroupList.append(items);
+				$groupList.append(items);
 				items = [];
 			}
 		});
 		if (items.length > 0) {
-			$userGroupList.append(items);
+			$groupList.append(items);
 		}
 	},
     
-    deleteGroup: function (id, groupname){
+    refresh: function(gid) {           
+        GroupList.showGroup('_everyone');
+        var deleteGID = GroupList.groups.indexOf(gid);
+        GroupList.groups.splice(deleteGID,1);
+    },
+ 
+    deleteGroup: function (gid) {
         $.post(
 	        OC.generateUrl('/apps/sharing_group/deleteGroup'),
 			{
-				gid: id
-			},
-			function (result) {
-		        var i = GroupList.groups.indexOf(groupname);
-		        GroupList.groups.splice(i,1);
-        });
- 
+				gid: gid
+			}).done(GroupList.refresh(gid));
+    
     },
-    /*
-    checktristate: function(groupname){
-        var CheckLength = $('#checkuser').data("checkeduser").length;
-        var Length = $('#usergrouplist').data(groupname).length;
-        var $tristate = $('#id-' + groupname).tristate();
-
-        if(CheckLength == 0) {
-            $tristate.tristate('state', false);
-        }
-        if(CheckLength == Length) {
-            var difference = [];
-            difference = $.grep($('#usergrouplist').data(groupname), function(el) { 
-            return $.inArray(el, $('#checkuser').data("checkeduser")) == -1;
-        })
-        $
-            $tristate.tristate('state', true);
-        }
-        if(CheckLength != 0 && CheckLength != Length) {
-            $tristate.tristate('state', null);
-        }
-    }
-    */
 };
 
-$(document).ready( function () {
-	$userGroupList = $('#usergrouplist');
-	$GroupListLi = $('#usergrouplist #everyonegroup');
+$(function() {
+	$groupList = $('#group-list');
+	$GroupListLi = $('#group-list #everyone-group');
 	GroupList.showGroupList();
     // Display or hide of Create Group List Element
 	$('#newgroup-form').hide();
-	$('#newgroup-init').on('click', function (e) {
-	
+	$('#newgroup-init').on('click', function(e) {
         GroupList.toggleAddGroup(e);
 	});
     
     
 	$(document).on('click', function(event) {
-       
-        if(!GroupList.isAddGroupButtonVisible() &&
+        if (!GroupList.isAddGroupButtonVisible() &&
 			!GroupList.elementBelongsToAddGroup(event.target)) {
 			GroupList.toggleAddGroup();
 		}
-        
 	});
     
-    
-    $('#newgroupname').keyup(function(event) {
-        if($.inArray($('#newgroupname').val(),GroupList.groups) > -1) {
-            $('#newgroupname').addClass("ui-status-error");
+    $('#newgroup-name').keyup(function(event) {
+        var newgroupname = $('#newgroup-name');
+        if ($.inArray(newgroupname.val(), GroupList.groups_name) > -1) {
+            newgroupname.addClass("ui-status-error");
         }
         else {
-            $('#newgroupname').removeClass("ui-status-error");
+            newgroupname.removeClass("ui-status-error");
         }
         
-        if(!GroupList.isAddGroupButtonVisible() && event.keyCode === $.ui.keyCode.ESCAPE) {
+        if (!GroupList.isAddGroupButtonVisible() && event.keyCode === $.ui.keyCode.ESCAPE) {
 			GroupList.toggleAddGroup();
 		}
-
-    });
-/* 
-    $(document).on('click', function(event) {
-        console.dir(event);
-        if(event.target.parentElement.className != 'group editing'){
-            //event.stopPropagation();
-            //event.preventDefault();
-            //$('#newgroup-form').remove();
-            //$('#newgroup-init').show();
-            GroupList.toggleAddGroup();
-            $(document).off('click');
+        if (event.which == $.ui.keyCode.ENTER && !newgroupname.hasClass('ui-status-error')) {
+            GroupList.createGroup(newgroupname.val());
         }
-    });
-  */  
 
+    });
 	// Responsible for Creating Groups.
-	$('#newgroup-form form').submit(function (event) {
+	$('#newgroup-form .button').click(function(event) {
 		//event.preventDefault();
-        if(GroupList.isGroupNameValid($('#newgroupname').val()) && !$('#newgroupname').hasClass('ui-status-error')) {
-			GroupList.createGroup($('#newgroupname').val());
+        var newgroupname = $('#newgroup-name');
+        if(GroupList.isGroupNameValid(newgroupname.val()) && !newgroupname.hasClass('ui-status-error')) {
+			GroupList.createGroup(newgroupname.val());
         }
 	});
 
 	// click on group name
-	$userGroupList.on('click', 'li.isgroup', function (event) {
+	$groupList.on('click', 'li.isgroup', function(event) {
+        var group = $(this);
         if($(event.target).is('.action.delete')) {
-            //$('li.isgroup.active').removeClass('active').addClass('load');
-			var id = $(this).find('a').closest('li').data('gid');
-            var groupname = $(this).find('.groupname').text();
+			var id = group.find('a').closest('li').data('gid');
+            var groupname = group.find('.group-name').text();
 
-            OC.dialogs.confirm('Are you sure delete group'+ ' ' + groupname, 'Sharing_Group',
-                function(result){
-                    if(result == true) {
-                        GroupList.deleteGroup(id, groupname);
-                        $('.isgroup.active').remove();
-                    }
-                }, true
-            
+            OC.dialogs.confirm(t(appname, 'Are you sure delete group ')  + groupname, t(appname, 'Sharing_Group'),
+            function(result) {
+                if (result == true) {
+                    GroupList.deleteGroup(id);
+                    $groupList.find('#' + groupname).remove();
+                    var deleteGroupname = GroupList.groups.indexOf(groupname);
+                    GroupList.groups.splice(deleteGroupname,1);
+                }
+            }, true
             );
-            
-
-            /*
-            $('.tipsy').remove();
-			$(this).addClass('loading').removeClass('active');
-			event.stopPropagation();
-			event.preventDefault();
-			var id = $(event.target).parents('li').first().data('id');
-			self.deleteGroup(id, function(response) {
-				if(response.error) {
-					OC.notify({message:response.message});
-				}
-			});
-            */
-        } else if($(event.target).is('.action.rename')) {
+        } else if ($(event.target).is('.action.rename')) {
             event.stopPropagation();
 			event.preventDefault();
-            GroupList.editGroup($(this));
+            GroupList.editGroup(group);
         } else {
-            //console.dir($(this).data('gid'));
-            GroupList.showGroup(GroupList.getElementGID($(this)));
-            //GroupList.showGroup($('li.isgroup.a').data('gid'));
-	    
+            GroupList.showGroup(GroupList.getElementGID(group));
         }
     });
     
-	$('#newgroupname').on('input', function() {
+    $('.sg-dropdown-scrollable').delegate('input:checkbox', 'click', function() {
+        var checkbox = $(this);
+        if(checkbox.data('origin') == 'unchecked' && checkbox.attr('checked') == undefined) {
+            checkbox.tristate('state', null);
+        }
+        if(checkbox.data('origin') == 'checked' && checkbox.attr('checked') == undefined){
+            checkbox.tristate('state', null);
+        }
+    });
+    
+    $('.sg-dropdown-scrollable').delegate('input:checkbox', 'click', function() {
+       $(this).data('click',1);
+    });
+
+    $('#toggle-group').click(function(event) {
+        $('.sg-dropdown-menu.checkuser').attr({hidden:true});
+        $('.sg-dropdown-menu.group').attr({hidden:!$('.sg-dropdown-menu.group').attr('hidden')});
+        $('.sg-dropdown-scrollable').find('li').remove();
+        $.each($groupList.find('li'), function(index, group) {
+            if ($(group).data('gid') != null && $(group).data('gid') != '_everyone') {
+               GroupList.addCheckbox($(group).data('gid'), group.id)
+            }
+        });
+        
+        $.each($('.sg-dropdown-scrollable').find('li input'), function(index, group) {
+            UserList.checktristate(group.id); 
+        });
+
+    });
+    
+    $('#multi-group-select').click(function() {
+        var multiGroup = {};
+
+        $.each($('.sg-dropdown-scrollable').find('li input '), function(index, group) {
+            var id = group.id.split('-')[1];
+            var checked = $('#' + group.id).attr('checked'); 
+            var indeterminate = $('#' + group.id).attr('indeterminate'); 
+            var click = $('#' + group.id).data('click');
+            
+            var data_add = UserList.compareDifference($('#checkuser').data('checkeduser'),$('#group-list').data(id)); 
+            var data_remove = UserList.compareSame(id);
+            
+            if (checked != undefined && click == 1 ) {
+                if (data_add.length != 0) {
+                    var action = 'add:' + data_add.join(",");
+                    multiGroup[id] = action;
+                }
+            }
+            
+            if (checked == undefined && indeterminate == undefined && click == 1) {
+                if (data_remove.length != 0) {
+                    var action = 'remove:' + data_remove.join(",");
+                    multiGroup[id] = action;
+                }
+            }
+        });
+        if (!$.isEmptyObject(multiGroup)){
+            GroupList.controlGroupUsers(multiGroup);
+        }
+        $('.sg-dropdown-menu').attr({hidden:true});
+    });
+
+    $('#cancel').click(function() {
+        $('.sg-dropdown-menu').attr({hidden:true});
+    });
+	
+	$('#newgroup-name').on('input', function() {
 		GroupList.handleAddGroupInput(this.value);
 	});
     
     $('.export').click(function() {
-        //document.location.href = OC.generateUrl('/apps/sharing_group/export');
-        
-        //var form = $('<form>').attr({action: '/owncloud/download.php', method: 'GET'});
-        var form = $('<form>').attr({action: OC.generateUrl('/apps/sharing_group/export'), method: 'GET'});
-
+        var form = $('<form>').attr({
+            action: OC.generateUrl('/apps/sharing_group/export'),
+            method: 'GET'
+        });
         form.trigger('submit');
-
-        //document.location.href = OC.generateUrl('/apps/sharing_group/download');
     });
     
-    $('.import').click(function(){
+    $('.import').click(function() {
         $('#upload').trigger('click')
-        
     });
+    
     $('#upload').fileupload({
         url: OC.generateUrl('/apps/sharing_group/importGroup'),
     });
-    /*$('#upload').change(function(event){
-        var file = event.target.files[0];
-        var files= this.files[0]; 
-        console.dir(typeof( event.target.files[0]));
-        console.dir(typeof(files ));
-        console.dir(files);
-        console.dir(this);
-        //var fd = new FormData();
-        //fd.append("fileToUpload", file);
-
-        $.ajax({
-            url: OC.generateUrl('/apps/sharing_group/importGroup'),
-            type: 'POST',
-            
-            beforeSend: function (xhr) {
-                xhr.setRequestHeader('Content-Type','multipart/form-data');
-            },
-            
-            //headers: { 'Content-Type': 'multipart/form-data' },
-            cache: false,
-            contentType: false,
-            processData: false,
-            //data: fd
-        });
-        $.post(
-	        OC.generateUrl('/apps/sharing_group/importGroup'),
-			{
-				data: files
-			}
-        );
-
-    });*/
-        
+       
 });

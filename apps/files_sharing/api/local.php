@@ -37,7 +37,7 @@ class Local {
 	 * @return \OC_OCS_Result share information
 	 */
 	public static function getAllShares($params) {
-		if (isset($_GET['shared_with_me']) && $_GET['shared_with_me'] !== 'false') {
+        if (isset($_GET['shared_with_me']) && $_GET['shared_with_me'] !== 'false') {
 				return self::getFilesSharedWithMe();
 			}
 		// if a file is specified, get the share for this file
@@ -57,8 +57,12 @@ class Local {
 			}
 			return self::collectShares($params);
 		}
-
+        $sharing_groups = '';
 		$shares = \OCP\Share::getItemShared('file', null);
+
+        foreach(\OCA\Sharing_group\Data::readGroups() as $group) {
+            $sharing_groups[$group['id']] = $group['name'];
+        }
 
 		if ($shares === false) {
 			return new \OC_OCS_Result(null, 404, 'could not get shares');
@@ -71,10 +75,14 @@ class Local {
 					}
 					$share['icon'] = substr(\OC_Helper::mimetypeIcon($share['mimetype']), 0, -3) . 'svg';
 				}
+
+                if($share['share_type'] === \OCP\Share::SHARE_TYPE_SHARING_GROUP) {
+                    $share['share_with'] = $sharing_groups[$share['share_with']];
+                    $share['share_with_displayname'] = $sharing_groups[$share['share_with_displayname']];
+                }
 			}
 			return new \OC_OCS_Result($shares);
 		}
-
 	}
 
 	/**
@@ -84,7 +92,6 @@ class Local {
 	 * @return \OC_OCS_Result share information
 	 */
 	public static function getShare($params) {
-        
 		$s = self::getShareFromId($params['id']);
 		$params['itemSource'] = $s['file_source'];
 		$params['itemType'] = $s['item_type'];
@@ -100,7 +107,6 @@ class Local {
 	 * @return \OC_OCS_Result
 	 */
 	private static function collectShares($params) {
-
 		$itemSource = $params['itemSource'];
 		$itemType = $params['itemType'];
 		$getSpecificShare = isset($params['specificShare']) ? $params['specificShare'] : false;
@@ -573,7 +579,6 @@ class Local {
 		$args = array($shareID);
 		$query = \OCP\DB::prepare($sql);
 		$result = $query->execute($args);
-
 		if (\OCP\DB::isError($result)) {
 			\OCP\Util::writeLog('files_sharing', \OC_DB::getErrorMessage(), \OCP\Util::ERROR);
 			return null;

@@ -19,25 +19,9 @@ script('core', [
 style('sharing_group', [
     'sharing_group',
     'style',
+    'dropdown'
 ]);
 
-
-$userlistParams = array();
-$allGroups=array();
-/*foreach($_["groups"] as $group) {
-    $allGroups[] = $group['name'];
-}
-foreach($_["adminGroup"] as $group) {
-    $allGroups[] = $group['name'];
-}
-$userlistParams['subadmingroups'] = $allGroups;
-$userlistParams['allGroups'] = json_encode($allGroups);
-$items = array_flip($userlistParams['subadmingroups']);
-unset($items['admin']);
-$userlistParams['subadmingroups'] = array_flip($items);
-
-translation('settings');
-*/
 ?>
 
 <div id="app">
@@ -48,7 +32,7 @@ translation('settings');
 
 	<div id="app-content">
 		<div id="app-content-wrapper">
-			<?php print_unescaped($this->inc('part.searchuser')); ?>
+			<?php print_unescaped($this->inc('part.controls')); ?>
 			<?php print_unescaped($this->inc('part.userlist')); ?>
 		</div>
 	</div>

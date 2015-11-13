@@ -379,7 +379,6 @@ class Filesystem {
 
 		$userManager = \OC::$server->getUserManager();
 		$userObject = $userManager->get($user);
-
 		if (is_null($userObject)) {
 			\OCP\Util::writeLog('files', ' Backends provided no user object for ' . $user, \OCP\Util::ERROR);
 			throw new \OC\User\NoUserException('Backends provided no user object for ' . $user);

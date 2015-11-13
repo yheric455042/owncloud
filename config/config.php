@@ -20,4 +20,5 @@ $CONFIG = array (
   'installed' => true,
   'theme' => '',
   'maintenance' => false,
+  'loglevel' => 3,
 );

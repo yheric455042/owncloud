@@ -343,6 +343,7 @@ OC.Share={
             });
         } else if(data.reshare != 0) {
             if(data.reshare.share_type === 7) {
+		console.dir(data.reshare);
                 data.reshare.share_with = OC.Share.findSharingGroupName(data.reshare.share_with, groups);
             }
         }
@@ -425,7 +426,6 @@ OC.Share={
 				html += t('core', 'Shared with you and the group {group} by {owner}', {group: data.reshare.share_with, owner: data.reshare.displayname_owner});
 			} else if (data.reshare.share_type == OC.Share.SHARE_TYPE_SHARING_GROUP) {
 				html += t('core', 'Shared with you and the sharing group {group} by {owner}', {group: data.reshare.share_with, owner: data.reshare.displayname_owner});
-                console.dir(data);
 			} else {
 				html += t('core', 'Shared with you by {owner}', {owner: data.reshare.displayname_owner});
 			}

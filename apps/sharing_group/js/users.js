@@ -1,8 +1,8 @@
-var $userList;
-//var $userListBody;
-var $userListUl;
-var filter;
-var uid = [];
+var $userList,
+    $userListUl,
+    filter,
+    appname = 'sharing_group';
+    uid = [];
 
 var UserList = {
 	availableGroups: [],
@@ -10,26 +10,24 @@ var UserList = {
 	usersToLoad: 10, //So many users will be loaded when user scrolls down
 	currentGid: '',
 
-
 	preSortSearchString: function(a, b) {
 		var pattern = filter.getPattern();
-		if(typeof pattern === 'undefined') {
+		var aMatches = false;
+		var bMatches = false;
+
+        if(typeof pattern === 'undefined') {
 			return undefined;
 		}
 		pattern = pattern.toLowerCase();
-		var aMatches = false;
-		var bMatches = false;
 		if(typeof a === 'string' && a.toLowerCase().indexOf(pattern) === 0) {
 			aMatches = true;
 		}
 		if(typeof b === 'string' && b.toLowerCase().indexOf(pattern) === 0) {
 			bMatches = true;
 		}
-
 		if((aMatches && bMatches) || (!aMatches && !bMatches)) {
 			return undefined;
 		}
-
 		if(aMatches) {
 			return -1;
 		} else {
@@ -80,60 +78,134 @@ var UserList = {
    
     empty: function() {
 		//one row needs to be kept, because it is cloned to add new rows
-		$userList.find('li').remove();
-		
+		$userList.find('label').remove();
         UserList.isEmpty = true;
 		UserList.offset = 0;
 		UserList.checkUsersToLoad();
 	},
+    compareDifference :function(array1, array2) {
+        var difference = [];
+        difference = $.grep(array1, function(el) {
+            return $.inArray(el, array2) == -1;
+        })
+        /*
+        difference = $.grep($('#usergrouplist').data(id), function(el) {
+            return $.inArray(el, $('#checkuser').data("checkeduser")) == -1;
+        })
+        */
+        return difference;
+    },
     
-    checktristate: function(groupname){
-        var checkLength = $('#checkuser').data("checkeduser").length;
-        var userLength = $('#checkuser').data("user").length;
+    compareSame: function(gid) {
+        var users = [];
+        var length = 0;
+        $('#group-list').data(gid).filter(function(user) {
+            $.each($('#checkuser').data('checkeduser'), function(index, checkuser) {
+                if (user == checkuser) {
+                    users.push(user);
+                }
+            });
+        });
+        return users;
+    },
+    
+    checktristate: function(groupid) {
+        var checkLength = $('#checkuser').data('checkeduser').length;
+        var userLength = $('#checkuser').data('user').length;
         var $tristate = $('#checkuser').tristate();
         
-        if(groupname != undefined){ 
-            groupLength = $('#usergrouplist').data(groupname).length;
-            var $tristate = $('#id-' + groupname);
-            var difference = [];
-                
-            difference = $.grep($('#usergrouplist').data(groupname), function(el) { 
-                return $.inArray(el, $('#checkuser').data("checkeduser")) == -1;
-            })
+        if(groupid != undefined) { 
+            var id = groupid.split('-')[1];
+            var groupLength = $('#group-list').data(id).length;
+            var $tristate = $('#id-' + id);
+            var sameLength = UserList.compareSame(id).length;    
             
-            //console.dir(difference);
-            if(difference.length != groupLength) {
-                $tristate.tristate('state', null);
-                $tristate.data("origin",'indeterminate');
-            }
-            if(groupLength != 0 && difference.length == 0){
+            if (sameLength == checkLength) {
                 $tristate.tristate('state', true);
-                $tristate.data("origin",'checked');
+                $tristate.data('origin','checked');
             }
-            
-            //$tristate.data("origin",$tristate.val());
-            //console.dir($tristate.data("origin"));
+            else if (sameLength != 0 && sameLength != checkLength) {
+                $tristate.tristate('state', null);
+                $tristate.data('origin','indeterminate');
+            }
+            else if (sameLength == 0) {
+                $tristate.tristate('state', false);
+                $tristate.data('origin','unchecked');
+            }
         }
         else {
-            if(checkLength == 0) {
+            if (checkLength == 0) {
                 $tristate.tristate('state', false);
+                $tristate.data('origin','unchecked');
             }
-         
-            if(checkLength == userLength)  {
+            else if (checkLength == userLength)  {
                 $tristate.tristate('state', true);
+                $tristate.data('origin','checked');
             }
-
-            if(checkLength != 0) {
+            else if (checkLength != 0 && checkLength != userLength) {
                 $tristate.tristate('state', null);
+                $tristate.data('origin','indeterminate');
             }
         }
     },
 
-	update: function (gid, limit) {
+    
+    addLabel: function(user) {
+        if(user != undefined) {
+            var div = $('<div>');
+            var checkbox = $('<input>').attr({
+                type: 'checkbox', 
+                id: 'id-' + user, 
+                checked:false
+            });
+            var span = $('<span>').text(user);
+            var label = $('<label>').attr({
+                for: 'id-' + user, 
+                class:'checkbox-card'
+            });
+                       
+            label.append(checkbox);
+            label.append(span);
+            $userList.find('div').append(label);
+        }
+        else {
+            var span = $('<span>').text(t(appname,'This group is empty'));
+            var label = $('<label>');
+                    
+            label.append(span);
+            $userList.find('div').append(label);
+        }
+    },
+	
+    clearAll: function() {
+        $.each($('#checkuser').data('checkeduser'), function(index, user) {
+            var user = $('#id-' + user);
+            
+            user.attr({
+                'checked':false
+            });
+            user.closest('label').removeClass('checked');
+        });
+        $('#checkuser').data('checkeduser', []);
+        UserList.checktristate();
+    },
+    
+    checkAll: function() {
+        $('#checkuser').data('checkeduser', $('#checkuser').data('user'));
+        
+        $.each($('#checkuser').data('user') , function(index, user) {
+            var user = $('#id-' + user);
+            
+            user.attr({'checked':true});
+            user.closest('label').addClass('checked');
+        });
+        UserList.checktristate();
+    },
+
+    update: function (gid, limit) {
 		if (UserList.updating) {
 			return;
 		}
-		
         if(!limit) {
 			limit = UserList.usersToLoad;
 		}
@@ -143,29 +215,28 @@ var UserList = {
 			gid = '';
 		}
 		UserList.currentGid = gid;
-		//console.dir(UserList.currentGid);
         var pattern = filter.getPattern();
 		$.get(
 			OC.generateUrl('/apps/sharing_group/user'),
-			{ offset: UserList.offset, limit: limit, gid: gid, pattern: pattern },
-			function (result) {
+			{ 
+                offset: UserList.offset, 
+                limit: limit, 
+                gid: gid, 
+                pattern: pattern 
+            },
+			function (users) {
                 $('#checkuser').data({
-                    'user':result ,
+                    'user': users,
                     'checkeduser':[] ,
                     'different': [],
+                    'origin': 'unchecked',
                 });
-
-                $.each(result, function (index, value) {
-				    var li = $('<li>').attr({class:'users'});
-                    var checkbox = $('<input>').attr({type: 'checkbox', id: 'id-' + value, checked:false});
-                    var label = $('<label>').attr({ for: 'id-' + value}).text(value);
-                   
-                    li.append(checkbox);
-                    li.append(label);
-
-                    $userList.append(li);
+                
+                $.each(users, function (index, user) {
+                    UserList.addLabel(user);
                 });
-				if (result.length > 0) {
+				
+                if (users.length > 0) {
 					$userList.siblings('.loading').css('visibility', 'hidden');
 					// reset state on load
 					UserList.noMoreEntries = false;
@@ -181,139 +252,113 @@ var UserList = {
     },
 };
 
-$(document).ready(function () {
-	$userList = $('#userlist');
-	$groupsselect = $('.groupsselect');
-    //$userListBody = $userList.find('tbody');
+$(function () {
+	$userList = $('#user-list');
          
 	// Implements User Search
 	filter = new UserManagementFilter($('#usersearchform input'), UserList, GroupList);
-
-    //UserList.availableGroups = $userList.data('groups');
-
-	//UserList.scrollArea = $('#app-content');
-	//UserList.scrollArea.scroll(function(e) {UserList._onScroll(e);});
-
+    
 	$userList.after($('<div class="loading" style="height: 200px; visibility: hidden;"></div>'));
     // calculate initial limit of users to load
-	var initialUserCountLimit = 20,
-		containerHeight = $('#app-content').height();
-	if(containerHeight > 40) {
-		initialUserCountLimit = Math.floor(containerHeight/40);
+	var initialUserCountLimit = 20;
+	var	containerHeight = $('#app-content').height();
+	
+    if (containerHeight > 40) {
+		initialUserCountLimit = Math.floor(containerHeight / 40);
 		while((initialUserCountLimit % UserList.usersToLoad) !== 0) {
 			// must be a multiple of this, otherwise LDAP freaks out.
 			// FIXME: solve this in LDAP backend in  8.1
 			initialUserCountLimit = initialUserCountLimit + 1;
 		}
 	}
-
-    $('#controls').delegate("input:checkbox","click",function(){
-        //console.dir($(this).data('origin'));
-        if($(this).data('origin') == 'unchecked' && $(this).attr('checked') == undefined) {
-            //console.dir($(this).attr('indeterminate'));
-            $(this).tristate('state', null);
-        }
-        if($(this).data('origin') == 'checked' && $(this).attr('checked') == undefined){
-            $(this).tristate('state', null);
-        }
-    });
-
-    $userList.delegate("input:checkbox","click",function(){
-        $(this).prop('checked') ? $(this).attr({'checked':true}) :  $(this).attr({'checked':false}) ;
-        var name = $(this).closest('li').find('label').text();
+    
+    $userList.delegate('input:checkbox', 'click' , function() {
+        var checkboxForUser = $(this);
+        var name = checkboxForUser.closest('label').find('span').text();
         
-        if($(this).prop('checked')) {
-           $('#checkuser').data("checkeduser").push(name);
+        checkboxForUser.prop('checked') ? checkboxForUser.attr({'checked':true}) :  checkboxForUser.attr({'checked':false});
+        
+        if (checkboxForUser.prop('checked')) {
+            checkboxForUser.closest('label').addClass('checked');
+            $('#checkuser').data('checkeduser').push(name);
         }
         else {
-           var index = $('#checkuser').data("checkeduser").indexOf(name);
+            checkboxForUser.closest('label').removeClass('checked');
+            var index = $('#checkuser').data('checkeduser').indexOf(name);
 
-           $('#checkuser').data("checkeduser").splice( index , 1);
+            $('#checkuser').data('checkeduser').splice(index , 1);
         }
         UserList.checktristate();
-       //console.dir(GroupList.groups); 
-        $.each(GroupList.groups, function(index, value) {
-            UserList.checktristate(value); 
-        });
-    
     });
-    $('#checkall').click(function() {
-         
-        $.each($('#checkuser').data("user") , function(index,value) {
-            $('#checkuser').data("checkeduser")[index] = value;
-            $('#id-' + value).attr({'checked':true});
-        });
-        UserList.checktristate();
-        $.each(GroupList.groups, function(index, value) {
-            UserList.checktristate(value); 
-        });
     
-
-    });
-
-    $('#clearall').click(function() {
-        $.each($('#checkuser').data("checkeduser"), function(index,value) {
-            $('#id-' + value).attr({'checked':false});
-        });
-        $('#checkuser').data("checkeduser",[]);
-        UserList.checktristate();
+    $('#checkuser').click( function() {
+        var originState = $('#checkuser').data('origin'); 
+        var checkuser = $('#checkuser'); 
         
-        $.each(GroupList.groups, function(index, value) {
-            //console.dir(value);
-            UserList.checktristate(value); 
+        if (originState == 'indeterminate') {
+            UserList.clearAll();
+            checkuser.tristate('state', null);
+        }
+        else if (originState == 'unchecked') {
+            UserList.checkAll();
+            checkuser.tristate('state', false);
+        }
+        else if (originState == 'checked') {
+            UserList.clearAll();
+            checkuser.tristate('state', null);
+        }
+        
+        event.stopPropagation();
+    });
+
+    $('#toggle-checkbox').click(function(event) {
+        $('.sg-dropdown-menu.checkuser').attr({
+            hidden:!$('.sg-dropdown-menu.checkuser').attr('hidden')
         });
-    
+        $('.sg-dropdown-menu.group').attr({hidden:true});
+    });
+
+    $(document).on('click', function(event) {
+        if ($(event.target).closest('.sg-dropdown').length != 1  && $(event.target).closest('#sg-dropdown-group').length != 1 ) {
+            $('.sg-dropdown-menu').attr({hidden:true});
+        }
+    });
+
+
+    $('#check-all').click(function() {
+        UserList.checkAll();
+        $('.sg-dropdown-menu').attr({hidden:true});
+    });
+
+    $('#clear-all').click(function() {
+        UserList.clearAll();
+        $('.sg-dropdown-menu').attr({hidden:true});
     });
     
     $('#inverse').click(function() {
-        var difference = [];
-        difference = $.grep($('#checkuser').data("user"), function(el) { 
-            return $.inArray(el, $('#checkuser').data("checkeduser")) == -1;
-        })
-        $.each($('#checkuser').data("checkeduser") , function(index,value) {
-            $('#id-' + value).attr({'checked':false});
-        });
-        $('#checkuser').data("checkeduser",difference);
-        $.each($('#checkuser').data("checkeduser") , function(index,value) {
-            $('#id-' + value).attr({'checked':true});
-        });
-        UserList.checktristate();
+        var checkusers = $('#checkuser').data('checkeduser');
+        var difference = UserList.compareDifference($('#checkuser').data('user'), checkusers);
         
-        $.each(GroupList.groups, function(index, value) {
-            //console.dir(value);
-            UserList.checktristate(value); 
+        $.each(checkusers , function(index, user) {
+            var user = $('#id-' + user);
+            
+            user.attr({'checked':false});
+            user.closest('label').removeClass('checked');
         });
+        
+        $('#checkuser').data('checkeduser',difference);
+        
+        $.each($('#checkuser').data('checkeduser'), function(index, user) {
+            var user = $('#id-' + user);
+            
+            user.attr({'checked':true});
+            user.closest('label').addClass('checked');
+        });
+        
+        UserList.checktristate();
+        $('.sg-dropdown-menu').attr({hidden:true});
     });
    
-    $('#mutigroupselect').click(function() {
-        var mutiGroup = {};
-        
-        $.each(GroupList.groups, function(index, value) {
-            if($('#id-'+value).attr('checked') != undefined) {
-                var action = {
-                    add: $('#checkuser').data('checkeduser')
-                }
-                mutiGroup[value] = action;
-            }
-            if($('#id-'+value).attr('checked') == undefined && $('#id-'+value).attr('indeterminate') == undefined) {
-                var action = {
-                    remove: $('#checkuser').data('checkeduser')
-                }
-                mutiGroup[value] = action;
-            }
-        });
-        console.dir(mutiGroup); 
-        $.post(
-			OC.generateUrl('/apps/sharing_group/controlGroupUser'),
-            {
-                mutigroup: mutiGroup
-            },
-            function(result){
-            }
-            ,'json'
-        );
-    });
-	// trigger loading of users on startup
+    // trigger loading of users on startup
 	UserList.update(UserList.currentGid, initialUserCountLimit);
-
 });

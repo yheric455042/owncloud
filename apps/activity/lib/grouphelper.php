@@ -81,6 +81,8 @@ class GroupHelper
 	 * @param array $activity
 	 */
 	public function addActivity($activity) {
+        
+        file_put_contents('activity',print_r($activity,true),FILE_APPEND);
 		$activity['subjectparams_array'] = $this->dataHelper->getParameters($activity['subjectparams']);
 		$activity['messageparams_array'] = $this->dataHelper->getParameters($activity['messageparams']);
 

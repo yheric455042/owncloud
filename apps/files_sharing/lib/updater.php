@@ -72,7 +72,6 @@ class Shared_Updater {
 	static public function postShareHook($params) {
 
 		if ($params['itemType'] === 'folder' || $params['itemType'] === 'file') {
-
 			$shareWith = $params['shareWith'];
 			$shareType = $params['shareType'];
 
@@ -82,7 +81,12 @@ class Shared_Updater {
 				foreach (\OC_Group::usersInGroup($shareWith) as $user) {
 					self::correctUsersFolder($user, $params['fileTarget']);
 				}
+			} elseif ($shareType === \OCP\Share::SHARE_TYPE_SHARING_GROUP) {
+				foreach (\OCA\Sharing_Group\Data::readGroupUsers($shareWith) as $user) {
+					self::correctUsersFolder($user, $params['fileTarget']);
+				}
 			}
+
 		}
 	}
 
@@ -105,6 +109,10 @@ class Shared_Updater {
 					foreach (\OC_Group::usersInGroup($share['shareWith']) as $user) {
 						self::correctUsersFolder($user, $share['fileTarget']);
 					}
+				} else if ($share['shareType'] === \OCP\Share::SHARE_TYPE_SHARING_GROUP) {
+					foreach (\OCA\Sharing_Group\Data::readGroupUsers($share['shareWith']) as $user) {
+						self::correctUsersFolder($user, $share['fileTarget']);
+					}
 				} else {
 					self::correctUsersFolder($share['shareWith'], $share['fileTarget']);
 				}
@@ -123,7 +131,11 @@ class Shared_Updater {
 					foreach (\OC_Group::usersInGroup($item['shareWith']) as $user) {
 						self::correctUsersFolder($user, $item['fileTarget']);
 					}
-				} else {
+				} else if ($share['shareType'] === \OCP\Share::SHARE_TYPE_SHARING_GROUP) {
+					foreach (\OCA\Sharing_Group\Data::readGroupUsers($share['shareWith']) as $user) {
+						self::correctUsersFolder($user, $share['fileTarget']);
+                    } 
+                } else {
 					self::correctUsersFolder($item['shareWith'], $item['fileTarget']);
 				}
 			}

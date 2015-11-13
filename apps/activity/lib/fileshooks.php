@@ -175,9 +175,9 @@ class FilesHooks {
 				if ((int) $params['shareType'] === Share::SHARE_TYPE_USER) {
 					$this->shareFileOrFolderWithUser($params);
 				} else if ((int) $params['shareType'] === Share::SHARE_TYPE_GROUP) {
-					$this->shareFileOrFolderWithGroup($params,Share::SHARE_TYPE_GROUP);
+					$this->shareFileOrFolderWithGroup($params);
                 } else if ((int) $params['shareType'] === Share::SHARE_TYPE_SHARING_GROUP) {
-					$this->shareFileOrFolderWithGroup($params,Share::SHARE_TYPE_SHARING_GROUP);
+					$this->shareFileOrFolderWithGroup($params);
                 }
 
 			} else {
@@ -208,9 +208,9 @@ class FilesHooks {
 	 * Sharing a file or folder with a group
 	 * @param array $params The hook params
 	 */
-	protected function shareFileOrFolderWithGroup($params, $type) {
+	protected function shareFileOrFolderWithGroup($params) {
 		// User performing the share
-        $subject = ($type == Share::SHARE_TYPE_GROUP) ? 'shared_group_self' : 'shared_sharing_group_self';
+        $subject = ($params['share_with'] == Share::SHARE_TYPE_GROUP) ? 'shared_group_self' : 'shared_sharing_group_self';
 		$this->shareNotificationForSharer($subject, $params['shareWith'], $params['fileSource'], $params['itemType']);
 
 		// Members of the new group

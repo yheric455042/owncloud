@@ -1,1 +1,2400 @@
-272144480514940file_createdadminadminfilescreated_self["\/getusersshaorng.txt"][]/getusersshaorng.txthttp://172.20.3.61/owncloud/index.php/apps/files?dir=%2F
+Array
+(
+    [activity_id] => 982
+    [timestamp] => 1447319879
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_sharing_group_self
+    [subjectparams] => ["\/bbbbb.txt",""]
+    [message] => 
+    [messageparams] => []
+    [file] => /bbbbb.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 981
+    [timestamp] => 1447315311
+    [priority] => 40
+    [type] => file_deleted
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files
+    [subject] => deleted_self
+    [subjectparams] => ["\/bbb.txt"]
+    [message] => 
+    [messageparams] => []
+    [file] => /bbb.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 980
+    [timestamp] => 1447315297
+    [priority] => 40
+    [type] => file_created
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files
+    [subject] => created_self
+    [subjectparams] => ["\/bbb.txt"]
+    [message] => 
+    [messageparams] => []
+    [file] => /bbb.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 979
+    [timestamp] => 1447315104
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_sharing_group_self
+    [subjectparams] => ["\/home.svg",""]
+    [message] => 
+    [messageparams] => []
+    [file] => /home.svg
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 977
+    [timestamp] => 1447313959
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_sharing_group_self
+    [subjectparams] => ["\/zzzzz.txt",""]
+    [message] => 
+    [messageparams] => []
+    [file] => /zzzzz.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 976
+    [timestamp] => 1447297246
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_sharing_group_self
+    [subjectparams] => ["\/xxxxx.txt",""]
+    [message] => 
+    [messageparams] => []
+    [file] => /xxxxx.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 975
+    [timestamp] => 1447297241
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_sharing_group_self
+    [subjectparams] => ["\/home.svg",""]
+    [message] => 
+    [messageparams] => []
+    [file] => /home.svg
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 973
+    [timestamp] => 1447296568
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_user_self
+    [subjectparams] => ["\/aaa.txt","user3"]
+    [message] => 
+    [messageparams] => []
+    [file] => /aaa.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 971
+    [timestamp] => 1447296316
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_sharing_group_self
+    [subjectparams] => ["\/home.svg",""]
+    [message] => 
+    [messageparams] => []
+    [file] => /home.svg
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 967
+    [timestamp] => 1447236876
+    [priority] => 30
+    [type] => shared
+    [user] => a
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_with_by
+    [subjectparams] => ["\/Photos (2)","a"]
+    [message] => 
+    [messageparams] => []
+    [file] => /Photos (2)
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2FPhotos+%282%29
+)
+Array
+(
+    [activity_id] => 961
+    [timestamp] => 1447236307
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_group_self
+    [subjectparams] => ["\/xxxxx.txt","admin"]
+    [message] => 
+    [messageparams] => []
+    [file] => /xxxxx.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 960
+    [timestamp] => 1447236304
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_sharing_group_self
+    [subjectparams] => ["\/xxxxx.txt",""]
+    [message] => 
+    [messageparams] => []
+    [file] => /xxxxx.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 951
+    [timestamp] => 1447236068
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_sharing_group_self
+    [subjectparams] => ["\/xxxxx.txt",""]
+    [message] => 
+    [messageparams] => []
+    [file] => /xxxxx.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 950
+    [timestamp] => 1447235970
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_sharing_group_self
+    [subjectparams] => ["\/xxxxx.txt",""]
+    [message] => 
+    [messageparams] => []
+    [file] => /xxxxx.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 940
+    [timestamp] => 1447223351
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_sharing_group_self
+    [subjectparams] => ["\/vvvv.txt",""]
+    [message] => 
+    [messageparams] => []
+    [file] => /vvvv.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 937
+    [timestamp] => 1447214067
+    [priority] => 40
+    [type] => file_changed
+    [user] => user4
+    [affecteduser] => admin
+    [app] => files
+    [subject] => changed_by
+    [subjectparams] => ["\/bbbbbb.txt","user4"]
+    [message] => 
+    [messageparams] => []
+    [file] => /bbbbbb.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 929
+    [timestamp] => 1447214027
+    [priority] => 40
+    [type] => file_changed
+    [user] => wilson
+    [affecteduser] => admin
+    [app] => files
+    [subject] => changed_by
+    [subjectparams] => ["\/bbbbbb.txt","wilson"]
+    [message] => 
+    [messageparams] => []
+    [file] => /bbbbbb.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 925
+    [timestamp] => 1447213972
+    [priority] => 30
+    [type] => shared
+    [user] => user
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_with_by
+    [subjectparams] => ["\/bbbbbb.txt","user"]
+    [message] => 
+    [messageparams] => []
+    [file] => /bbbbbb.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 883
+    [timestamp] => 1447213956
+    [priority] => 40
+    [type] => file_changed
+    [user] => user
+    [affecteduser] => admin
+    [app] => files
+    [subject] => changed_by
+    [subjectparams] => ["\/vvvv.txt","user"]
+    [message] => 
+    [messageparams] => []
+    [file] => /vvvv.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 879
+    [timestamp] => 1447213773
+    [priority] => 40
+    [type] => file_changed
+    [user] => user
+    [affecteduser] => admin
+    [app] => files
+    [subject] => changed_by
+    [subjectparams] => ["\/vvvvvvvvvvvvvvv.txt","user"]
+    [message] => 
+    [messageparams] => []
+    [file] => /vvvvvvvvvvvvvvv.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 874
+    [timestamp] => 1447213591
+    [priority] => 40
+    [type] => file_changed
+    [user] => user
+    [affecteduser] => admin
+    [app] => files
+    [subject] => changed_by
+    [subjectparams] => ["\/vvvvvvvvvvvvvvv.txt","user"]
+    [message] => 
+    [messageparams] => []
+    [file] => /vvvvvvvvvvvvvvv.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 869
+    [timestamp] => 1447213574
+    [priority] => 40
+    [type] => file_changed
+    [user] => user
+    [affecteduser] => admin
+    [app] => files
+    [subject] => changed_by
+    [subjectparams] => ["\/vvvvvvvvvvvvvvv.txt","user"]
+    [message] => 
+    [messageparams] => []
+    [file] => /vvvvvvvvvvvvvvv.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 860
+    [timestamp] => 1447213518
+    [priority] => 40
+    [type] => file_changed
+    [user] => user
+    [affecteduser] => admin
+    [app] => files
+    [subject] => changed_by
+    [subjectparams] => ["\/vvvvvvvvvvvvvvv.txt","user"]
+    [message] => 
+    [messageparams] => []
+    [file] => /vvvvvvvvvvvvvvv.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 818
+    [timestamp] => 1447210783
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_sharing_group_self
+    [subjectparams] => ["\/vvvv.txt",""]
+    [message] => 
+    [messageparams] => []
+    [file] => /vvvv.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 814
+    [timestamp] => 1447210211
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_group_self
+    [subjectparams] => ["\/bbbbb.txt","admin"]
+    [message] => 
+    [messageparams] => []
+    [file] => /bbbbb.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 763
+    [timestamp] => 1446801312
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_group_self
+    [subjectparams] => ["\/Photos","grege"]
+    [message] => 
+    [messageparams] => []
+    [file] => /Photos
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2FPhotos
+)
+Array
+(
+    [activity_id] => 722
+    [timestamp] => 1446801306
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_sharing_group_self
+    [subjectparams] => ["\/Photos",""]
+    [message] => 
+    [messageparams] => []
+    [file] => /Photos
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2FPhotos
+)
+Array
+(
+    [activity_id] => 683
+    [timestamp] => 1446799469
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_group_self
+    [subjectparams] => ["\/xxxxx.txt","grege"]
+    [message] => 
+    [messageparams] => []
+    [file] => /xxxxx.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 642
+    [timestamp] => 1446799161
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_sharing_group_self
+    [subjectparams] => ["\/vvvv.txt",""]
+    [message] => 
+    [messageparams] => []
+    [file] => /vvvv.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 601
+    [timestamp] => 1446797987
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_sharing_group_self
+    [subjectparams] => ["\/zzzzz.txt",""]
+    [message] => 
+    [messageparams] => []
+    [file] => /zzzzz.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 982
+    [timestamp] => 1447319879
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_sharing_group_self
+    [subjectparams] => ["\/bbbbb.txt",""]
+    [message] => 
+    [messageparams] => []
+    [file] => /bbbbb.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 981
+    [timestamp] => 1447315311
+    [priority] => 40
+    [type] => file_deleted
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files
+    [subject] => deleted_self
+    [subjectparams] => ["\/bbb.txt"]
+    [message] => 
+    [messageparams] => []
+    [file] => /bbb.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 980
+    [timestamp] => 1447315297
+    [priority] => 40
+    [type] => file_created
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files
+    [subject] => created_self
+    [subjectparams] => ["\/bbb.txt"]
+    [message] => 
+    [messageparams] => []
+    [file] => /bbb.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 979
+    [timestamp] => 1447315104
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_sharing_group_self
+    [subjectparams] => ["\/home.svg",""]
+    [message] => 
+    [messageparams] => []
+    [file] => /home.svg
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 977
+    [timestamp] => 1447313959
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_sharing_group_self
+    [subjectparams] => ["\/zzzzz.txt",""]
+    [message] => 
+    [messageparams] => []
+    [file] => /zzzzz.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 976
+    [timestamp] => 1447297246
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_sharing_group_self
+    [subjectparams] => ["\/xxxxx.txt",""]
+    [message] => 
+    [messageparams] => []
+    [file] => /xxxxx.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 975
+    [timestamp] => 1447297241
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_sharing_group_self
+    [subjectparams] => ["\/home.svg",""]
+    [message] => 
+    [messageparams] => []
+    [file] => /home.svg
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 973
+    [timestamp] => 1447296568
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_user_self
+    [subjectparams] => ["\/aaa.txt","user3"]
+    [message] => 
+    [messageparams] => []
+    [file] => /aaa.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 971
+    [timestamp] => 1447296316
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_sharing_group_self
+    [subjectparams] => ["\/home.svg",""]
+    [message] => 
+    [messageparams] => []
+    [file] => /home.svg
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 967
+    [timestamp] => 1447236876
+    [priority] => 30
+    [type] => shared
+    [user] => a
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_with_by
+    [subjectparams] => ["\/Photos (2)","a"]
+    [message] => 
+    [messageparams] => []
+    [file] => /Photos (2)
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2FPhotos+%282%29
+)
+Array
+(
+    [activity_id] => 961
+    [timestamp] => 1447236307
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_group_self
+    [subjectparams] => ["\/xxxxx.txt","admin"]
+    [message] => 
+    [messageparams] => []
+    [file] => /xxxxx.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 960
+    [timestamp] => 1447236304
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_sharing_group_self
+    [subjectparams] => ["\/xxxxx.txt",""]
+    [message] => 
+    [messageparams] => []
+    [file] => /xxxxx.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 951
+    [timestamp] => 1447236068
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_sharing_group_self
+    [subjectparams] => ["\/xxxxx.txt",""]
+    [message] => 
+    [messageparams] => []
+    [file] => /xxxxx.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 950
+    [timestamp] => 1447235970
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_sharing_group_self
+    [subjectparams] => ["\/xxxxx.txt",""]
+    [message] => 
+    [messageparams] => []
+    [file] => /xxxxx.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 940
+    [timestamp] => 1447223351
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_sharing_group_self
+    [subjectparams] => ["\/vvvv.txt",""]
+    [message] => 
+    [messageparams] => []
+    [file] => /vvvv.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 937
+    [timestamp] => 1447214067
+    [priority] => 40
+    [type] => file_changed
+    [user] => user4
+    [affecteduser] => admin
+    [app] => files
+    [subject] => changed_by
+    [subjectparams] => ["\/bbbbbb.txt","user4"]
+    [message] => 
+    [messageparams] => []
+    [file] => /bbbbbb.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 929
+    [timestamp] => 1447214027
+    [priority] => 40
+    [type] => file_changed
+    [user] => wilson
+    [affecteduser] => admin
+    [app] => files
+    [subject] => changed_by
+    [subjectparams] => ["\/bbbbbb.txt","wilson"]
+    [message] => 
+    [messageparams] => []
+    [file] => /bbbbbb.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 925
+    [timestamp] => 1447213972
+    [priority] => 30
+    [type] => shared
+    [user] => user
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_with_by
+    [subjectparams] => ["\/bbbbbb.txt","user"]
+    [message] => 
+    [messageparams] => []
+    [file] => /bbbbbb.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 883
+    [timestamp] => 1447213956
+    [priority] => 40
+    [type] => file_changed
+    [user] => user
+    [affecteduser] => admin
+    [app] => files
+    [subject] => changed_by
+    [subjectparams] => ["\/vvvv.txt","user"]
+    [message] => 
+    [messageparams] => []
+    [file] => /vvvv.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 879
+    [timestamp] => 1447213773
+    [priority] => 40
+    [type] => file_changed
+    [user] => user
+    [affecteduser] => admin
+    [app] => files
+    [subject] => changed_by
+    [subjectparams] => ["\/vvvvvvvvvvvvvvv.txt","user"]
+    [message] => 
+    [messageparams] => []
+    [file] => /vvvvvvvvvvvvvvv.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 874
+    [timestamp] => 1447213591
+    [priority] => 40
+    [type] => file_changed
+    [user] => user
+    [affecteduser] => admin
+    [app] => files
+    [subject] => changed_by
+    [subjectparams] => ["\/vvvvvvvvvvvvvvv.txt","user"]
+    [message] => 
+    [messageparams] => []
+    [file] => /vvvvvvvvvvvvvvv.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 869
+    [timestamp] => 1447213574
+    [priority] => 40
+    [type] => file_changed
+    [user] => user
+    [affecteduser] => admin
+    [app] => files
+    [subject] => changed_by
+    [subjectparams] => ["\/vvvvvvvvvvvvvvv.txt","user"]
+    [message] => 
+    [messageparams] => []
+    [file] => /vvvvvvvvvvvvvvv.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 860
+    [timestamp] => 1447213518
+    [priority] => 40
+    [type] => file_changed
+    [user] => user
+    [affecteduser] => admin
+    [app] => files
+    [subject] => changed_by
+    [subjectparams] => ["\/vvvvvvvvvvvvvvv.txt","user"]
+    [message] => 
+    [messageparams] => []
+    [file] => /vvvvvvvvvvvvvvv.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 818
+    [timestamp] => 1447210783
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_sharing_group_self
+    [subjectparams] => ["\/vvvv.txt",""]
+    [message] => 
+    [messageparams] => []
+    [file] => /vvvv.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 814
+    [timestamp] => 1447210211
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_group_self
+    [subjectparams] => ["\/bbbbb.txt","admin"]
+    [message] => 
+    [messageparams] => []
+    [file] => /bbbbb.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 763
+    [timestamp] => 1446801312
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_group_self
+    [subjectparams] => ["\/Photos","grege"]
+    [message] => 
+    [messageparams] => []
+    [file] => /Photos
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2FPhotos
+)
+Array
+(
+    [activity_id] => 722
+    [timestamp] => 1446801306
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_sharing_group_self
+    [subjectparams] => ["\/Photos",""]
+    [message] => 
+    [messageparams] => []
+    [file] => /Photos
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2FPhotos
+)
+Array
+(
+    [activity_id] => 683
+    [timestamp] => 1446799469
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_group_self
+    [subjectparams] => ["\/xxxxx.txt","grege"]
+    [message] => 
+    [messageparams] => []
+    [file] => /xxxxx.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 642
+    [timestamp] => 1446799161
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_sharing_group_self
+    [subjectparams] => ["\/vvvv.txt",""]
+    [message] => 
+    [messageparams] => []
+    [file] => /vvvv.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 601
+    [timestamp] => 1446797987
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_sharing_group_self
+    [subjectparams] => ["\/zzzzz.txt",""]
+    [message] => 
+    [messageparams] => []
+    [file] => /zzzzz.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 982
+    [timestamp] => 1447319879
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_sharing_group_self
+    [subjectparams] => ["\/bbbbb.txt",""]
+    [message] => 
+    [messageparams] => []
+    [file] => /bbbbb.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 981
+    [timestamp] => 1447315311
+    [priority] => 40
+    [type] => file_deleted
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files
+    [subject] => deleted_self
+    [subjectparams] => ["\/bbb.txt"]
+    [message] => 
+    [messageparams] => []
+    [file] => /bbb.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 980
+    [timestamp] => 1447315297
+    [priority] => 40
+    [type] => file_created
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files
+    [subject] => created_self
+    [subjectparams] => ["\/bbb.txt"]
+    [message] => 
+    [messageparams] => []
+    [file] => /bbb.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 979
+    [timestamp] => 1447315104
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_sharing_group_self
+    [subjectparams] => ["\/home.svg",""]
+    [message] => 
+    [messageparams] => []
+    [file] => /home.svg
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 977
+    [timestamp] => 1447313959
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_sharing_group_self
+    [subjectparams] => ["\/zzzzz.txt",""]
+    [message] => 
+    [messageparams] => []
+    [file] => /zzzzz.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 976
+    [timestamp] => 1447297246
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_sharing_group_self
+    [subjectparams] => ["\/xxxxx.txt",""]
+    [message] => 
+    [messageparams] => []
+    [file] => /xxxxx.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 975
+    [timestamp] => 1447297241
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_sharing_group_self
+    [subjectparams] => ["\/home.svg",""]
+    [message] => 
+    [messageparams] => []
+    [file] => /home.svg
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 973
+    [timestamp] => 1447296568
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_user_self
+    [subjectparams] => ["\/aaa.txt","user3"]
+    [message] => 
+    [messageparams] => []
+    [file] => /aaa.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 971
+    [timestamp] => 1447296316
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_sharing_group_self
+    [subjectparams] => ["\/home.svg",""]
+    [message] => 
+    [messageparams] => []
+    [file] => /home.svg
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 967
+    [timestamp] => 1447236876
+    [priority] => 30
+    [type] => shared
+    [user] => a
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_with_by
+    [subjectparams] => ["\/Photos (2)","a"]
+    [message] => 
+    [messageparams] => []
+    [file] => /Photos (2)
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2FPhotos+%282%29
+)
+Array
+(
+    [activity_id] => 961
+    [timestamp] => 1447236307
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_group_self
+    [subjectparams] => ["\/xxxxx.txt","admin"]
+    [message] => 
+    [messageparams] => []
+    [file] => /xxxxx.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 960
+    [timestamp] => 1447236304
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_sharing_group_self
+    [subjectparams] => ["\/xxxxx.txt",""]
+    [message] => 
+    [messageparams] => []
+    [file] => /xxxxx.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 951
+    [timestamp] => 1447236068
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_sharing_group_self
+    [subjectparams] => ["\/xxxxx.txt",""]
+    [message] => 
+    [messageparams] => []
+    [file] => /xxxxx.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 950
+    [timestamp] => 1447235970
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_sharing_group_self
+    [subjectparams] => ["\/xxxxx.txt",""]
+    [message] => 
+    [messageparams] => []
+    [file] => /xxxxx.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 940
+    [timestamp] => 1447223351
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_sharing_group_self
+    [subjectparams] => ["\/vvvv.txt",""]
+    [message] => 
+    [messageparams] => []
+    [file] => /vvvv.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 937
+    [timestamp] => 1447214067
+    [priority] => 40
+    [type] => file_changed
+    [user] => user4
+    [affecteduser] => admin
+    [app] => files
+    [subject] => changed_by
+    [subjectparams] => ["\/bbbbbb.txt","user4"]
+    [message] => 
+    [messageparams] => []
+    [file] => /bbbbbb.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 929
+    [timestamp] => 1447214027
+    [priority] => 40
+    [type] => file_changed
+    [user] => wilson
+    [affecteduser] => admin
+    [app] => files
+    [subject] => changed_by
+    [subjectparams] => ["\/bbbbbb.txt","wilson"]
+    [message] => 
+    [messageparams] => []
+    [file] => /bbbbbb.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 925
+    [timestamp] => 1447213972
+    [priority] => 30
+    [type] => shared
+    [user] => user
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_with_by
+    [subjectparams] => ["\/bbbbbb.txt","user"]
+    [message] => 
+    [messageparams] => []
+    [file] => /bbbbbb.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 883
+    [timestamp] => 1447213956
+    [priority] => 40
+    [type] => file_changed
+    [user] => user
+    [affecteduser] => admin
+    [app] => files
+    [subject] => changed_by
+    [subjectparams] => ["\/vvvv.txt","user"]
+    [message] => 
+    [messageparams] => []
+    [file] => /vvvv.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 879
+    [timestamp] => 1447213773
+    [priority] => 40
+    [type] => file_changed
+    [user] => user
+    [affecteduser] => admin
+    [app] => files
+    [subject] => changed_by
+    [subjectparams] => ["\/vvvvvvvvvvvvvvv.txt","user"]
+    [message] => 
+    [messageparams] => []
+    [file] => /vvvvvvvvvvvvvvv.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 874
+    [timestamp] => 1447213591
+    [priority] => 40
+    [type] => file_changed
+    [user] => user
+    [affecteduser] => admin
+    [app] => files
+    [subject] => changed_by
+    [subjectparams] => ["\/vvvvvvvvvvvvvvv.txt","user"]
+    [message] => 
+    [messageparams] => []
+    [file] => /vvvvvvvvvvvvvvv.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 869
+    [timestamp] => 1447213574
+    [priority] => 40
+    [type] => file_changed
+    [user] => user
+    [affecteduser] => admin
+    [app] => files
+    [subject] => changed_by
+    [subjectparams] => ["\/vvvvvvvvvvvvvvv.txt","user"]
+    [message] => 
+    [messageparams] => []
+    [file] => /vvvvvvvvvvvvvvv.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 860
+    [timestamp] => 1447213518
+    [priority] => 40
+    [type] => file_changed
+    [user] => user
+    [affecteduser] => admin
+    [app] => files
+    [subject] => changed_by
+    [subjectparams] => ["\/vvvvvvvvvvvvvvv.txt","user"]
+    [message] => 
+    [messageparams] => []
+    [file] => /vvvvvvvvvvvvvvv.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 818
+    [timestamp] => 1447210783
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_sharing_group_self
+    [subjectparams] => ["\/vvvv.txt",""]
+    [message] => 
+    [messageparams] => []
+    [file] => /vvvv.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 814
+    [timestamp] => 1447210211
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_group_self
+    [subjectparams] => ["\/bbbbb.txt","admin"]
+    [message] => 
+    [messageparams] => []
+    [file] => /bbbbb.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 763
+    [timestamp] => 1446801312
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_group_self
+    [subjectparams] => ["\/Photos","grege"]
+    [message] => 
+    [messageparams] => []
+    [file] => /Photos
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2FPhotos
+)
+Array
+(
+    [activity_id] => 722
+    [timestamp] => 1446801306
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_sharing_group_self
+    [subjectparams] => ["\/Photos",""]
+    [message] => 
+    [messageparams] => []
+    [file] => /Photos
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2FPhotos
+)
+Array
+(
+    [activity_id] => 683
+    [timestamp] => 1446799469
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_group_self
+    [subjectparams] => ["\/xxxxx.txt","grege"]
+    [message] => 
+    [messageparams] => []
+    [file] => /xxxxx.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 642
+    [timestamp] => 1446799161
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_sharing_group_self
+    [subjectparams] => ["\/vvvv.txt",""]
+    [message] => 
+    [messageparams] => []
+    [file] => /vvvv.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 601
+    [timestamp] => 1446797987
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_sharing_group_self
+    [subjectparams] => ["\/zzzzz.txt",""]
+    [message] => 
+    [messageparams] => []
+    [file] => /zzzzz.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 560
+    [timestamp] => 1446797887
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_sharing_group_self
+    [subjectparams] => ["\/zzzzz.txt",""]
+    [message] => 
+    [messageparams] => []
+    [file] => /zzzzz.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 556
+    [timestamp] => 1446797368
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_group_self
+    [subjectparams] => ["\/zzzzz.txt","grege"]
+    [message] => 
+    [messageparams] => []
+    [file] => /zzzzz.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 552
+    [timestamp] => 1446797299
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_group_self
+    [subjectparams] => ["\/zzzzz.txt","grege"]
+    [message] => 
+    [messageparams] => []
+    [file] => /zzzzz.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 551
+    [timestamp] => 1446797277
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_sharing_group_self
+    [subjectparams] => ["\/zzzzz.txt",""]
+    [message] => 
+    [messageparams] => []
+    [file] => /zzzzz.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 547
+    [timestamp] => 1446797100
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_group_self
+    [subjectparams] => ["\/zzzzz.txt","grege"]
+    [message] => 
+    [messageparams] => []
+    [file] => /zzzzz.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 543
+    [timestamp] => 1446796677
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_group_self
+    [subjectparams] => ["\/zzzzz.txt","grege"]
+    [message] => 
+    [messageparams] => []
+    [file] => /zzzzz.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 532
+    [timestamp] => 1446796111
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_sharing_group_self
+    [subjectparams] => ["\/xxxxx.txt",""]
+    [message] => 
+    [messageparams] => []
+    [file] => /xxxxx.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 521
+    [timestamp] => 1446795357
+    [priority] => 40
+    [type] => file_deleted
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files
+    [subject] => deleted_self
+    [subjectparams] => ["\/ccccc.txt"]
+    [message] => 
+    [messageparams] => []
+    [file] => /ccccc.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 517
+    [timestamp] => 1446795237
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_group_self
+    [subjectparams] => ["\/bbbbb.txt","grege"]
+    [message] => 
+    [messageparams] => []
+    [file] => /bbbbb.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 510
+    [timestamp] => 1446795199
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_sharing_group_self
+    [subjectparams] => ["\/bbbbb.txt",""]
+    [message] => 
+    [messageparams] => []
+    [file] => /bbbbb.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 503
+    [timestamp] => 1446795068
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_sharing_group_self
+    [subjectparams] => ["\/zzzzz.txt",""]
+    [message] => 
+    [messageparams] => []
+    [file] => /zzzzz.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 496
+    [timestamp] => 1446794963
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_sharing_group_self
+    [subjectparams] => ["\/zzzzz.txt",""]
+    [message] => 
+    [messageparams] => []
+    [file] => /zzzzz.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 489
+    [timestamp] => 1446794780
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_sharing_group_self
+    [subjectparams] => ["\/xxxxx.txt",""]
+    [message] => 
+    [messageparams] => []
+    [file] => /xxxxx.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 482
+    [timestamp] => 1446794646
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_sharing_group_self
+    [subjectparams] => ["\/zzzzz.txt",""]
+    [message] => 
+    [messageparams] => []
+    [file] => /zzzzz.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 475
+    [timestamp] => 1446794199
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_sharing_group_self
+    [subjectparams] => ["\/xxxxx.txt",""]
+    [message] => 
+    [messageparams] => []
+    [file] => /xxxxx.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 468
+    [timestamp] => 1446793845
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_sharing_group_self
+    [subjectparams] => ["\/xxxxx.txt",""]
+    [message] => 
+    [messageparams] => []
+    [file] => /xxxxx.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 464
+    [timestamp] => 1446793648
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_group_self
+    [subjectparams] => ["\/home.svg","admin"]
+    [message] => 
+    [messageparams] => []
+    [file] => /home.svg
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 460
+    [timestamp] => 1446793430
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_group_self
+    [subjectparams] => ["\/zzzzz.txt","admin"]
+    [message] => 
+    [messageparams] => []
+    [file] => /zzzzz.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 453
+    [timestamp] => 1446792725
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_sharing_group_self
+    [subjectparams] => ["\/ccccc.txt",""]
+    [message] => 
+    [messageparams] => []
+    [file] => /ccccc.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 449
+    [timestamp] => 1446792335
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_group_self
+    [subjectparams] => ["\/fff.txt","admin"]
+    [message] => 
+    [messageparams] => []
+    [file] => /fff.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 442
+    [timestamp] => 1446792223
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_sharing_group_self
+    [subjectparams] => ["\/fff.txt",""]
+    [message] => 
+    [messageparams] => []
+    [file] => /fff.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 435
+    [timestamp] => 1446792162
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_sharing_group_self
+    [subjectparams] => ["\/bbbbb.txt",""]
+    [message] => 
+    [messageparams] => []
+    [file] => /bbbbb.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 428
+    [timestamp] => 1446792088
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_sharing_group_self
+    [subjectparams] => ["\/ccccc.txt",""]
+    [message] => 
+    [messageparams] => []
+    [file] => /ccccc.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 421
+    [timestamp] => 1446791722
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_sharing_group_self
+    [subjectparams] => ["\/bbbbb.txt",""]
+    [message] => 
+    [messageparams] => []
+    [file] => /bbbbb.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 414
+    [timestamp] => 1446790837
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_sharing_group_self
+    [subjectparams] => ["\/bbbbb.txt",""]
+    [message] => 
+    [messageparams] => []
+    [file] => /bbbbb.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 407
+    [timestamp] => 1446789675
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_sharing_group_self
+    [subjectparams] => ["\/Photos",""]
+    [message] => 
+    [messageparams] => []
+    [file] => /Photos
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2FPhotos
+)
+Array
+(
+    [activity_id] => 400
+    [timestamp] => 1446787016
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_sharing_group_self
+    [subjectparams] => ["\/Photos\/Squirrel.jpg",""]
+    [message] => 
+    [messageparams] => []
+    [file] => /Photos/Squirrel.jpg
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2FPhotos
+)
+Array
+(
+    [activity_id] => 396
+    [timestamp] => 1446786631
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_group_self
+    [subjectparams] => ["\/bbbbb.txt","admin"]
+    [message] => 
+    [messageparams] => []
+    [file] => /bbbbb.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 389
+    [timestamp] => 1446786610
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_sharing_group_self
+    [subjectparams] => ["\/ccccc.txt",""]
+    [message] => 
+    [messageparams] => []
+    [file] => /ccccc.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 385
+    [timestamp] => 1446627981
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_group_self
+    [subjectparams] => ["\/aaa.txt","admin"]
+    [message] => 
+    [messageparams] => []
+    [file] => /aaa.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 379
+    [timestamp] => 1446627707
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_sharing_group_self
+    [subjectparams] => ["\/home.svg",""]
+    [message] => 
+    [messageparams] => []
+    [file] => /home.svg
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 375
+    [timestamp] => 1446625080
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_group_self
+    [subjectparams] => ["\/aaa.txt","grege"]
+    [message] => 
+    [messageparams] => []
+    [file] => /aaa.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 374
+    [timestamp] => 1446622728
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_link_self
+    [subjectparams] => ["\/bbbbb.txt"]
+    [message] => 
+    [messageparams] => []
+    [file] => /bbbbb.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 367
+    [timestamp] => 1446616869
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_sharing_group_self
+    [subjectparams] => ["\/Photos",""]
+    [message] => 
+    [messageparams] => []
+    [file] => /Photos
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2FPhotos
+)
+Array
+(
+    [activity_id] => 365
+    [timestamp] => 1446606509
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_user_self
+    [subjectparams] => ["\/home.svg","user"]
+    [message] => 
+    [messageparams] => []
+    [file] => /home.svg
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 360
+    [timestamp] => 1446606504
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_sharing_group_self
+    [subjectparams] => ["\/home.svg",""]
+    [message] => 
+    [messageparams] => []
+    [file] => /home.svg
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 358
+    [timestamp] => 1446606498
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_user_self
+    [subjectparams] => ["\/vvvv.txt","user"]
+    [message] => 
+    [messageparams] => []
+    [file] => /vvvv.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 355
+    [timestamp] => 1446606479
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_group_self
+    [subjectparams] => ["\/vvvv.txt","admin"]
+    [message] => 
+    [messageparams] => []
+    [file] => /vvvv.txt
+    [link] => http://172.20.3.84/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 352
+    [timestamp] => 1446192591
+    [priority] => 30
+    [type] => shared
+    [user] => wilson
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_with_by
+    [subjectparams] => ["\/vvvvvvvvvvvvvvv.txt","wilson"]
+    [message] => 
+    [messageparams] => []
+    [file] => /vvvvvvvvvvvvvvv.txt
+    [link] => http://172.20.3.73/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 345
+    [timestamp] => 1445583518
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_sharing_group_self
+    [subjectparams] => ["\/aaa.txt",""]
+    [message] => 
+    [messageparams] => []
+    [file] => /aaa.txt
+    [link] => http://172.20.3.73/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 340
+    [timestamp] => 1445421458
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_sharing_group_self
+    [subjectparams] => ["\/home.svg",""]
+    [message] => 
+    [messageparams] => []
+    [file] => /home.svg
+    [link] => http://172.20.3.61/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 339
+    [timestamp] => 1445421426
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_sharing_group_self
+    [subjectparams] => ["\/ccccc.txt",""]
+    [message] => 
+    [messageparams] => []
+    [file] => /ccccc.txt
+    [link] => http://172.20.3.61/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 336
+    [timestamp] => 1445421289
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_group_self
+    [subjectparams] => ["\/vvvv.txt","admin"]
+    [message] => 
+    [messageparams] => []
+    [file] => /vvvv.txt
+    [link] => http://172.20.3.61/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 335
+    [timestamp] => 1445421277
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_sharing_group_self
+    [subjectparams] => ["\/xxxxx.txt",""]
+    [message] => 
+    [messageparams] => []
+    [file] => /xxxxx.txt
+    [link] => http://172.20.3.61/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 334
+    [timestamp] => 1445421239
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_sharing_group_self
+    [subjectparams] => ["\/zzzzz.txt",""]
+    [message] => 
+    [messageparams] => []
+    [file] => /zzzzz.txt
+    [link] => http://172.20.3.61/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 333
+    [timestamp] => 1445421170
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_sharing_group_self
+    [subjectparams] => ["\/home.svg",""]
+    [message] => 
+    [messageparams] => []
+    [file] => /home.svg
+    [link] => http://172.20.3.61/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 332
+    [timestamp] => 1445421027
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_sharing_group_self
+    [subjectparams] => ["\/fff.txt",""]
+    [message] => 
+    [messageparams] => []
+    [file] => /fff.txt
+    [link] => http://172.20.3.61/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 331
+    [timestamp] => 1445421009
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_sharing_group_self
+    [subjectparams] => ["\/vvvv.txt",""]
+    [message] => 
+    [messageparams] => []
+    [file] => /vvvv.txt
+    [link] => http://172.20.3.61/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 330
+    [timestamp] => 1445420992
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_sharing_group_self
+    [subjectparams] => ["\/vvvv.txt",""]
+    [message] => 
+    [messageparams] => []
+    [file] => /vvvv.txt
+    [link] => http://172.20.3.61/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 327
+    [timestamp] => 1445420467
+    [priority] => 30
+    [type] => shared
+    [user] => wilson
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_with_by
+    [subjectparams] => ["\/b.txt","wilson"]
+    [message] => 
+    [messageparams] => []
+    [file] => /b.txt
+    [link] => http://172.20.3.61/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 324
+    [timestamp] => 1445419819
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_sharing_group_self
+    [subjectparams] => ["\/zzzzz.txt",""]
+    [message] => 
+    [messageparams] => []
+    [file] => /zzzzz.txt
+    [link] => http://172.20.3.61/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 318
+    [timestamp] => 1445395916
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_sharing_group_self
+    [subjectparams] => ["\/xxxxx.txt",""]
+    [message] => 
+    [messageparams] => []
+    [file] => /xxxxx.txt
+    [link] => http://172.20.3.61/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 315
+    [timestamp] => 1444989096
+    [priority] => 30
+    [type] => shared
+    [user] => wilson
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_with_by
+    [subjectparams] => ["\/ownCloudUserManual.pdf","wilson"]
+    [message] => 
+    [messageparams] => []
+    [file] => /ownCloudUserManual.pdf
+    [link] => http://172.20.3.61/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 310
+    [timestamp] => 1444982946
+    [priority] => 30
+    [type] => shared
+    [user] => wilson
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_with_by
+    [subjectparams] => ["\/vvv.txt","wilson"]
+    [message] => 
+    [messageparams] => []
+    [file] => /vvv.txt
+    [link] => http://172.20.3.61/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 306
+    [timestamp] => 1444982917
+    [priority] => 30
+    [type] => shared
+    [user] => wilson
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_with_by
+    [subjectparams] => ["\/vvv.txt","wilson"]
+    [message] => 
+    [messageparams] => []
+    [file] => /vvv.txt
+    [link] => http://172.20.3.61/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 301
+    [timestamp] => 1444809771
+    [priority] => 30
+    [type] => shared
+    [user] => wilson
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_with_by
+    [subjectparams] => ["\/vvvv (2).txt","wilson"]
+    [message] => 
+    [messageparams] => []
+    [file] => /vvvv (2).txt
+    [link] => http://172.20.3.61/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 298
+    [timestamp] => 1444809136
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_user_self
+    [subjectparams] => ["\/ccccc.txt","user"]
+    [message] => 
+    [messageparams] => []
+    [file] => /ccccc.txt
+    [link] => http://172.20.3.61/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 295
+    [timestamp] => 1444809132
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_group_self
+    [subjectparams] => ["\/ccccc.txt","admin"]
+    [message] => 
+    [messageparams] => []
+    [file] => /ccccc.txt
+    [link] => http://172.20.3.61/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 293
+    [timestamp] => 1444807150
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_user_self
+    [subjectparams] => ["\/bbbbb.txt","user2"]
+    [message] => 
+    [messageparams] => []
+    [file] => /bbbbb.txt
+    [link] => http://172.20.3.61/owncloud/index.php/apps/files?dir=%2F
+)
+Array
+(
+    [activity_id] => 290
+    [timestamp] => 1444807134
+    [priority] => 30
+    [type] => shared
+    [user] => admin
+    [affecteduser] => admin
+    [app] => files_sharing
+    [subject] => shared_group_self
+    [subjectparams] => ["\/bbbbb.txt","admin"]
+    [message] => 
+    [messageparams] => []
+    [file] => /bbbbb.txt
+    [link] => http://172.20.3.61/owncloud/index.php/apps/files?dir=%2F
+)

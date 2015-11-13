@@ -136,7 +136,6 @@ class Share extends Constants {
 
 		if($meta !== false) {
 			$source = $meta['fileid'];
-            file_put_contents("test",$source);
 			$cache = new \OC\Files\Cache\Cache($meta['storage']);
 		}
 
@@ -193,7 +192,7 @@ class Share extends Constants {
 				WHERE
 				`item_source` = ? AND `share_type` = ? AND `item_type` IN (\'file\', \'folder\')'
 			);
-			$result = $query->execute(array($source, self::SHARE_TYPE_Sharing_GROUP));
+			$result = $query->execute(array($source, self::SHARE_TYPE_SHARING_GROUP));
 			if (\OCP\DB::isError($result)) {
 				\OCP\Util::writeLog('OCP\Share', \OC_DB::getErrorMessage(), \OC_Log::ERROR);
 			} else {
@@ -862,10 +861,10 @@ class Share extends Constants {
 		// check if it is a valid itemType
 		self::getBackend($itemType);
 		$items = self::getItemSharedWithUser($itemType, $itemSource, $shareWith, $owner, $shareType);
-
-		$toDelete = array();
+        $toDelete = array();
 		$newParent = null;
 		$currentUser = $owner ? $owner : \OC_User::getUser();
+         
 		foreach ($items as $item) {
 			// delete the item with the expected share_type and owner
 			if ((int)$item['share_type'] === (int)$shareType && $item['uid_owner'] === $currentUser) {
@@ -881,6 +880,7 @@ class Share extends Constants {
 		}
 
 		if (!empty($toDelete)) {
+            
 			self::unshareItem($toDelete, $newParent);
 			return true;
 		}

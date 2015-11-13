@@ -1,1 +1,0 @@
-INNER JOIN `*PREFIX*filecache` ON `file_source` = `*PREFIX*filecache`.`fileid`  AND `file_target` IS NOT NULL INNER JOIN `*PREFIX*storages` ON `numeric_id` = `*PREFIX*filecache`.`storage`  AND ((`share_type` in (?, ?) AND `share_with` = ?) ) AND `uid_owner` != ? ORDER BY `*PREFIX*share`.`id` ASC

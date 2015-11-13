@@ -135,6 +135,7 @@
 				}
 			});
 			var callBack = this.reloadCallback.bind(this);
+            //console.dir()
 			return this._reloadCall.then(callBack, callBack);
 		},
 
